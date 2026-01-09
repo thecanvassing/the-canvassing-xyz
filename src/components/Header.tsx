@@ -37,7 +37,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-card">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -50,14 +50,14 @@ const Header = () => {
             {navItems.map((item) =>
               item.hasDropdown ? (
                 <DropdownMenu key={item.label}>
-                  <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors text-body-lg-medium">
+                  <DropdownMenuTrigger className="flex items-center gap-1 text-foreground/80 hover:text-primary transition-colors font-medium">
                     {item.label}
                     <ChevronDown className="w-4 h-4" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start" className="bg-background border border-border rounded-xl">
+                  <DropdownMenuContent align="start" className="bg-background border border-border">
                     {item.items?.map((subItem) => (
                       <DropdownMenuItem key={subItem.href} asChild>
-                        <Link to={subItem.href} className="cursor-pointer text-body-md">
+                        <Link to={subItem.href} className="cursor-pointer">
                           {subItem.label}
                         </Link>
                       </DropdownMenuItem>
@@ -68,7 +68,7 @@ const Header = () => {
                 <Link
                   key={item.label}
                   to={item.href!}
-                  className={`text-foreground hover:text-primary transition-colors text-body-lg-medium ${
+                  className={`text-foreground/80 hover:text-primary transition-colors font-medium ${
                     location.pathname === item.href ? "text-primary" : ""
                   }`}
                 >
@@ -80,10 +80,10 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 rounded-lg px-6 py-2 text-body-lg-medium">
+            <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 rounded-full px-6">
               Login to Rez
             </Button>
-            <Button className="bg-primary hover:bg-primary-secondary text-primary-foreground rounded-lg px-6 py-2 text-body-lg-medium">
+            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-6">
               Get Started on Rez
             </Button>
           </div>

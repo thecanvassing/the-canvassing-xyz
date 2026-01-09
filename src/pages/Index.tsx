@@ -1,69 +1,21 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, Check, Star, FileText, ClipboardList, Users, Award } from "lucide-react";
+import { ArrowDown, Check, Star, FileText, ClipboardList, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import StatsBar from "@/components/StatsBar";
+import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 
 const Index = () => {
-  const products = [
-    {
-      icon: "📋",
-      title: "Online Surveys & Polls",
-      useCases: [
-        "Market research",
-        "Customer satisfaction",
-        "Academic research",
-        "Employee feedback",
-      ],
-      link: "/products/online-surveys",
-      linkText: "Learn More →",
-    },
-    {
-      icon: "🧪",
-      title: "Product Testing",
-      useCases: [
-        "UX/UI testing",
-        "App beta testing",
-        "Website validation",
-        "First-click tests",
-      ],
-      link: "/products/product-testing",
-      linkText: "Learn More →",
-    },
-    {
-      icon: "👤",
-      title: "User Interviews",
-      useCases: [
-        "Discovery research",
-        "User journey mapping",
-        "Persona development",
-        "Concept testing",
-      ],
-      link: "/contact",
-      linkText: "Coming Soon →",
-    },
-  ];
-
-  const researcherFeatures = [
-    "Create and publish tasks",
-    "Manage all campaign responses",
-    "Track progress and view rewards",
-  ];
-
-  const participantFeatures = [
-    "GET+ TOKENS EVERY DAY...",
-    "GPT is GoodDollar EASY EARNING",
-    "IT'S ABOUT YOUR MARKET",
-  ];
-
-  const participantSubFeatures = [
-    "Browse available tasks",
-    "Complete surveys/projects/tests",
-    "Crypto and Non Crypto earners",
+  const painPoints = [
+    "Weeks spent recruiting qualified participants",
+    "Falling response rates and low engagement",
+    "Struggling with poor data quality and fake responses",
+    "Long delays between project launch and results",
+    "Juggling different tools for surveys, testing, and payments",
   ];
 
   const timelineSteps = [
@@ -101,6 +53,22 @@ const Index = () => {
     },
   ];
 
+  const surveyFeatures = [
+    "Launch surveys quickly with your preferred tools",
+    "Access verified participants across Africa",
+    "Target by age, location, and demographics",
+    "Real-time response tracking",
+    "Quality verification on every response",
+  ];
+
+  const testingFeatures = [
+    "Real users testing your actual product",
+    "Detailed feedback and video recordings",
+    "Target specific user segments",
+    "Fast turnaround times",
+    "Comprehensive testing reports",
+  ];
+
   const testimonials = [
     {
       quote: "Canvassing helped us gather insights from 500+ African consumers in just 3 days. The quality of responses was exceptional.",
@@ -129,7 +97,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-20 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient" />
         <div className="absolute inset-0 bg-radial-glow" />
         
@@ -140,31 +108,24 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <Badge variant="orange">Powered by Web3 Payments</Badge>
-                <Badge>Market Research platform</Badge>
-              </div>
-              <h1 className="text-h1 mb-6 text-foreground">
-                Research made simple.{" "}
-                <span className="text-accent">Micro-tasks rewarded in tokens.</span>
+              <Badge className="mb-6">Powered by Web3 Payments</Badge>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
+                Get Quality Research Insights{" "}
+                <span className="text-accent">in Days, Not Weeks</span>
               </h1>
-              <p className="text-body-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                Canvassing helps researchers access verified participants 
-                while participants earn stablecoin rewards through surveys and testing.
+              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+                Connect with verified African participants for your surveys and product tests. 
+                Get quality insights delivered fast with transparent pricing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
-                  asChild
-                  className="bg-accent hover:bg-accent/90 text-white rounded-lg px-8 py-3"
-                >
-                  <Link to="/rez">Go to Rez</Link>
-                </Button>
-                <Button
-                  asChild
                   variant="outline"
-                  className="border-foreground text-foreground hover:bg-foreground hover:text-white rounded-lg px-8 py-3"
+                  className="border-accent text-accent hover:bg-accent hover:text-white rounded-full px-8 py-6 text-lg"
                 >
-                  <Link to="/pax">Open Pax App</Link>
+                  Go to Dashboard
+                </Button>
+                <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-lg">
+                  I Have the Pax App
                 </Button>
               </div>
             </motion.div>
@@ -181,95 +142,44 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-16 px-4 bg-purple-light">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-10">
-            <Badge className="mb-4">Built for the Canvassing ecosystem</Badge>
-            <h2 className="text-3xl font-bold mb-4">
-              We help researchers, startups, and NGOs collect high-quality data while participants earn crypto rewards through
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {products.map((product, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border">
-                <div className="text-3xl mb-4">{product.icon}</div>
-                <h3 className="font-bold text-lg mb-4">{product.title}</h3>
-                <p className="text-sm text-muted-foreground mb-3">USE CASES</p>
-                <ul className="space-y-2 mb-6">
-                  {product.useCases.map((useCase, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                      {useCase}
-                    </li>
-                  ))}
-                </ul>
-                <Link to={product.link} className="text-accent font-medium text-sm hover:underline">
-                  {product.linkText}
-                </Link>
-              </div>
-            ))}
+      {/* Demo Video Section */}
+      <section className="py-16 px-4 bg-background">
+        <div className="container mx-auto max-w-4xl text-center">
+          <p className="text-xl font-display mb-2">
+            Play Demo Video, <span className="text-accent">to see how it works</span>
+          </p>
+          <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce mb-8" />
+          
+          <div className="bg-accent rounded-3xl h-80 md:h-96 flex items-center justify-center">
+            <p className="text-xl text-white font-medium">Demo Video will be inserted here</p>
           </div>
         </div>
       </section>
 
-      {/* Choose Your Path Section */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-10">
-            <Badge className="mb-4">Getting started with Canvassing</Badge>
-            <h2 className="text-3xl font-bold">Choose Your Path</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Researcher Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-card border border-border">
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-accent text-white mb-4">
-                Researcher Dashboard
-              </span>
-              <p className="text-muted-foreground mb-6">
-                Create and manage research tasks
-              </p>
-              <ul className="space-y-3 mb-6">
-                {researcherFeatures.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm">
-                    <Check className="w-4 h-4 text-success" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Button asChild className="w-full bg-accent hover:bg-accent/90 text-white rounded-lg">
-                <Link to="/rez">Open Dashboard →</Link>
-              </Button>
-            </div>
-
-            {/* Participant Card */}
-            <div className="bg-gradient-to-br from-yellow-light to-yellow/30 rounded-2xl p-6 border border-yellow/50">
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-yellow text-foreground mb-4">
-                Participants
-              </span>
-              <p className="text-foreground mb-2">
-                Discover tasks and earn rewards
-              </p>
-              <div className="space-y-1 mb-4">
-                {participantFeatures.map((feature, i) => (
-                  <p key={i} className="text-xs text-muted-foreground">{feature}</p>
-                ))}
+      {/* Pain Points Section */}
+      <section className="py-16 px-4 bg-purple-light">
+        <div className="container mx-auto max-w-2xl text-center">
+          <Badge className="mb-6">Based on 100+ research projects</Badge>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-10">
+            Research Shouldn't Be This <span className="text-accent">Hard</span>
+          </h2>
+          
+          <div className="space-y-4 mb-10">
+            {painPoints.map((point, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-card text-left"
+              >
+                <div className="w-3 h-3 rounded-full bg-accent flex-shrink-0" />
+                <span className="text-muted-foreground line-through decoration-accent/50">{point}</span>
               </div>
-              <ul className="space-y-3 mb-6">
-                {participantSubFeatures.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm">
-                    <Check className="w-4 h-4 text-success" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <Button asChild variant="outline" className="w-full border-foreground text-foreground hover:bg-foreground hover:text-white rounded-lg">
-                <Link to="/pax">Go to App →</Link>
-              </Button>
-            </div>
+            ))}
           </div>
+
+          <p className="text-xl font-display mb-4">
+            Sound familiar? <span className="text-accent">There's a better way.</span>
+          </p>
+          <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce" />
         </div>
       </section>
 
@@ -278,7 +188,7 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <Badge className="mb-6">Process</Badge>
-            <h2 className="text-3xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
               From project setup to results delivery in{" "}
               <span className="text-accent">under 72 hours</span>
             </h2>
@@ -289,7 +199,7 @@ const Index = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden md:block" />
 
             <div className="space-y-8 md:space-y-0">
-              {timelineSteps.map((step) => (
+              {timelineSteps.map((step, index) => (
                 <div
                   key={step.number}
                   className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${
@@ -297,10 +207,10 @@ const Index = () => {
                   }`}
                 >
                   <div className={`flex-1 ${step.side === "right" ? "md:text-right" : ""}`}>
-                    <div className="bg-white rounded-xl p-6 shadow-card border border-border">
+                    <div className="bg-white rounded-xl p-6 shadow-card border border-border/50">
                       <div className="flex items-center gap-3 mb-3">
                         <step.icon className="w-5 h-5 text-primary" />
-                        <h3 className="font-bold text-lg">{step.title}</h3>
+                        <h3 className="font-display font-bold text-lg">{step.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
                       <Link to="#" className="text-accent text-sm font-medium hover:underline">
@@ -310,7 +220,7 @@ const Index = () => {
                   </div>
                   
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display font-bold">
                       {step.number}
                     </div>
                   </div>
@@ -322,35 +232,111 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild className="bg-primary hover:bg-primary-secondary text-primary-foreground rounded-lg px-8 py-3">
-              <Link to="/rez">Get Started</Link>
+            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6">
+              Get Started
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Two Methods Section */}
       <section className="py-16 px-4 bg-purple-light">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <Badge className="mb-6">Methods</Badge>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
+              <span className="text-accent">Two</span> Powerful Ways to Get Insights
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Online Surveys Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
+              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 mb-4">
+                Method 01
+              </span>
+              <h3 className="text-2xl font-display font-bold mb-6">Online Surveys</h3>
+              <ul className="space-y-3 mb-8">
+                {surveyFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                asChild
+                variant="outline"
+                className="w-full border-primary text-primary hover:bg-primary hover:text-white rounded-full"
+              >
+                <Link to="/products/online-surveys">Start Survey →</Link>
+              </Button>
+            </div>
+
+            {/* Product Testing Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
+              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-yellow/20 text-yellow-foreground border border-yellow/30 mb-4">
+                Method 02
+              </span>
+              <h3 className="text-2xl font-display font-bold mb-6">Product Testing</h3>
+              <ul className="space-y-3 mb-8">
+                {testingFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                asChild
+                variant="outline"
+                className="w-full border-primary text-primary hover:bg-primary hover:text-white rounded-full"
+              >
+                <Link to="/products/product-testing">Start Testing →</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Calculator Section */}
+      <section className="py-16 px-4 bg-cream">
+        <div className="container mx-auto max-w-4xl">
+          <Badge className="mb-4">Calculator</Badge>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-10">
+            <span className="text-accent">Calculate</span> Your Project Cost
+          </h2>
+          
+          <Calculator />
+
+          <p className="text-center mt-10 text-lg">
+            Over <span className="text-accent font-bold">500 researchers</span> have used our calculator
+          </p>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-5xl">
           <div className="mb-12">
             <Badge className="mb-4">Testimonials</Badge>
-            <h2 className="text-3xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
               Here's what researchers <span className="text-accent">love</span> about Canvassing
             </h2>
           </div>
 
           <div className="flex gap-4 mb-8">
-            <button className="px-6 py-2 rounded-lg font-medium bg-primary text-primary-foreground">
+            <button className="px-6 py-2 rounded-full font-medium bg-primary text-primary-foreground">
               Researchers
             </button>
-            <button className="px-6 py-2 rounded-lg font-medium bg-white text-foreground border border-border">
+            <button className="px-6 py-2 rounded-full font-medium bg-white text-foreground border border-border">
               Participants
             </button>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border">
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-accent text-accent" />
