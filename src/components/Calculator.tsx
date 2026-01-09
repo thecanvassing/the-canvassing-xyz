@@ -136,7 +136,7 @@ const Calculator = ({ variant = "surveys" }: CalculatorProps) => {
           </div>
           <Button
             variant="outline"
-            className="mt-8 border-white/30 text-primary-foreground hover:bg-white/10 rounded-full"
+            className="mt-8 border-white border-2 text-white hover:bg-white hover:text-primary rounded-full"
           >
             Start My Project
           </Button>
