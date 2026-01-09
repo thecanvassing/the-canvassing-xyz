@@ -2,95 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import "@fontsource/fraunces/400.css";
+@import "@fontsource/fraunces/500.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/fraunces/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+/* Canvassing Design System */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 270 50% 15%;
+    
+    /* Purple Primary */
+    --primary: 270 60% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 270 65% 25%;
+    
+    /* Orange Accent */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 35 95% 60%;
+    
+    /* Yellow */
+    --yellow: 45 93% 55%;
+    --yellow-foreground: 270 50% 15%;
+    
+    /* Light Purple Background */
+    --purple-light: 270 40% 96%;
+    --purple-soft: 270 50% 92%;
+    
+    /* Cream Background */
+    --cream: 40 40% 95%;
+    --cream-dark: 35 30% 90%;
+    
+    /* UI Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 270 50% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
+    --popover-foreground: 270 50% 15%;
+    
+    --secondary: 270 40% 96%;
+    --secondary-foreground: 270 50% 15%;
+    
+    --muted: 270 20% 94%;
+    --muted-foreground: 270 15% 45%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 270 20% 90%;
+    --input: 270 20% 90%;
+    --ring: 270 60% 40%;
+    
+    --radius: 0.75rem;
+    
+    /* Success/Check Color */
+    --success: 145 65% 42%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Footer Dark */
+    --footer-bg: 270 65% 20%;
+    --footer-foreground: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(270 40% 96%) 0%, hsl(270 50% 92%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-radial: radial-gradient(ellipse at center, hsl(270 50% 92% / 0.6) 0%, transparent 70%);
+    --gradient-orange: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(35 95% 60%) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(270 60% 40%) 0%, hsl(270 65% 25%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px hsl(270 20% 15% / 0.05);
+    --shadow-md: 0 4px 12px hsl(270 20% 15% / 0.08);
+    --shadow-lg: 0 8px 24px hsl(270 20% 15% / 0.12);
+    --shadow-card: 0 2px 8px hsl(270 20% 15% / 0.06);
+    
+    /* Sidebar (keeping for compatibility) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 270 65% 8%;
+    --foreground: 0 0% 95%;
+    --primary: 270 50% 60%;
+    --primary-foreground: 270 65% 8%;
+    --card: 270 50% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 270 50% 12%;
+    --popover-foreground: 0 0% 95%;
+    --secondary: 270 30% 18%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 270 20% 20%;
+    --muted-foreground: 270 15% 65%;
+    --border: 270 20% 20%;
+    --input: 270 20% 20%;
+    --ring: 270 50% 60%;
   }
 }
 
@@ -100,6 +119,101 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Badge Pill */
+  .badge-pill {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium border;
+  }
+  
+  .badge-pill-primary {
+    @apply bg-white border-primary/30 text-primary;
+  }
+  
+  .badge-pill-orange {
+    @apply bg-accent/10 border-accent/30 text-accent;
+  }
+  
+  .badge-pill-purple {
+    @apply bg-primary/10 border-primary/30 text-primary;
+  }
+  
+  /* Stats Card */
+  .stats-card {
+    @apply bg-white rounded-xl p-4 shadow-card border border-border/50;
+  }
+  
+  /* Feature Item */
+  .feature-item {
+    @apply flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-border/50;
+  }
+  
+  /* Section backgrounds */
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-radial-glow {
+    background: var(--gradient-radial);
+  }
+  
+  .bg-cream-section {
+    @apply bg-cream;
+  }
+  
+  .bg-purple-light-section {
+    @apply bg-purple-light;
+  }
+  
+  /* Text accent styling */
+  .text-accent-highlight {
+    @apply text-accent font-bold;
+  }
+  
+  /* Timeline connector */
+  .timeline-connector {
+    @apply absolute w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20;
+  }
+  
+  /* Calculator result card */
+  .calculator-result {
+    @apply bg-primary rounded-2xl p-6 text-white;
+  }
+  
+  /* CTA Card */
+  .cta-card {
+    @apply bg-primary-dark rounded-3xl p-8 text-white;
+  }
+  
+  /* Animated arrow */
+  .bounce-arrow {
+    @apply animate-bounce;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fraunces', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-orange);
+  }
+  
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-purple);
   }
 }
