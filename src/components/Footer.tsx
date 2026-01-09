@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
+import logoSvg from "@/assets/logo.svg";
 
 const Footer = () => {
   const footerLinks = {
@@ -32,10 +33,7 @@ const Footer = () => {
           {/* Logo and Tagline */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent via-yellow to-accent" />
-                <span className="relative text-primary font-display font-bold text-xl">C.</span>
-              </div>
+              <img src={logoSvg} alt="Canvassing logo" className="w-10 h-10 object-contain" />
               <span className="font-display font-bold text-xl text-white">Canvassing</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
