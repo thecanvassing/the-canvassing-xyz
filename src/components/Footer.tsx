@@ -147,9 +147,9 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/20 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4 text-sm text-white/60">
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             <span>|</span>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
           </div>
           <p className="text-sm text-white/60">
             © 2025 Canvassing. All rights reserved. Built with ❤️ in Africa.
