@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, Check, Star, ClipboardList, Package, Users, FileText, Award } from "lucide-react";
+import { ArrowDown, Check, Star, FileText, ClipboardList, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
@@ -10,37 +10,12 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 
 const Index = () => {
-  const helpFeatures = [
-    {
-      icon: ClipboardList,
-      title: "Online Surveys",
-      subtitle: "& Polls",
-      useCases: ["Market research", "Customer satisfaction", "Academic studies", "Product feedback", "Brand tracking"],
-    },
-    {
-      icon: Package,
-      title: "Product",
-      subtitle: "Testing",
-      useCases: ["App beta testing", "Website usability", "Physical products", "Prototype testing", "User testing"],
-    },
-    {
-      icon: Users,
-      title: "User",
-      subtitle: "Interviews",
-      useCases: ["User research", "In-depth insights", "Customer personas", "Discovery research", "Concept testing"],
-    },
-  ];
-
-  const researcherFeatures = [
-    "Create and publish tasks",
-    "Manage participant payments",
-    "Track responses via dashboard",
-  ];
-
-  const participantFeatures = [
-    "Browse available tasks",
-    "Complete tasks at your pace",
-    "Earn verified rewards instantly",
+  const painPoints = [
+    "Weeks spent recruiting qualified participants",
+    "Falling response rates and low engagement",
+    "Struggling with poor data quality and fake responses",
+    "Long delays between project launch and results",
+    "Juggling different tools for surveys, testing, and payments",
   ];
 
   const timelineSteps = [
@@ -78,6 +53,22 @@ const Index = () => {
     },
   ];
 
+  const surveyFeatures = [
+    "Launch surveys quickly with your preferred tools",
+    "Access verified participants across Africa",
+    "Target by age, location, and demographics",
+    "Real-time response tracking",
+    "Quality verification on every response",
+  ];
+
+  const testingFeatures = [
+    "Real users testing your actual product",
+    "Detailed feedback and video recordings",
+    "Target specific user segments",
+    "Fast turnaround times",
+    "Comprehensive testing reports",
+  ];
+
   const testimonials = [
     {
       quote: "Canvassing helped us gather insights from 500+ African consumers in just 3 days. The quality of responses was exceptional.",
@@ -99,7 +90,7 @@ const Index = () => {
   const faqs = [
     { question: "What is Canvassing?", answer: "Canvassing is a marketplace that connects researchers with verified participants for surveys and product testing. We help you gather quality insights quickly and affordably." },
     { question: "How are participants verified?", answer: "Participants go through our verification process which includes identity verification, quality checks, and engagement tracking to ensure authentic responses." },
-    { question: "Who can use Canvassing?", answer: "Researchers, startups, NGOs, and enterprises looking to collect quality data, as well as individuals looking to earn rewards by participating in research." },
+    { question: "What tools do you support?", answer: "We support popular survey tools like Google Forms, Tally, Typeform, and more. Simply paste your survey link and we handle the rest." },
     { question: "What kind of incentives are offered?", answer: "Participants are rewarded with GoodDollar (G$) tokens, a stablecoin that provides real value and instant payments." },
   ];
 
@@ -119,22 +110,22 @@ const Index = () => {
             >
               <Badge className="mb-6">Powered by Web3 Payments</Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
-                Research made simple.{" "}
-                <span className="text-accent">Micro-tasks rewarded in tokens.</span>
+                Get Quality Research Insights{" "}
+                <span className="text-accent">in Days, Not Weeks</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                Canvassing offers a two-way value for verified 
-                participants—turning everyday activity to paid daily transactions.
+                Connect with verified African participants for your surveys and product tests. 
+                Get quality insights delivered fast with transparent pricing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-lg">
-                  Learn More
-                </Button>
                 <Button
                   variant="outline"
-                  className="border-foreground text-foreground hover:bg-foreground hover:text-background rounded-full px-8 py-6 text-lg"
+                  className="border-accent text-accent hover:bg-accent hover:text-white rounded-full px-8 py-6 text-lg"
                 >
-                  Download Pax Demo
+                  Go to Dashboard
+                </Button>
+                <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-lg">
+                  I Have the Pax App
                 </Button>
               </div>
             </motion.div>
@@ -151,119 +142,49 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Help Section */}
-      <section className="py-16 px-4 bg-purple-light">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-12">
-            <Badge className="mb-6">hello, we are Canvassing</Badge>
-            <h2 className="text-3xl md:text-4xl font-display font-bold max-w-2xl mx-auto">
-              We help researchers, startups, and NGOs collect high-quality data{" "}
-              <span className="text-accent">while participants earn crypto rewards through</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {helpFeatures.map((feature, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
-                <feature.icon className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-display font-bold text-lg mb-1">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{feature.subtitle}</p>
-                <p className="text-xs text-accent font-semibold mb-2">USE CASES</p>
-                <ul className="space-y-1">
-                  {feature.useCases.map((useCase, i) => (
-                    <li key={i} className="text-sm text-muted-foreground flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                      {useCase}
-                    </li>
-                  ))}
-                </ul>
-                <Link to="#" className="text-accent text-sm font-medium hover:underline mt-4 flex items-center gap-1">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            ))}
-          </div>
+      {/* Demo Video Section */}
+      <section className="py-16 px-4 bg-background">
+        <div className="container mx-auto max-w-4xl text-center">
+          <p className="text-xl font-display mb-2">
+            Play Demo Video, <span className="text-accent">to see how it works</span>
+          </p>
+          <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce mb-8" />
           
-          <div className="text-center mt-8">
-            <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white">
-              Coming Soon
-            </Button>
+          <div className="bg-accent rounded-3xl h-80 md:h-96 flex items-center justify-center">
+            <p className="text-xl text-white font-medium">Demo Video will be inserted here</p>
           </div>
         </div>
       </section>
 
-      {/* Choose Your Path Section */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-12">
-            <Badge className="mb-6">Process</Badge>
-            <h2 className="text-3xl md:text-4xl font-display font-bold">
-              Choose Your Path
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Researcher Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
-                FOR RESEARCHERS
-              </span>
-              <h3 className="text-2xl font-display font-bold mb-2">Create and manage research tasks</h3>
-              <ul className="space-y-3 mb-8 mt-6">
-                {researcherFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                asChild
-                className="w-full bg-accent hover:bg-accent/90 text-white rounded-full"
+      {/* Pain Points Section */}
+      <section className="py-16 px-4 bg-purple-light">
+        <div className="container mx-auto max-w-2xl text-center">
+          <Badge className="mb-6">Based on 100+ research projects</Badge>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-10">
+            Research Shouldn't Be This <span className="text-accent">Hard</span>
+          </h2>
+          
+          <div className="space-y-4 mb-10">
+            {painPoints.map((point, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-card text-left"
               >
-                <Link to="/rez">Rez Dashboard →</Link>
-              </Button>
-            </div>
-
-            {/* Participant Card */}
-            <div className="bg-yellow/10 rounded-2xl p-8 border border-yellow/30">
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-yellow/20 text-yellow-foreground border border-yellow/30 mb-4">
-                FOR PARTICIPANTS
-              </span>
-              <h3 className="text-2xl font-display font-bold mb-2">Discover tasks and earn rewards</h3>
-              <div className="space-y-2 mb-4 mt-4">
-                <div className="bg-white rounded-lg px-3 py-2 text-sm">
-                  🛒 +55% RESEARCH PROJECTS →25
-                </div>
-                <div className="bg-white rounded-lg px-3 py-2 text-sm">
-                  📱 USER ON MOBILE PLATFORM →63
-                </div>
-                <div className="bg-white rounded-lg px-3 py-2 text-sm">
-                  🎯 25 PARTICIPANT MATCHED →63
-                </div>
+                <div className="w-3 h-3 rounded-full bg-accent flex-shrink-0" />
+                <span className="text-muted-foreground line-through decoration-accent/50">{point}</span>
               </div>
-              <ul className="space-y-3 mb-8">
-                {participantFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                asChild
-                variant="outline"
-                className="w-full border-primary text-primary hover:bg-primary hover:text-white rounded-full"
-              >
-                <Link to="/pax">Pax App →</Link>
-              </Button>
-            </div>
+            ))}
           </div>
+
+          <p className="text-xl font-display mb-4">
+            Sound familiar? <span className="text-accent">There's a better way.</span>
+          </p>
+          <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce" />
         </div>
       </section>
 
       {/* Process Timeline Section */}
-      <section className="py-16 px-4 bg-purple-light">
+      <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <Badge className="mb-6">Process</Badge>
@@ -318,6 +239,66 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Two Methods Section */}
+      <section className="py-16 px-4 bg-purple-light">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <Badge className="mb-6">Methods</Badge>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
+              <span className="text-accent">Two</span> Powerful Ways to Get Insights
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Online Surveys Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
+              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 mb-4">
+                Method 01
+              </span>
+              <h3 className="text-2xl font-display font-bold mb-6">Online Surveys</h3>
+              <ul className="space-y-3 mb-8">
+                {surveyFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                asChild
+                variant="outline"
+                className="w-full border-primary text-primary hover:bg-primary hover:text-white rounded-full"
+              >
+                <Link to="/products/online-surveys">Start Survey →</Link>
+              </Button>
+            </div>
+
+            {/* Product Testing Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
+              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-yellow/20 text-yellow-foreground border border-yellow/30 mb-4">
+                Method 02
+              </span>
+              <h3 className="text-2xl font-display font-bold mb-6">Product Testing</h3>
+              <ul className="space-y-3 mb-8">
+                {testingFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                asChild
+                variant="outline"
+                className="w-full border-primary text-primary hover:bg-primary hover:text-white rounded-full"
+              >
+                <Link to="/products/product-testing">Start Testing →</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Calculator Section */}
       <section className="py-16 px-4 bg-cream">
         <div className="container mx-auto max-w-4xl">
@@ -340,7 +321,7 @@ const Index = () => {
           <div className="mb-12">
             <Badge className="mb-4">Testimonials</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              Here's what researchers <span className="text-accent">love</span><br />about Canvassing
+              Here's what researchers <span className="text-accent">love</span> about Canvassing
             </h2>
           </div>
 
