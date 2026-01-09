@@ -6,6 +6,8 @@
 @import "@fontsource/fraunces/500.css";
 @import "@fontsource/fraunces/600.css";
 @import "@fontsource/fraunces/700.css";
+@import "@fontsource/sen/400.css";
+@import "@fontsource/sen/700.css";
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
@@ -204,7 +206,7 @@
   }
   
   .font-sans {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sen', 'Inter', sans-serif;
   }
   
   .text-gradient-orange {
