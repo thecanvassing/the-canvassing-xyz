@@ -2,86 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@fontsource/fraunces/400.css";
-@import "@fontsource/fraunces/500.css";
-@import "@fontsource/fraunces/600.css";
-@import "@fontsource/fraunces/700.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
+@import "@fontsource/sen/400.css";
+@import "@fontsource/sen/500.css";
+@import "@fontsource/sen/600.css";
+@import "@fontsource/sen/700.css";
+@import "@fontsource/sen/800.css";
 
-/* Canvassing Design System */
+/* Canvassing Design System - Based on Figma Specs */
 
 @layer base {
   :root {
-    /* Core Brand Colors */
+    /* Core Brand Colors - Exact Figma Values */
     --background: 0 0% 100%;
-    --foreground: 270 50% 15%;
+    --foreground: 220 39% 11%; /* #1F2937 */
     
-    /* Purple Primary */
-    --primary: 270 60% 40%;
+    /* Purple Primary Palette */
+    --primary: 276 82% 24%; /* #3c0a6d - Color 1a */
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 270 65% 25%;
+    --primary-dark: 276 82% 24%; /* #3c0a6d */
+    --primary-secondary: 270 38% 38%; /* #633b8a - Color 1b */
+    --primary-light: 270 26% 69%; /* #b19dc5 - Color 1d */
+    --primary-bg: 248 80% 96%; /* #efecfd - Color 1f */
+    --primary-bg-alt: 252 61% 90%; /* #ddd7f4 - Color 1g */
     
-    /* Orange Accent */
-    --accent: 25 95% 53%;
+    /* Orange Accent Palette */
+    --accent: 16 98% 55%; /* #fd5d1b - Color 3a */
     --accent-foreground: 0 0% 100%;
-    --accent-light: 35 95% 60%;
+    --accent-red: 8 100% 50%; /* #ff1f01 - Color 2a */
     
-    /* Yellow */
-    --yellow: 45 93% 55%;
-    --yellow-foreground: 270 50% 15%;
+    /* Yellow Palette */
+    --yellow: 48 100% 50%; /* #ffc700 - Color 4a */
+    --yellow-foreground: 220 39% 11%;
+    --yellow-light: 48 100% 76%; /* #ffe999 - Color 4d */
     
-    /* Light Purple Background */
-    --purple-light: 270 40% 96%;
-    --purple-soft: 270 50% 92%;
+    /* Success Green */
+    --success: 142 60% 43%; /* #34a853 - Color 5a */
+    --success-foreground: 0 0% 100%;
+    
+    /* Gray Palette */
+    --gray-dark: 0 0% 36%; /* #5d5d5d - Color 6c */
+    --gray-medium: 0 0% 73%; /* #bababa - Color 7a */
+    --text-dark: 220 39% 11%; /* #1F2937 */
+    --text-medium: 220 9% 46%; /* #6B7280 */
+    
+    /* Light Purple Backgrounds */
+    --purple-light: 248 80% 96%; /* #efecfd */
+    --purple-soft: 252 61% 90%; /* #ddd7f4 */
     
     /* Cream Background */
-    --cream: 40 40% 95%;
-    --cream-dark: 35 30% 90%;
+    --cream: 40 40% 96%;
+    --cream-dark: 35 30% 92%;
     
     /* UI Colors */
     --card: 0 0% 100%;
-    --card-foreground: 270 50% 15%;
+    --card-foreground: 220 39% 11%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 270 50% 15%;
+    --popover-foreground: 220 39% 11%;
     
-    --secondary: 270 40% 96%;
-    --secondary-foreground: 270 50% 15%;
+    --secondary: 248 80% 96%;
+    --secondary-foreground: 220 39% 11%;
     
-    --muted: 270 20% 94%;
-    --muted-foreground: 270 15% 45%;
+    --muted: 248 80% 96%;
+    --muted-foreground: 220 9% 46%; /* #6B7280 */
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 270 20% 90%;
-    --input: 270 20% 90%;
-    --ring: 270 60% 40%;
+    /* Borders - Exact Figma */
+    --border: 200 6% 87%; /* #dee0e1 - Stroke 1 */
+    --input: 200 6% 87%;
+    --ring: 276 82% 24%;
     
-    --radius: 0.75rem;
-    
-    /* Success/Check Color */
-    --success: 145 65% 42%;
-    --success-foreground: 0 0% 100%;
+    --radius: 0.5rem; /* 8px base */
     
     /* Footer Dark */
-    --footer-bg: 270 65% 20%;
+    --footer-bg: 276 82% 24%; /* #3c0a6d */
     --footer-foreground: 0 0% 100%;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(270 40% 96%) 0%, hsl(270 50% 92%) 50%, hsl(0 0% 100%) 100%);
-    --gradient-radial: radial-gradient(ellipse at center, hsl(270 50% 92% / 0.6) 0%, transparent 70%);
-    --gradient-orange: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(35 95% 60%) 100%);
-    --gradient-purple: linear-gradient(135deg, hsl(270 60% 40%) 0%, hsl(270 65% 25%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(248 80% 96%) 0%, hsl(252 61% 90%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-radial: radial-gradient(ellipse at center, hsl(252 61% 90% / 0.6) 0%, transparent 70%);
+    --gradient-orange: linear-gradient(135deg, hsl(16 98% 55%) 0%, hsl(48 100% 50%) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(276 82% 24%) 0%, hsl(270 38% 38%) 100%);
     
-    /* Shadows */
-    --shadow-sm: 0 1px 2px hsl(270 20% 15% / 0.05);
-    --shadow-md: 0 4px 12px hsl(270 20% 15% / 0.08);
-    --shadow-lg: 0 8px 24px hsl(270 20% 15% / 0.12);
-    --shadow-card: 0 2px 8px hsl(270 20% 15% / 0.06);
+    /* Shadows - Exact Figma Drop Shadows */
+    --shadow-1: 1px 1px 4px rgba(0,0,0,0.1), 1px 1px 0px rgba(0,0,0,0.02);
+    --shadow-3: -1px 6px 15px rgba(0,0,0,0.2), 1px 1px 3px rgba(0,0,0,0.1);
+    --shadow-card: 1px 1px 4px rgba(0,0,0,0.1), 1px 1px 0px rgba(0,0,0,0.02);
     
     /* Sidebar (keeping for compatibility) */
     --sidebar-background: 0 0% 98%;
@@ -95,21 +103,21 @@
   }
 
   .dark {
-    --background: 270 65% 8%;
+    --background: 276 82% 8%;
     --foreground: 0 0% 95%;
     --primary: 270 50% 60%;
-    --primary-foreground: 270 65% 8%;
-    --card: 270 50% 12%;
+    --primary-foreground: 276 82% 8%;
+    --card: 276 50% 12%;
     --card-foreground: 0 0% 95%;
-    --popover: 270 50% 12%;
+    --popover: 276 50% 12%;
     --popover-foreground: 0 0% 95%;
-    --secondary: 270 30% 18%;
+    --secondary: 276 30% 18%;
     --secondary-foreground: 0 0% 95%;
-    --muted: 270 20% 20%;
-    --muted-foreground: 270 15% 65%;
-    --border: 270 20% 20%;
-    --input: 270 20% 20%;
-    --ring: 270 50% 60%;
+    --muted: 276 20% 20%;
+    --muted-foreground: 276 15% 65%;
+    --border: 276 20% 20%;
+    --input: 276 20% 20%;
+    --ring: 276 50% 60%;
   }
 }
 
@@ -119,11 +127,34 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Sen', sans-serif;
+    letter-spacing: 0.5px;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+  /* Typography Scale from Figma */
+  h1 {
+    @apply text-4xl font-extrabold leading-tight tracking-wide;
+    /* 36px, 800, 41px line-height */
+  }
+  
+  h2 {
+    @apply text-3xl font-bold leading-tight tracking-wide;
+  }
+  
+  h3 {
+    @apply text-2xl font-medium leading-7 tracking-wide;
+    /* 24px, 500, 28px line-height */
+  }
+  
+  h4 {
+    @apply text-xl font-semibold leading-7 tracking-wide;
+    /* 20px, 600, 28px line-height */
+  }
+  
+  p {
+    @apply text-base font-normal leading-6 tracking-wide;
+    /* 16px, 400, 24px line-height */
   }
 }
 
@@ -147,12 +178,14 @@
   
   /* Stats Card */
   .stats-card {
-    @apply bg-white rounded-xl p-4 shadow-card border border-border/50;
+    @apply bg-white rounded-xl p-4 border border-border;
+    box-shadow: var(--shadow-card);
   }
   
   /* Feature Item */
   .feature-item {
-    @apply flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-border/50;
+    @apply flex items-center gap-3 p-4 bg-white rounded-xl border border-border;
+    box-shadow: var(--shadow-1);
   }
   
   /* Section backgrounds */
@@ -189,22 +222,91 @@
   
   /* CTA Card */
   .cta-card {
-    @apply bg-primary-dark rounded-3xl p-8 text-white;
+    @apply bg-primary rounded-3xl p-8 text-white;
   }
   
   /* Animated arrow */
   .bounce-arrow {
     @apply animate-bounce;
   }
+  
+  /* Button base styles */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-primary-foreground rounded-lg px-6 py-3 font-semibold;
+  }
+  
+  .btn-accent {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground rounded-lg px-6 py-3 font-semibold;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg px-6 py-3 font-semibold;
+  }
 }
 
 @layer utilities {
-  .font-display {
-    font-family: 'Fraunces', serif;
+  /* Typography utilities matching Figma */
+  .text-h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: 0.5px;
   }
   
-  .font-sans {
-    font-family: 'Inter', sans-serif;
+  .text-h3-medium {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+  }
+  
+  .text-h3-regular {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+  }
+  
+  .text-h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+  }
+  
+  .text-h4-regular {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+  }
+  
+  .text-body-lg-medium {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+  
+  .text-body-lg {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+  
+  .text-body-md {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+  
+  .text-body-sm {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.5px;
   }
   
   .text-gradient-orange {
@@ -215,5 +317,13 @@
   .text-gradient-purple {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-purple);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-3);
   }
 }
