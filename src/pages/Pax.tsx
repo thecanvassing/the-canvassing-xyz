@@ -1,0 +1,198 @@
+import { Check, ArrowDown, Download, User, ClipboardCheck, Wallet } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Layout from "@/components/Layout";
+import Badge from "@/components/Badge";
+import StatsBar from "@/components/StatsBar";
+import FAQSection from "@/components/FAQSection";
+
+const Pax = () => {
+  const benefits = [
+    "Get paid in stablecoins for completing surveys and testing products",
+    "Instant crypto/stablecoin rewards",
+    "Earn bonus rewards through referrals and community engagement",
+    "Mobile-first seamless experience",
+    "Real-time transparent dashboard tracking earnings, surveys, and rewards",
+  ];
+
+  const timelineSteps = [
+    {
+      number: "01",
+      title: "Sign Up",
+      description: "Download the Pax app and create your profile.",
+      icon: Download,
+      link: "Download App →",
+      side: "left",
+    },
+    {
+      number: "02",
+      title: "Complete Profile",
+      description: "Complete your profile to verify your eligibility and match with surveys and tasks for businesses.",
+      icon: User,
+      link: "Verification and approval →",
+      side: "right",
+    },
+    {
+      number: "03",
+      title: "Complete tasks",
+      description: "Take surveys or test products at your convenience.",
+      icon: ClipboardCheck,
+      link: "Explore tasks in Pax App →",
+      side: "left",
+    },
+    {
+      number: "04",
+      title: "Get Paid",
+      description: "Receive stablecoin payments directly to your wallet.",
+      icon: Wallet,
+      link: "Instant Payments →",
+      side: "right",
+    },
+  ];
+
+  const faqs = [
+    { question: "What is Pax?", answer: "Pax is the participant app for Canvassing. It allows you to earn stablecoin rewards by completing surveys and testing products for researchers and companies." },
+    { question: "How does Pax work?", answer: "Download the app, complete your profile verification, and start accepting tasks. Complete surveys and product tests to earn G$ tokens that can be exchanged for real value." },
+    { question: "Who can use Pax?", answer: "Anyone in Africa can join Pax. You need to complete our verification process to ensure you're matched with relevant opportunities." },
+    { question: "How are payments verified?", answer: "Payments are made in GoodDollar (G$) tokens immediately upon task completion and verification. You can track all payments in your dashboard." },
+    { question: "How do I get started with Pax?", answer: "Download the Pax app, create an account, verify your profile, and start browsing available tasks. Your first payment can arrive within hours of completing a task." },
+  ];
+
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-hero-gradient" />
+        <div className="absolute inset-0 bg-radial-glow" />
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <Badge className="mb-6">Powered by Web3 Payments</Badge>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
+              Micro task, <span className="text-accent">rewarded in tokens</span>
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+              Join thousands of participants earning stablecoin rewards by completing surveys and testing products from top researchers and companies.
+            </p>
+            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg">
+              Download Pax App
+            </Button>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <StatsBar />
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 px-4 bg-purple-light">
+        <div className="container mx-auto max-w-2xl">
+          <div className="text-center mb-10">
+            <Badge className="mb-6">Built for Everyday Earners</Badge>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
+              Why Join Canvassing?
+            </h2>
+          </div>
+
+          <div className="space-y-4 mb-10">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-card"
+              >
+                <Check className="w-5 h-5 text-success flex-shrink-0" />
+                <span className="text-foreground">{benefit}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-xl font-display mb-2">
+              Here's how Pax <span className="text-accent">makes earning simple and transparent</span>
+            </p>
+            <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce" />
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-16 px-4 bg-background">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <Badge className="mb-6">How it Works</Badge>
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
+              From signup to <span className="text-accent">stablecoin rewards</span> in minutes
+            </h2>
+          </div>
+
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden md:block" />
+
+            <div className="space-y-8 md:space-y-0">
+              {timelineSteps.map((step) => (
+                <div
+                  key={step.number}
+                  className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${
+                    step.side === "right" ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  <div className={`flex-1 ${step.side === "right" ? "md:text-right" : ""}`}>
+                    <div className="bg-white rounded-xl p-6 shadow-card border border-border/50">
+                      <div className="flex items-center gap-3 mb-3">
+                        <step.icon className="w-5 h-5 text-primary" />
+                        <h3 className="font-display font-bold text-lg">{step.title}</h3>
+                      </div>
+                      <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
+                      <span className="text-accent text-sm font-medium inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
+                        {step.link}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-display font-bold">
+                      {step.number}
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 hidden md:block" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* App Preview Section */}
+      <section className="py-16 px-4 bg-primary-dark">
+        <div className="container mx-auto max-w-4xl">
+          <div className="bg-primary rounded-3xl h-80 flex items-center justify-center">
+            <p className="text-xl text-white/80 font-display">Pax Image will be inserted here</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Ready to Earn CTA */}
+      <section className="py-16 px-4 bg-primary-dark text-center">
+        <div className="container mx-auto max-w-xl">
+          <Badge variant="orange" className="mb-6">✨</Badge>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            Ready to Start Earning?
+          </h2>
+          <p className="text-white/70 mb-8">
+            Download the Pax app and join our community of participants making money through research.
+          </p>
+          <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 py-6">
+            Download App →
+          </Button>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSection faqs={faqs} />
+    </Layout>
+  );
+};
+
+export default Pax;
