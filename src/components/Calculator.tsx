@@ -124,14 +124,14 @@ const Calculator = ({ variant = "surveys" }: CalculatorProps) => {
         </div>
 
         {/* Result */}
-        <div className="bg-primary rounded-2xl p-6 text-primary-foreground flex flex-col">
-          <div className="text-sm opacity-80 mb-2">Total Cost</div>
-          <div className="text-sm opacity-70 mb-4">
+        <div className="bg-primary rounded-2xl p-6 flex flex-col">
+          <div className="text-sm text-white/90 mb-2">Total Cost</div>
+          <div className="text-sm text-white/80 mb-4">
             {activeTab === "surveys"
               ? `For ${questions} questions × ${responses} participants`
               : `For ${testers} product testers`}
           </div>
-          <div className="text-5xl font-display font-bold mb-auto">
+          <div className="text-5xl font-display font-bold text-white mb-auto">
             ${calculateCost().toFixed(0)}
           </div>
           <Button
