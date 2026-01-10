@@ -66,8 +66,8 @@
     --success: 145 65% 42%;
     --success-foreground: 0 0% 100%;
     
-    /* Footer Dark - Charcoal/Slate instead of purple */
-    --footer-bg: 220 15% 15%;
+    /* Footer Dark */
+    --footer-bg: 270 65% 20%;
     --footer-foreground: 0 0% 100%;
     
     /* Gradients */
