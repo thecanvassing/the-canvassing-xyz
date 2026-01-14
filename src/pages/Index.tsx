@@ -120,14 +120,14 @@ const Index = () => {
               <Badge className="mb-6">Powered by Web3 Payments</Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
                 Research made simple.{" "}
-                <span className="text-accent">Micro-tasks rewarded in tokens.</span>
+                <span className="text-primary">Micro-tasks rewarded in tokens.</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
                 Canvassing offers a two-way value for verified 
                 participants—turning everyday activity to paid daily transactions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-accent hover:bg-accent/90 text-white rounded-full px-8 py-6 text-lg">
+                <Button className="bg-primary hover:bg-primary-dark text-white rounded-full px-8 py-6 text-lg">
                   Learn More
                 </Button>
                 <Button
@@ -158,7 +158,7 @@ const Index = () => {
             <Badge className="mb-6">hello, we are Canvassing</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold max-w-2xl mx-auto">
               We help researchers, startups, and NGOs collect high-quality data{" "}
-              <span className="text-accent">while participants earn crypto rewards through</span>
+              <span className="text-primary">while participants earn crypto rewards through</span>
             </h2>
           </div>
 
@@ -168,16 +168,16 @@ const Index = () => {
                 <feature.icon className="w-8 h-8 text-primary mb-4" />
                 <h3 className="font-display font-bold text-lg mb-1">{feature.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{feature.subtitle}</p>
-                <p className="text-xs text-accent font-semibold mb-2">USE CASES</p>
+                <p className="text-xs text-primary font-semibold mb-2">USE CASES</p>
                 <ul className="space-y-1">
                   {feature.useCases.map((useCase, i) => (
                     <li key={i} className="text-sm text-muted-foreground flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {useCase}
                     </li>
                   ))}
                 </ul>
-                <Link to="#" className="text-accent text-sm font-medium hover:underline mt-4 flex items-center gap-1">
+                <Link to="#" className="text-primary text-sm font-medium hover:underline mt-4 flex items-center gap-1">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -212,14 +212,16 @@ const Index = () => {
               <ul className="space-y-3 mb-8 mt-6">
                 {researcherFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <div className="w-5 h-5 rounded-full bg-yellow flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-yellow-foreground" />
+                    </div>
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
               <Button
                 asChild
-                className="w-full bg-accent hover:bg-accent/90 text-white rounded-full"
+                className="w-full bg-primary hover:bg-primary-dark text-white rounded-full"
               >
                 <Link to="/rez">Rez Dashboard →</Link>
               </Button>
@@ -245,7 +247,9 @@ const Index = () => {
               <ul className="space-y-3 mb-8">
                 {participantFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <div className="w-5 h-5 rounded-full bg-yellow flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-yellow-foreground" />
+                    </div>
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
@@ -269,7 +273,7 @@ const Index = () => {
             <Badge className="mb-6">Process</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
               From project setup to results delivery in{" "}
-              <span className="text-accent">under 72 hours</span>
+              <span className="text-primary">under 72 hours</span>
             </h2>
           </div>
 
@@ -292,7 +296,7 @@ const Index = () => {
                         <h3 className="font-display font-bold text-lg">{step.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
-                      <Link to="#" className="text-accent text-sm font-medium hover:underline">
+                      <Link to="#" className="text-primary text-sm font-medium hover:underline">
                         {step.link}
                       </Link>
                     </div>
@@ -323,13 +327,13 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <Badge className="mb-4">Calculator</Badge>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-10">
-            <span className="text-accent">Calculate</span> Your Project Cost
+            <span className="text-primary">Calculate</span> Your Project Cost
           </h2>
           
           <Calculator />
 
           <p className="text-center mt-10 text-lg">
-            Over <span className="text-accent font-bold">500 researchers</span> have used our calculator
+            Over <span className="text-primary font-bold">500 researchers</span> have used our calculator
           </p>
         </div>
       </section>
@@ -340,7 +344,7 @@ const Index = () => {
           <div className="mb-12">
             <Badge className="mb-4">Testimonials</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              Here's what researchers <span className="text-accent">love</span><br />about Canvassing
+              Here's what researchers <span className="text-primary">love</span><br />about Canvassing
             </h2>
           </div>
 
@@ -358,7 +362,7 @@ const Index = () => {
               <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                    <Star key={i} className="w-4 h-4 fill-yellow text-yellow" />
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
