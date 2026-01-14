@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MessageSquare, Calendar } from "lucide-react";
+import { Send, MessageCircle, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,22 +22,25 @@ const Contact = () => {
 
   const contactOptions = [
     {
-      icon: Mail,
+      icon: Send,
       title: "Email Us",
       subtitle: "Send us an email anytime",
       detail: "admin@canvassing.xyz",
+      gradient: "from-primary to-primary-dark"
     },
     {
-      icon: MessageSquare,
+      icon: MessageCircle,
       title: "Live Chat",
       subtitle: "Chat with our team",
       detail: "Available 9am - 6pm EST",
+      gradient: "from-accent to-accent/80"
     },
     {
-      icon: Calendar,
+      icon: Video,
       title: "Scheduled a Demo",
       subtitle: "Book a personalized walkthrough",
       detail: "30-minute session",
+      gradient: "from-yellow to-accent"
     },
   ];
 
@@ -66,10 +69,10 @@ const Contact = () => {
             {contactOptions.map((option) => (
               <div
                 key={option.title}
-                className="bg-white rounded-2xl p-6 text-center shadow-card border border-border/50"
+                className="bg-white rounded-2xl p-6 text-center shadow-card border border-border/50 group hover:shadow-lg transition-shadow"
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <option.icon className="w-6 h-6 text-primary" />
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${option.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform`}>
+                  <option.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-display font-bold text-lg text-primary mb-1">
                   {option.title}

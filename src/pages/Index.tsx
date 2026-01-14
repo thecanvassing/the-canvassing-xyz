@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight, Check, Star, ClipboardList, Package, Users, FileText, Award } from "lucide-react";
+import { ArrowRight, Star, BarChart3, Beaker, Mic2, PenLine, Calculator as CalcIcon, Rocket, Trophy, Sparkles, Coins, Zap, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
@@ -10,26 +10,29 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 const Index = () => {
   const helpFeatures = [{
-    icon: ClipboardList,
+    icon: BarChart3,
     title: "Online Surveys",
     subtitle: "& Polls",
     useCases: ["Market research", "Customer satisfaction", "Academic studies", "Product feedback", "Brand tracking"],
     comingSoon: false,
-    link: "/products/online-surveys"
+    link: "/products/online-surveys",
+    gradient: "from-primary to-primary-dark"
   }, {
-    icon: Package,
+    icon: Beaker,
     title: "Product",
     subtitle: "Testing",
     useCases: ["App beta testing", "Website usability", "Physical products", "Prototype testing", "User testing"],
     comingSoon: false,
-    link: "/products/product-testing"
+    link: "/products/product-testing",
+    gradient: "from-accent to-accent/80"
   }, {
-    icon: Users,
+    icon: Mic2,
     title: "User",
     subtitle: "Interviews",
     useCases: ["User research", "In-depth insights", "Customer personas", "Discovery research", "Concept testing"],
     comingSoon: true,
-    link: "#"
+    link: "#",
+    gradient: "from-yellow to-yellow/80"
   }];
   const researcherFeatures = ["Create and publish tasks", "Manage participant payments", "Track responses via dashboard"];
   const participantFeatures = ["Browse available tasks", "Complete tasks at your pace", "Earn verified rewards instantly"];
@@ -37,28 +40,28 @@ const Index = () => {
     number: "01",
     title: "Define Your Project",
     description: "Set your research goals and target participants. Specify demographics, timeline, and methodology.",
-    icon: FileText,
+    icon: PenLine,
     link: "Get Started →",
     side: "left"
   }, {
     number: "02",
     title: "Get Instant Quote",
     description: "Receive immediate pricing based on your requirements. No surprises, no hidden fees.",
-    icon: ClipboardList,
+    icon: CalcIcon,
     link: "See Pricing →",
     side: "right"
   }, {
     number: "03",
     title: "Project is Published",
     description: "Your project goes live to verified participants matching your criteria instantly.",
-    icon: Users,
+    icon: Rocket,
     link: "View Process →",
     side: "left"
   }, {
     number: "04",
     title: "Get Results",
     description: "Receive quality-verified responses directly to your dashboard in real-time.",
-    icon: Award,
+    icon: Trophy,
     link: "View Dashboard →",
     side: "right"
   }];
@@ -151,14 +154,16 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {helpFeatures.map((feature, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
-                <feature.icon className="w-8 h-8 text-primary mb-4" />
+            {helpFeatures.map((feature, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50 group hover:shadow-lg transition-shadow">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}>
+                  <feature.icon className="w-6 h-6 text-white" />
+                </div>
                 <h3 className="font-display font-bold text-lg mb-1">{feature.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">{feature.subtitle}</p>
                 <p className="text-xs text-accent font-semibold mb-2">USE CASES</p>
-                <ul className="space-y-1">
+                <ul className="space-y-1.5">
                   {feature.useCases.map((useCase, i) => <li key={i} className="text-sm text-muted-foreground flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      <Target className="w-3 h-3 text-accent flex-shrink-0" />
                       {useCase}
                     </li>)}
                 </ul>
@@ -195,8 +200,8 @@ const Index = () => {
               <h3 className="text-2xl font-display font-bold mb-2">Create and manage tasks</h3>
               <ul className="space-y-3 mb-8 mt-6">
                 {researcherFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-accent flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-accent-foreground" />
+                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Sparkles className="w-3.5 h-3.5 text-white" />
                     </div>
                     <span className="text-muted-foreground">{feature}</span>
                   </li>)}
@@ -212,15 +217,10 @@ const Index = () => {
                 FOR PARTICIPANTS
               </span>
               <h3 className="text-2xl font-display font-bold mb-2">Discover tasks and earn rewards</h3>
-              <div className="space-y-2 mb-4 mt-4">
-                
-                
-                
-              </div>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 mt-6">
                 {participantFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-accent flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-accent-foreground" />
+                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Coins className="w-3.5 h-3.5 text-white" />
                     </div>
                     <span className="text-muted-foreground">{feature}</span>
                   </li>)}
@@ -251,20 +251,22 @@ const Index = () => {
             <div className="space-y-8 md:space-y-0">
               {timelineSteps.map((step, index) => <div key={step.number} className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${step.side === "right" ? "md:flex-row-reverse" : ""}`}>
                   <div className={`flex-1 ${step.side === "right" ? "md:text-right" : ""}`}>
-                    <div className="bg-white rounded-xl p-6 shadow-card border border-border/50">
-                      <div className="flex items-center gap-3 mb-3">
-                        <step.icon className="w-5 h-5 text-primary" />
+                    <div className="bg-white rounded-xl p-6 shadow-card border border-border/50 group hover:shadow-lg transition-shadow">
+                      <div className={`flex items-center gap-3 mb-3 ${step.side === "right" ? "md:flex-row-reverse" : ""}`}>
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                          <step.icon className="w-5 h-5 text-primary" />
+                        </div>
                         <h3 className="font-display font-bold text-lg">{step.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
-                      <Link to="#" className="text-accent text-sm font-medium hover:underline">
+                      <Link to="#" className="text-accent text-sm font-medium hover:underline inline-flex items-center gap-1">
                         {step.link}
                       </Link>
                     </div>
                   </div>
                   
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display font-bold">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-primary-dark text-primary-foreground flex items-center justify-center font-display font-bold shadow-lg">
                       {step.number}
                     </div>
                   </div>

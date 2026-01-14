@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Smartphone } from "lucide-react";
+import { ArrowRight, BarChart3, Coins } from "lucide-react";
 import Badge from "./Badge";
 
 const CTASection = () => {
@@ -24,8 +24,8 @@ const CTASection = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Researcher Dashboard Card */}
           <div className="group bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 text-left border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/20">
-            <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent/30 transition-colors">
-              <Users className="w-7 h-7 text-accent" />
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-lg">
+              <BarChart3 className="w-7 h-7 text-white" />
             </div>
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-accent text-white mb-4">
               Researcher Dashboard
@@ -48,8 +48,8 @@ const CTASection = () => {
 
           {/* Participant App Card */}
           <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 text-left border border-white/10 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
-            <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
-              <Smartphone className="w-7 h-7 text-primary-foreground" />
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow to-accent flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-lg">
+              <Coins className="w-7 h-7 text-white" />
             </div>
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white mb-4">
               Participant App
