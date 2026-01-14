@@ -9,6 +9,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import rezLogo from "@/assets/rez-logo.svg";
+import paxLogo from "@/assets/pax-logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -57,7 +59,9 @@ const Header = () => {
                   <DropdownMenuContent align="start" className="bg-background border border-border">
                     {item.items?.map((subItem) => (
                       <DropdownMenuItem key={subItem.href} asChild>
-                        <Link to={subItem.href} className="cursor-pointer">
+                        <Link to={subItem.href} className="cursor-pointer flex items-center gap-2">
+                          {subItem.href === "/rez" && <img src={rezLogo} alt="" className="w-5 h-5" />}
+                          {subItem.href === "/pax" && <img src={paxLogo} alt="" className="w-5 h-5" />}
                           {subItem.label}
                         </Link>
                       </DropdownMenuItem>
@@ -112,9 +116,11 @@ const Header = () => {
                         <Link
                           key={subItem.href}
                           to={subItem.href}
-                          className="text-muted-foreground hover:text-primary"
+                          className="text-muted-foreground hover:text-primary flex items-center gap-2"
                           onClick={() => setMobileMenuOpen(false)}
                         >
+                          {subItem.href === "/rez" && <img src={rezLogo} alt="" className="w-5 h-5" />}
+                          {subItem.href === "/pax" && <img src={paxLogo} alt="" className="w-5 h-5" />}
                           {subItem.label}
                         </Link>
                       ))}

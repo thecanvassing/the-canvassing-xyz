@@ -8,6 +8,7 @@ import StatsBar from "@/components/StatsBar";
 import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import rezLogo from "@/assets/rez-logo.svg";
 
 const Index = () => {
   const painPoints = [
@@ -108,6 +109,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
+              <img src={rezLogo} alt="Rez" className="w-16 h-16 mx-auto mb-6" />
               <Badge className="mb-6">Powered by Web3 Payments</Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
                 Get Quality Research Insights{" "}
