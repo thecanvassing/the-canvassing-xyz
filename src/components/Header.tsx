@@ -19,8 +19,8 @@ const Header = () => {
       label: "Solutions",
       hasDropdown: true,
       items: [
-        { label: "Research", href: "/products/online-surveys" },
-        { label: "Participants", href: "/pax" },
+        { label: "Rez (for Researchers)", href: "/rez" },
+        { label: "Pax (for Participants)", href: "/pax" },
       ],
     },
     {
