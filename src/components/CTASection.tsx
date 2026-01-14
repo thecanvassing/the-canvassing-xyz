@@ -16,7 +16,7 @@ const CTASection = () => {
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {/* Researcher Dashboard Card */}
           <div className="bg-white rounded-2xl p-6 text-left shadow-md border border-primary/10">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary text-white mb-4">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-accent text-white mb-4">
               Researcher Dashboard
             </span>
             <p className="text-foreground mb-6">
@@ -24,7 +24,7 @@ const CTASection = () => {
             </p>
             <Button
               asChild
-              className="bg-primary hover:bg-primary-dark text-white rounded-full"
+              className="bg-accent hover:bg-accent/90 text-white rounded-full"
             >
               <Link to="/products/online-surveys">Start Project →</Link>
             </Button>
