@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BarChart3, Coins } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Badge from "./Badge";
+import rezLogo from "@/assets/rez-logo.svg";
+import paxLogo from "@/assets/pax-logo.png";
 
 const CTASection = () => {
   return (
@@ -24,9 +26,7 @@ const CTASection = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Researcher Dashboard Card */}
           <div className="group bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 text-left border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/20">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-lg">
-              <BarChart3 className="w-7 h-7 text-white" />
-            </div>
+            <img src={rezLogo} alt="Rez" className="w-14 h-14 mb-6 group-hover:scale-105 transition-transform" />
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-accent text-white mb-4">
               Researcher Dashboard
             </span>
@@ -48,9 +48,7 @@ const CTASection = () => {
 
           {/* Participant App Card */}
           <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 text-left border border-white/10 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow to-accent flex items-center justify-center mb-6 group-hover:scale-105 transition-transform shadow-lg">
-              <Coins className="w-7 h-7 text-white" />
-            </div>
+            <img src={paxLogo} alt="Pax" className="w-14 h-14 mb-6 group-hover:scale-105 transition-transform" />
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white mb-4">
               Participant App
             </span>
