@@ -67,7 +67,7 @@ const Pax = () => {
         
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-6">Earn with Canvassing</Badge>
+            <Badge className="mb-6">Trusted by 1K+ participants</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
               Micro task, <span className="text-accent">rewarded in tokens</span>
             </h1>
@@ -120,7 +120,7 @@ const Pax = () => {
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <Badge className="mb-6">How it Works</Badge>
+            <Badge className="mb-6">Get Started</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
               From signup to <span className="text-accent">stablecoin rewards</span> in minutes
             </h2>

@@ -9,7 +9,7 @@ const StatsBar = () => {
     {
       label: "Average Response Time",
       value: "2.3 days",
-      change: "↑ 18% faster",
+      change: "↑ 10% faster",
       color: "bg-primary/10 text-primary",
     },
     {
