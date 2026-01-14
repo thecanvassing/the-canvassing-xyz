@@ -108,12 +108,9 @@ const Index = () => {
                 Canvassing offers a two-way value for verified 
                 participants—turning everyday activity to paid daily transactions.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button className="bg-primary hover:bg-primary-dark text-white rounded-full px-8 py-6 text-lg">
                   Learn More
-                </Button>
-                <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-background rounded-full px-8 py-6 text-lg">
-                  Download Pax Demo
                 </Button>
               </div>
             </motion.div>
