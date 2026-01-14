@@ -12,7 +12,7 @@ const CTASection = () => {
       
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
-          <Badge variant="purple" className="mb-6">Get Started</Badge>
+          <Badge className="mb-6 bg-white/20 text-white border-white/30">Get Started</Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4">
             Ready to Get Started?
           </h2>
@@ -62,8 +62,7 @@ const CTASection = () => {
             </p>
             <Button
               asChild
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white hover:text-primary-dark rounded-full px-6 py-5 transition-all"
+              className="bg-white text-primary-dark hover:bg-white/90 rounded-full px-6 py-5 transition-all font-semibold"
             >
               <Link to="/pax" className="flex items-center gap-2">
                 Open App <ArrowRight className="w-4 h-4" />
