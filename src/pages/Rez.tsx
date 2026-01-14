@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowDown, Check, Star, FileText, ClipboardList, Users, Award } from "lucide-react";
+import { ArrowDown, Star, PenLine, Calculator as CalcIcon, Rocket, Trophy, Zap, Target, BarChart3, Beaker } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
@@ -23,7 +23,7 @@ const Index = () => {
       number: "01",
       title: "Define Your Project",
       description: "Set your research goals and target participants. Specify demographics, timeline, and methodology.",
-      icon: FileText,
+      icon: PenLine,
       link: "Get Started →",
       side: "left",
     },
@@ -31,7 +31,7 @@ const Index = () => {
       number: "02",
       title: "Get Instant Quote",
       description: "Receive immediate pricing based on your requirements. No surprises, no hidden fees.",
-      icon: ClipboardList,
+      icon: CalcIcon,
       link: "See Pricing →",
       side: "right",
     },
@@ -39,7 +39,7 @@ const Index = () => {
       number: "03",
       title: "Project is Published",
       description: "Your project goes live to verified participants matching your criteria instantly.",
-      icon: Users,
+      icon: Rocket,
       link: "View Process →",
       side: "left",
     },
@@ -47,7 +47,7 @@ const Index = () => {
       number: "04",
       title: "Get Results",
       description: "Receive quality-verified responses directly to your dashboard in real-time.",
-      icon: Award,
+      icon: Trophy,
       link: "View Dashboard →",
       side: "right",
     },
@@ -207,20 +207,22 @@ const Index = () => {
                   }`}
                 >
                   <div className={`flex-1 ${step.side === "right" ? "md:text-right" : ""}`}>
-                    <div className="bg-white rounded-xl p-6 shadow-card border border-border/50">
-                      <div className="flex items-center gap-3 mb-3">
-                        <step.icon className="w-5 h-5 text-primary" />
+                    <div className="bg-white rounded-xl p-6 shadow-card border border-border/50 group hover:shadow-lg transition-shadow">
+                      <div className={`flex items-center gap-3 mb-3 ${step.side === "right" ? "md:flex-row-reverse" : ""}`}>
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                          <step.icon className="w-5 h-5 text-primary" />
+                        </div>
                         <h3 className="font-display font-bold text-lg">{step.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
-                      <Link to="#" className="text-accent text-sm font-medium hover:underline">
+                      <Link to="#" className="text-accent text-sm font-medium hover:underline inline-flex items-center gap-1">
                         {step.link}
                       </Link>
                     </div>
                   </div>
                   
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-display font-bold">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-primary-dark text-primary-foreground flex items-center justify-center font-display font-bold shadow-lg">
                       {step.number}
                     </div>
                   </div>
@@ -251,7 +253,10 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Online Surveys Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
+            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50 group hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                <BarChart3 className="w-6 h-6 text-white" />
+              </div>
               <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 mb-4">
                 Method 01
               </span>
@@ -259,7 +264,9 @@ const Index = () => {
               <ul className="space-y-3 mb-8">
                 {surveyFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <div className="w-5 h-5 rounded-md bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Zap className="w-3 h-3 text-accent" />
+                    </div>
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
@@ -274,7 +281,10 @@ const Index = () => {
             </div>
 
             {/* Product Testing Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
+            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50 group hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow to-yellow/80 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                <Beaker className="w-6 h-6 text-yellow-foreground" />
+              </div>
               <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-yellow/20 text-yellow-foreground border border-yellow/30 mb-4">
                 Method 02
               </span>
@@ -282,7 +292,9 @@ const Index = () => {
               <ul className="space-y-3 mb-8">
                 {testingFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <div className="w-5 h-5 rounded-md bg-gradient-to-br from-yellow/20 to-yellow/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Target className="w-3 h-3 text-yellow-foreground" />
+                    </div>
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}

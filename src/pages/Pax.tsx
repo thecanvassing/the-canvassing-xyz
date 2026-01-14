@@ -1,4 +1,4 @@
-import { Check, ArrowDown, Download, User, ClipboardCheck, Wallet } from "lucide-react";
+import { ArrowDown, Download, UserCircle, ListChecks, Banknote, Gift, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
@@ -18,21 +18,21 @@ const Pax = () => {
     number: "02",
     title: "Complete Profile",
     description: "Complete your profile to verify your eligibility and match with surveys and tasks for businesses.",
-    icon: User,
+    icon: UserCircle,
     link: "Verification and approval →",
     side: "right"
   }, {
     number: "03",
     title: "Complete tasks",
     description: "Take surveys or test products at your convenience.",
-    icon: ClipboardCheck,
+    icon: ListChecks,
     link: "Explore tasks in Pax App →",
     side: "left"
   }, {
     number: "04",
     title: "Get Paid",
     description: "Receive stablecoin payments directly to your wallet.",
-    icon: Wallet,
+    icon: Banknote,
     link: "Instant Payments →",
     side: "right"
   }];
@@ -89,9 +89,9 @@ const Pax = () => {
           </div>
 
           <div className="space-y-4 mb-10">
-            {benefits.map((benefit, index) => <div key={index} className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-card">
-                <div className="w-6 h-6 rounded-full bg-yellow flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3.5 h-3.5 text-yellow-foreground" />
+            {benefits.map((benefit, index) => <div key={index} className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-card group hover:shadow-lg transition-shadow">
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-yellow to-accent flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                  <Gift className="w-4 h-4 text-white" />
                 </div>
                 <span className="text-foreground">{benefit}</span>
               </div>)}
@@ -123,9 +123,11 @@ const Pax = () => {
             <div className="space-y-8 md:space-y-0">
               {timelineSteps.map(step => <div key={step.number} className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${step.side === "right" ? "md:flex-row-reverse" : ""}`}>
                   <div className={`flex-1 ${step.side === "right" ? "md:text-right" : ""}`}>
-                    <div className="bg-white rounded-xl p-6 shadow-card border border-border/50">
-                      <div className="flex items-center gap-3 mb-3">
-                        <step.icon className="w-5 h-5 text-primary" />
+                    <div className="bg-white rounded-xl p-6 shadow-card border border-border/50 group hover:shadow-lg transition-shadow">
+                      <div className={`flex items-center gap-3 mb-3 ${step.side === "right" ? "md:flex-row-reverse" : ""}`}>
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent/10 to-yellow/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                          <step.icon className="w-5 h-5 text-accent" />
+                        </div>
                         <h3 className="font-display font-bold text-lg">{step.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
@@ -136,7 +138,7 @@ const Pax = () => {
                   </div>
                   
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-display font-bold">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent to-yellow text-white flex items-center justify-center font-display font-bold shadow-lg">
                       {step.number}
                     </div>
                   </div>
