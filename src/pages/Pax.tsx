@@ -69,7 +69,7 @@ const Pax = () => {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <Badge className="mb-6">Trusted by 1K+ participants</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
-              Micro task, <span className="text-accent">rewarded in tokens</span>
+              Micro task, <span className="text-primary">rewarded in tokens</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
               Join thousands of participants earning stablecoin rewards by completing surveys and testing products from top researchers and companies.
@@ -101,7 +101,9 @@ const Pax = () => {
                 key={index}
                 className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-card"
               >
-                <Check className="w-5 h-5 text-success flex-shrink-0" />
+                <div className="w-6 h-6 rounded-full bg-yellow flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3.5 h-3.5 text-yellow-foreground" />
+                </div>
                 <span className="text-foreground">{benefit}</span>
               </div>
             ))}
@@ -109,9 +111,9 @@ const Pax = () => {
 
           <div className="text-center">
             <p className="text-xl font-display mb-2">
-              Here's how Pax <span className="text-accent">makes earning simple and transparent</span>
+              Here's how Pax <span className="text-primary">makes earning simple and transparent</span>
             </p>
-            <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce" />
+            <ArrowDown className="w-6 h-6 mx-auto text-primary animate-bounce" />
           </div>
         </div>
       </section>
@@ -122,7 +124,7 @@ const Pax = () => {
           <div className="text-center mb-12">
             <Badge className="mb-6">Get Started</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              From signup to <span className="text-accent">stablecoin rewards</span> in minutes
+              From signup to <span className="text-primary">stablecoin rewards</span> in minutes
             </h2>
           </div>
 
@@ -145,14 +147,14 @@ const Pax = () => {
                         <h3 className="font-display font-bold text-lg">{step.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
-                      <span className="text-accent text-sm font-medium inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
+                      <span className="text-primary text-sm font-medium inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
                         {step.link}
                       </span>
                     </div>
                   </div>
                   
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-display font-bold">
+                    <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-display font-bold">
                       {step.number}
                     </div>
                   </div>
@@ -210,7 +212,7 @@ const Pax = () => {
             Ready to Start Earning?
           </h2>
           <p className="text-white/70 mb-8">
-            Download the <span className="text-accent">Pax app</span> and join our community of participants making money through research.
+            Download the <span className="text-yellow">Pax app</span> and join our community of participants making money through research.
           </p>
           <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 py-6">
             Download App →

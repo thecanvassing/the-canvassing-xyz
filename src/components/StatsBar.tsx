@@ -4,7 +4,7 @@ const StatsBar = () => {
       label: "Average Responses",
       value: "200+",
       change: "↑ 24% from last week",
-      color: "bg-accent/10 text-accent",
+      color: "bg-primary/10 text-primary",
     },
     {
       label: "Average Response Time",
@@ -16,7 +16,7 @@ const StatsBar = () => {
       label: "Quality Score",
       value: "98%",
       change: "Verified responses",
-      color: "bg-success/10 text-success",
+      color: "bg-primary/10 text-primary",
     },
   ];
 
