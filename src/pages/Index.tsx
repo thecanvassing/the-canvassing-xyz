@@ -203,9 +203,7 @@ const Index = () => {
               <h3 className="text-2xl font-display font-bold mb-2">Create and manage tasks</h3>
               <ul className="space-y-3 mb-8 mt-6">
                 {researcherFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Sparkles className="w-3.5 h-3.5 text-white" />
-                    </div>
+                    <img src={rezLogo} alt="" className="w-5 h-5 flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>)}
               </ul>
@@ -223,9 +221,7 @@ const Index = () => {
               <h3 className="text-2xl font-display font-bold mb-2">Discover tasks and earn rewards</h3>
               <ul className="space-y-3 mb-8 mt-6">
                 {participantFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Coins className="w-3.5 h-3.5 text-white" />
-                    </div>
+                    <img src={paxLogo} alt="" className="w-5 h-5 flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>)}
               </ul>
