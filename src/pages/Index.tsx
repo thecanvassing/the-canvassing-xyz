@@ -13,17 +13,20 @@ const Index = () => {
     icon: ClipboardList,
     title: "Online Surveys",
     subtitle: "& Polls",
-    useCases: ["Market research", "Customer satisfaction", "Academic studies", "Product feedback", "Brand tracking"]
+    useCases: ["Market research", "Customer satisfaction", "Academic studies", "Product feedback", "Brand tracking"],
+    comingSoon: false
   }, {
     icon: Package,
     title: "Product",
     subtitle: "Testing",
-    useCases: ["App beta testing", "Website usability", "Physical products", "Prototype testing", "User testing"]
+    useCases: ["App beta testing", "Website usability", "Physical products", "Prototype testing", "User testing"],
+    comingSoon: false
   }, {
     icon: Users,
     title: "User",
     subtitle: "Interviews",
-    useCases: ["User research", "In-depth insights", "Customer personas", "Discovery research", "Concept testing"]
+    useCases: ["User research", "In-depth insights", "Customer personas", "Discovery research", "Concept testing"],
+    comingSoon: true
   }];
   const researcherFeatures = ["Create and publish tasks", "Manage participant payments", "Track responses via dashboard"];
   const participantFeatures = ["Browse available tasks", "Complete tasks at your pace", "Earn verified rewards instantly"];
@@ -156,16 +159,16 @@ const Index = () => {
                       {useCase}
                     </li>)}
                 </ul>
-                <Link to="#" className="text-accent text-sm font-medium hover:underline mt-4 flex items-center gap-1">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
+                {feature.comingSoon ? (
+                  <Button variant="outline" className="mt-4 rounded-full border-primary text-primary hover:bg-primary hover:text-white text-sm px-4 py-1 h-auto">
+                    Coming Soon
+                  </Button>
+                ) : (
+                  <Link to="#" className="text-accent text-sm font-medium hover:underline mt-4 flex items-center gap-1">
+                    Learn More <ArrowRight className="w-4 h-4" />
+                  </Link>
+                )}
               </div>)}
-          </div>
-          
-          <div className="text-center mt-8">
-            <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white">
-              Coming Soon
-            </Button>
           </div>
         </div>
       </section>
