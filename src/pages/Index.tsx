@@ -105,8 +105,7 @@ const Index = () => {
                 <span className="text-accent">Micro-tasks</span> <span className="text-primary">rewarded in tokens.</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                Canvassing offers a two-way value for verified 
-                participants—turning everyday activity to paid daily transactions.
+                Connecting African researchers with verified participants—creating income and driving innovation.
               </p>
               <div className="flex justify-center">
                 <Button className="bg-primary hover:bg-primary-dark text-white rounded-full px-8 py-6 text-lg">
