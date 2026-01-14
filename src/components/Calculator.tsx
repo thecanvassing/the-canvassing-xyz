@@ -112,7 +112,7 @@ const Calculator = ({ variant = "surveys" }: CalculatorProps) => {
               </div>
             )}
 
-            <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full py-6">
+            <Button className="w-full bg-primary hover:bg-primary-dark text-primary-foreground rounded-full py-6">
               Calculate My Cost
             </Button>
 
