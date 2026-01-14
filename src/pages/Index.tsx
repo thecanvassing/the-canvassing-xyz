@@ -8,6 +8,7 @@ import StatsBar from "@/components/StatsBar";
 import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import WelcomePopup from "@/components/WelcomePopup";
 import rezLogo from "@/assets/rez-logo.svg";
 import paxLogo from "@/assets/pax-logo.png";
 const Index = () => {
@@ -94,6 +95,7 @@ const Index = () => {
     answer: "Participants are rewarded with GoodDollar (G$) tokens, a stablecoin that provides real value and instant payments."
   }];
   return <Layout>
+      <WelcomePopup />
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient" />
