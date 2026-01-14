@@ -14,19 +14,22 @@ const Index = () => {
     title: "Online Surveys",
     subtitle: "& Polls",
     useCases: ["Market research", "Customer satisfaction", "Academic studies", "Product feedback", "Brand tracking"],
-    comingSoon: false
+    comingSoon: false,
+    link: "/products/online-surveys"
   }, {
     icon: Package,
     title: "Product",
     subtitle: "Testing",
     useCases: ["App beta testing", "Website usability", "Physical products", "Prototype testing", "User testing"],
-    comingSoon: false
+    comingSoon: false,
+    link: "/products/product-testing"
   }, {
     icon: Users,
     title: "User",
     subtitle: "Interviews",
     useCases: ["User research", "In-depth insights", "Customer personas", "Discovery research", "Concept testing"],
-    comingSoon: true
+    comingSoon: true,
+    link: "#"
   }];
   const researcherFeatures = ["Create and publish tasks", "Manage participant payments", "Track responses via dashboard"];
   const participantFeatures = ["Browse available tasks", "Complete tasks at your pace", "Earn verified rewards instantly"];
@@ -164,7 +167,7 @@ const Index = () => {
                     Coming Soon
                   </Button>
                 ) : (
-                  <Link to="#" className="text-accent text-sm font-medium hover:underline mt-4 flex items-center gap-1">
+                  <Link to={feature.link} className="text-accent text-sm font-medium hover:underline mt-4 flex items-center gap-1">
                     Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 )}
