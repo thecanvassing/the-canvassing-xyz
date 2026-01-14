@@ -1,48 +1,73 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Users, Smartphone } from "lucide-react";
 import Badge from "./Badge";
 
 const CTASection = () => {
   return (
-    <section className="py-16 px-4 bg-purple-light">
-      <div className="container mx-auto">
-        <div className="text-center mb-10">
+    <section className="py-20 px-4 bg-primary-dark overflow-hidden relative">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+      
+      <div className="container mx-auto relative z-10">
+        <div className="text-center mb-12">
           <Badge variant="purple" className="mb-6">Get Started</Badge>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-dark">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4">
             Ready to Get Started?
           </h2>
+          <p className="text-white/70 max-w-xl mx-auto">
+            Join hundreds of researchers and participants already using Canvassing
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Researcher Dashboard Card */}
-          <div className="bg-white rounded-2xl p-6 text-left shadow-md border border-primary/10">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-accent text-white mb-4">
+          <div className="group bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 text-left border border-white/10 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/20">
+            <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center mb-6 group-hover:bg-accent/30 transition-colors">
+              <Users className="w-7 h-7 text-accent" />
+            </div>
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-accent text-white mb-4">
               Researcher Dashboard
             </span>
-            <p className="text-foreground mb-6">
-              Get verified African participants for your next project
+            <h3 className="text-xl font-display font-bold text-white mb-3">
+              Get verified African participants
+            </h3>
+            <p className="text-white/70 mb-8">
+              Access our network of verified participants for your next research project
             </p>
             <Button
               asChild
-              className="bg-accent hover:bg-accent/90 text-white rounded-full"
+              className="bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-5 group-hover:shadow-lg group-hover:shadow-accent/30 transition-all"
             >
-              <Link to="/products/online-surveys">Start Project →</Link>
+              <Link to="/rez" className="flex items-center gap-2">
+                Start Project <ArrowRight className="w-4 h-4" />
+              </Link>
             </Button>
           </div>
 
           {/* Participant App Card */}
-          <div className="bg-white rounded-2xl p-6 text-left shadow-md border border-primary/10">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary text-white mb-4">
+          <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 text-left border border-white/10 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
+            <div className="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
+              <Smartphone className="w-7 h-7 text-primary-foreground" />
+            </div>
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white mb-4">
               Participant App
             </span>
-            <p className="text-foreground mb-6">
-              Discover tasks and earn rewards
+            <h3 className="text-xl font-display font-bold text-white mb-3">
+              Discover tasks & earn rewards
+            </h3>
+            <p className="text-white/70 mb-8">
+              Complete micro-tasks and get rewarded with verified crypto tokens
             </p>
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-white rounded-full"
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white hover:text-primary-dark rounded-full px-6 py-5 transition-all"
             >
-              <Link to="/pax">Open App →</Link>
+              <Link to="/pax" className="flex items-center gap-2">
+                Open App <ArrowRight className="w-4 h-4" />
+              </Link>
             </Button>
           </div>
         </div>
