@@ -5,61 +5,54 @@ import Badge from "@/components/Badge";
 import StatsBar from "@/components/StatsBar";
 import FAQSection from "@/components/FAQSection";
 import paxGetRewardedImage from "@/assets/pax-get-rewarded.svg";
-
 const Pax = () => {
-  const benefits = [
-    "Get paid in stablecoins for completing surveys and testing products",
-    "Instant crypto/stablecoin rewards",
-    "Earn bonus rewards through referrals and community engagement",
-    "Mobile-first seamless experience",
-    "Real-time transparent dashboard tracking earnings, surveys, and rewards",
-  ];
-
-  const timelineSteps = [
-    {
-      number: "01",
-      title: "Sign Up",
-      description: "Download the Pax app and create your profile.",
-      icon: Download,
-      link: "Download App →",
-      side: "left",
-    },
-    {
-      number: "02",
-      title: "Complete Profile",
-      description: "Complete your profile to verify your eligibility and match with surveys and tasks for businesses.",
-      icon: User,
-      link: "Verification and approval →",
-      side: "right",
-    },
-    {
-      number: "03",
-      title: "Complete tasks",
-      description: "Take surveys or test products at your convenience.",
-      icon: ClipboardCheck,
-      link: "Explore tasks in Pax App →",
-      side: "left",
-    },
-    {
-      number: "04",
-      title: "Get Paid",
-      description: "Receive stablecoin payments directly to your wallet.",
-      icon: Wallet,
-      link: "Instant Payments →",
-      side: "right",
-    },
-  ];
-
-  const faqs = [
-    { question: "What is Pax?", answer: "Pax is the participant app for Canvassing. It allows you to earn stablecoin rewards by completing surveys and testing products for researchers and companies." },
-    { question: "How does Pax work?", answer: "Download the app, complete your profile verification, and start accepting tasks. Complete surveys and product tests to earn G$ tokens that can be exchanged for real value." },
-    { question: "Who can use Pax?", answer: "Anyone in Africa can join Pax. You need to complete our verification process to ensure you're matched with relevant opportunities." },
-    { question: "How are payments verified?", answer: "Payments are made in GoodDollar (G$) tokens immediately upon task completion and verification. You can track all payments in your dashboard." },
-    { question: "How do I get started with Pax?", answer: "Download the Pax app, create an account, verify your profile, and start browsing available tasks. Your first payment can arrive within hours of completing a task." },
-  ];
-
-  return (
-    <Layout>
+  const benefits = ["Get paid in stablecoins for completing surveys and testing products", "Instant crypto/stablecoin rewards", "Earn bonus rewards through referrals and community engagement", "Mobile-first seamless experience", "Real-time transparent dashboard tracking earnings, surveys, and rewards"];
+  const timelineSteps = [{
+    number: "01",
+    title: "Sign Up",
+    description: "Download the Pax app and create your profile.",
+    icon: Download,
+    link: "Download App →",
+    side: "left"
+  }, {
+    number: "02",
+    title: "Complete Profile",
+    description: "Complete your profile to verify your eligibility and match with surveys and tasks for businesses.",
+    icon: User,
+    link: "Verification and approval →",
+    side: "right"
+  }, {
+    number: "03",
+    title: "Complete tasks",
+    description: "Take surveys or test products at your convenience.",
+    icon: ClipboardCheck,
+    link: "Explore tasks in Pax App →",
+    side: "left"
+  }, {
+    number: "04",
+    title: "Get Paid",
+    description: "Receive stablecoin payments directly to your wallet.",
+    icon: Wallet,
+    link: "Instant Payments →",
+    side: "right"
+  }];
+  const faqs = [{
+    question: "What is Pax?",
+    answer: "Pax is the participant app for Canvassing. It allows you to earn stablecoin rewards by completing surveys and testing products for researchers and companies."
+  }, {
+    question: "How does Pax work?",
+    answer: "Download the app, complete your profile verification, and start accepting tasks. Complete surveys and product tests to earn G$ tokens that can be exchanged for real value."
+  }, {
+    question: "Who can use Pax?",
+    answer: "Anyone in Africa can join Pax. You need to complete our verification process to ensure you're matched with relevant opportunities."
+  }, {
+    question: "How are payments verified?",
+    answer: "Payments are made in GoodDollar (G$) tokens immediately upon task completion and verification. You can track all payments in your dashboard."
+  }, {
+    question: "How do I get started with Pax?",
+    answer: "Download the Pax app, create an account, verify your profile, and start browsing available tasks. Your first payment can arrive within hours of completing a task."
+  }];
+  return <Layout>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient" />
@@ -69,7 +62,7 @@ const Pax = () => {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <Badge className="mb-6">Trusted by 1K+ participants</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
-              <span className="text-accent">Micro task,</span> <span className="text-primary">rewarded in tokens</span>
+              <span className="text-accent">Micro tasks,</span> <span className="text-primary">rewarded in tokens</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
               Join thousands of participants earning stablecoin rewards by completing surveys and testing products from top researchers and companies.
@@ -96,17 +89,12 @@ const Pax = () => {
           </div>
 
           <div className="space-y-4 mb-10">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-card"
-              >
+            {benefits.map((benefit, index) => <div key={index} className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-card">
                 <div className="w-6 h-6 rounded-full bg-yellow flex items-center justify-center flex-shrink-0">
                   <Check className="w-3.5 h-3.5 text-yellow-foreground" />
                 </div>
                 <span className="text-foreground">{benefit}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           <div className="text-center">
@@ -133,13 +121,7 @@ const Pax = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden md:block" />
 
             <div className="space-y-8 md:space-y-0">
-              {timelineSteps.map((step) => (
-                <div
-                  key={step.number}
-                  className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${
-                    step.side === "right" ? "md:flex-row-reverse" : ""
-                  }`}
-                >
+              {timelineSteps.map(step => <div key={step.number} className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${step.side === "right" ? "md:flex-row-reverse" : ""}`}>
                   <div className={`flex-1 ${step.side === "right" ? "md:text-right" : ""}`}>
                     <div className="bg-white rounded-xl p-6 shadow-card border border-border/50">
                       <div className="flex items-center gap-3 mb-3">
@@ -160,8 +142,7 @@ const Pax = () => {
                   </div>
                   
                   <div className="flex-1 hidden md:block" />
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -192,11 +173,7 @@ const Pax = () => {
             
             {/* Right Image */}
             <div className="flex-1 flex justify-center">
-              <img 
-                src={paxGetRewardedImage} 
-                alt="Pax App - Get Rewarded for Your Opinions" 
-                className="max-w-full h-auto max-h-80 object-contain"
-              />
+              <img src={paxGetRewardedImage} alt="Pax App - Get Rewarded for Your Opinions" className="max-w-full h-auto max-h-80 object-contain" />
             </div>
           </div>
         </div>
@@ -222,8 +199,6 @@ const Pax = () => {
 
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Pax;
