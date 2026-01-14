@@ -203,7 +203,7 @@ const Index = () => {
 
             {/* Participant Card */}
             <div className="bg-accent/10 rounded-2xl p-8 border border-accent/30">
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/20 text-accent-foreground border border-accent/30 mb-4">
+              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/20 text-foreground border border-accent/30 mb-4">
                 FOR PARTICIPANTS
               </span>
               <h3 className="text-2xl font-display font-bold mb-2">Discover tasks and earn rewards</h3>
