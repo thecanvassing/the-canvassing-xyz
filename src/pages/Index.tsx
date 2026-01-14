@@ -8,6 +8,8 @@ import StatsBar from "@/components/StatsBar";
 import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import rezLogo from "@/assets/rez-logo.svg";
+import paxLogo from "@/assets/pax-logo.png";
 const Index = () => {
   const helpFeatures = [{
     icon: BarChart3,
@@ -194,6 +196,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Researcher Card */}
             <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
+              <img src={rezLogo} alt="Rez" className="w-12 h-12 mb-4" />
               <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
                 FOR RESEARCHERS
               </span>
@@ -213,6 +216,7 @@ const Index = () => {
 
             {/* Participant Card */}
             <div className="bg-accent/10 rounded-2xl p-8 border border-accent/30">
+              <img src={paxLogo} alt="Pax" className="w-12 h-12 mb-4" />
               <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/20 text-foreground border border-accent/30 mb-4">
                 FOR PARTICIPANTS
               </span>

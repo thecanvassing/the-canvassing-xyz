@@ -5,6 +5,7 @@ import Badge from "@/components/Badge";
 import StatsBar from "@/components/StatsBar";
 import FAQSection from "@/components/FAQSection";
 import paxGetRewardedImage from "@/assets/pax-get-rewarded.svg";
+import paxLogo from "@/assets/pax-logo.png";
 const Pax = () => {
   const benefits = ["Get paid in stablecoins for completing surveys and testing products", "Instant crypto/stablecoin rewards", "Earn bonus rewards through referrals and community engagement", "Mobile-first seamless experience", "Real-time transparent dashboard tracking earnings, surveys, and rewards"];
   const timelineSteps = [{
@@ -52,7 +53,7 @@ const Pax = () => {
     question: "How do I get started with Pax?",
     answer: "Download the Pax app, create an account, verify your profile, and start browsing available tasks. Your first payment can arrive within hours of completing a task."
   }];
-  return <Layout>
+return <Layout>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient" />
@@ -60,6 +61,7 @@ const Pax = () => {
         
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
+            <img src={paxLogo} alt="Pax" className="w-16 h-16 mx-auto mb-6" />
             <Badge className="mb-6">Trusted by 1K+ participants</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
               <span className="text-accent">Micro tasks,</span> <span className="text-primary">rewarded in tokens</span>
@@ -156,9 +158,7 @@ const Pax = () => {
           <div className="bg-primary rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
             {/* Left Content */}
             <div className="flex-1 text-left">
-              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-6">
-                <span className="text-white font-bold text-xl">C</span>
-              </div>
+              <img src={paxLogo} alt="Pax" className="w-12 h-12 mb-6 rounded-lg" />
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
                 Get Rewarded<br />for Your<br />Opinions.
               </h2>
