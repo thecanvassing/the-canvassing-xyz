@@ -190,8 +190,8 @@ const Index = () => {
               <h3 className="text-2xl font-display font-bold mb-2">Create and manage tasks</h3>
               <ul className="space-y-3 mb-8 mt-6">
                 {researcherFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-yellow flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-yellow-foreground" />
+                    <div className="w-5 h-5 rounded-full bg-accent flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-accent-foreground" />
                     </div>
                     <span className="text-muted-foreground">{feature}</span>
                   </li>)}
@@ -202,8 +202,8 @@ const Index = () => {
             </div>
 
             {/* Participant Card */}
-            <div className="bg-yellow/10 rounded-2xl p-8 border border-yellow/30">
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-yellow/20 text-yellow-foreground border border-yellow/30 mb-4">
+            <div className="bg-accent/10 rounded-2xl p-8 border border-accent/30">
+              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/20 text-accent-foreground border border-accent/30 mb-4">
                 FOR PARTICIPANTS
               </span>
               <h3 className="text-2xl font-display font-bold mb-2">Discover tasks and earn rewards</h3>
@@ -214,8 +214,8 @@ const Index = () => {
               </div>
               <ul className="space-y-3 mb-8">
                 {participantFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-yellow flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-yellow-foreground" />
+                    <div className="w-5 h-5 rounded-full bg-accent flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-accent-foreground" />
                     </div>
                     <span className="text-muted-foreground">{feature}</span>
                   </li>)}
@@ -315,7 +315,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow text-yellow" />)}
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
                 </div>
                 <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
                   "{testimonial.quote}"
