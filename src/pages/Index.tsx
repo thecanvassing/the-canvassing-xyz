@@ -143,7 +143,7 @@ const Index = () => {
       <section className="py-16 px-4 bg-purple-light">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
-            <Badge className="mb-6">hello, we are Canvassing</Badge>
+            <Badge className="mb-6">Hello, we are Canvassing</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold max-w-2xl mx-auto">
               We help researchers, startups, and NGOs collect high-quality data{" "}
               <span className="text-accent">while participants earn crypto rewards through</span>
