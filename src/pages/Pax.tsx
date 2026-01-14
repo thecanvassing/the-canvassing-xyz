@@ -69,7 +69,7 @@ const Pax = () => {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <Badge className="mb-6">Trusted by 1K+ participants</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
-              Micro task, <span className="text-primary">rewarded in tokens</span>
+              <span className="text-accent">Micro task,</span> <span className="text-primary">rewarded in tokens</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
               Join thousands of participants earning stablecoin rewards by completing surveys and testing products from top researchers and companies.
@@ -111,9 +111,9 @@ const Pax = () => {
 
           <div className="text-center">
             <p className="text-xl font-display mb-2">
-              Here's how Pax <span className="text-primary">makes earning simple and transparent</span>
+              Here's how Pax <span className="text-accent">makes earning simple and transparent</span>
             </p>
-            <ArrowDown className="w-6 h-6 mx-auto text-primary animate-bounce" />
+            <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce" />
           </div>
         </div>
       </section>
@@ -124,7 +124,7 @@ const Pax = () => {
           <div className="text-center mb-12">
             <Badge className="mb-6">Get Started</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              From signup to <span className="text-primary">stablecoin rewards</span> in minutes
+              From signup to <span className="text-accent">stablecoin rewards</span> in minutes
             </h2>
           </div>
 
@@ -154,7 +154,7 @@ const Pax = () => {
                   </div>
                   
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-display font-bold">
+                    <div className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-display font-bold">
                       {step.number}
                     </div>
                   </div>
