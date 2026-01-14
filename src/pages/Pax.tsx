@@ -67,7 +67,7 @@ const Pax = () => {
         
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Badge className="mb-6">Powered by Web3 Payments</Badge>
+            <Badge className="mb-6">Earn with Canvassing</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
               Micro task, <span className="text-accent">rewarded in tokens</span>
             </h1>
