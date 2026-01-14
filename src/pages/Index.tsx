@@ -120,7 +120,7 @@ const Index = () => {
               <Badge className="mb-6">Powered by Web3 Payments</Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
                 Research made simple.{" "}
-                <span className="text-primary">Micro-tasks rewarded in tokens.</span>
+                <span className="text-accent">Micro-tasks</span> <span className="text-primary">rewarded in tokens.</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
                 Canvassing offers a two-way value for verified 
