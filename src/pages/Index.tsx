@@ -180,7 +180,7 @@ const Index = () => {
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
-            <Badge className="mb-6">Process</Badge>
+            <Badge className="mb-6">What we offer</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
               Choose Your Path
             </h2>
