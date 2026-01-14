@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import StatsBar from "@/components/StatsBar";
 import FAQSection from "@/components/FAQSection";
+import paxGetRewardedImage from "@/assets/pax-get-rewarded.svg";
 
 const Pax = () => {
   const benefits = [
@@ -164,11 +165,37 @@ const Pax = () => {
         </div>
       </section>
 
-      {/* App Preview Section */}
+      {/* Get Rewarded CTA Section with Image */}
       <section className="py-16 px-4 bg-primary-dark">
-        <div className="container mx-auto max-w-4xl">
-          <div className="bg-primary rounded-3xl h-80 flex items-center justify-center">
-            <p className="text-xl text-white/80 font-display">Pax Image will be inserted here</p>
+        <div className="container mx-auto max-w-5xl">
+          <div className="bg-primary rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+            {/* Left Content */}
+            <div className="flex-1 text-left">
+              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-6">
+                <span className="text-white font-bold text-xl">C</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
+                Get Rewarded<br />for Your<br />Opinions.
+              </h2>
+              <p className="text-white/80 mb-6">
+                Earn crypto rewards by sharing your thoughts through quick, verified surveys.
+              </p>
+              <Button className="bg-black text-white hover:bg-black/90 rounded-lg px-6 py-3 gap-2">
+                <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+                  <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                </svg>
+                Google Play
+              </Button>
+            </div>
+            
+            {/* Right Image */}
+            <div className="flex-1 flex justify-center">
+              <img 
+                src={paxGetRewardedImage} 
+                alt="Pax App - Get Rewarded for Your Opinions" 
+                className="max-w-full h-auto max-h-80 object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -176,12 +203,14 @@ const Pax = () => {
       {/* Ready to Earn CTA */}
       <section className="py-16 px-4 bg-primary-dark text-center">
         <div className="container mx-auto max-w-xl">
-          <Badge variant="orange" className="mb-6">✨</Badge>
+          <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
+            <span className="text-white text-lg">✨</span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             Ready to Start Earning?
           </h2>
           <p className="text-white/70 mb-8">
-            Download the Pax app and join our community of participants making money through research.
+            Download the <span className="text-accent">Pax app</span> and join our community of participants making money through research.
           </p>
           <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 py-6">
             Download App →
