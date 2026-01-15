@@ -9,6 +9,7 @@ import StatsBar from "@/components/StatsBar";
 import Calculator from "@/components/Calculator";
 import CTASection from "@/components/CTASection";
 import WelcomePopup from "@/components/WelcomePopup";
+import RingPattern from "@/components/RingPattern";
 import rezLogo from "@/assets/rez-logo.svg";
 import paxLogo from "@/assets/pax-logo.png";
 const Index = () => {
@@ -146,8 +147,9 @@ const Index = () => {
       </section>
 
       {/* Help Section */}
-      <section className="py-16 px-4 bg-purple-light">
-        <div className="container mx-auto max-w-5xl">
+      <section className="py-16 px-4 bg-purple-light relative overflow-hidden">
+        <RingPattern position="right" />
+        <div className="container mx-auto max-w-5xl relative z-10">
           <div className="text-center mb-12">
             <Badge className="mb-6">Hello, we are Canvassing</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold max-w-2xl mx-auto text-primary">

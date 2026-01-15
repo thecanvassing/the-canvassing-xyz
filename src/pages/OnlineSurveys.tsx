@@ -7,6 +7,7 @@ import Calculator from "@/components/Calculator";
 import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
+import RingPattern from "@/components/RingPattern";
 
 const OnlineSurveys = () => {
   const features = [
@@ -51,8 +52,9 @@ const OnlineSurveys = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 bg-purple-light">
-        <div className="container mx-auto max-w-2xl">
+      <section className="py-16 px-4 bg-purple-light relative overflow-hidden">
+        <RingPattern position="right" />
+        <div className="container mx-auto max-w-2xl relative z-10">
           <AnimatedSection className="text-center mb-10">
             <Badge className="mb-6">Features</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
