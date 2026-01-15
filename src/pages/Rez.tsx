@@ -119,22 +119,13 @@ const Index = () => {
                     className="flex-1 px-4 py-3 rounded-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    onClick={handleGetParticipants}
-                    disabled={!isValidEmail(email)}
-                    className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Get Participants Now
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    onClick={() => setShowPopup(true)}
-                    className="border-primary text-primary hover:bg-primary hover:text-white rounded-full px-8 py-6 text-lg"
-                  >
-                    Download Free Playbook
-                  </Button>
-                </div>
+                <Button 
+                  onClick={handleGetParticipants}
+                  disabled={!isValidEmail(email)}
+                  className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Get Participants Now
+                </Button>
               </div>
             </motion.div>
           </div>
