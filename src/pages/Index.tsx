@@ -272,7 +272,7 @@ const Index = () => {
                         <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-105 transition-transform">
                           <step.icon className="w-5 h-5 text-primary" />
                         </div>
-                        <h3 className="font-display font-bold text-lg">{step.title}</h3>
+                        <h3 className="font-display font-bold text-lg text-primary">{step.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-sm">{step.description}</p>
                     </div>
