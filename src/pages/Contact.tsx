@@ -26,21 +26,24 @@ const Contact = () => {
       title: "Email Us",
       subtitle: "Send us an email anytime",
       detail: "admin@thecanvassing.com",
-      gradient: "from-primary to-primary-dark"
+      bgColor: "bg-primary/10",
+      iconColor: "text-primary"
     },
     {
       icon: MessageCircle,
       title: "Live Chat",
       subtitle: "Chat with our team",
       detail: "Available 9am - 6pm EST",
-      gradient: "from-accent to-accent/80"
+      bgColor: "bg-accent/10",
+      iconColor: "text-accent"
     },
     {
       icon: Video,
-      title: "Scheduled a Demo",
+      title: "Schedule a Demo",
       subtitle: "Book a personalized walkthrough",
       detail: "30-minute session",
-      gradient: "from-yellow to-accent"
+      bgColor: "bg-yellow/20",
+      iconColor: "text-yellow-600"
     },
   ];
 
@@ -71,10 +74,10 @@ const Contact = () => {
                 key={option.title}
                 className="bg-white rounded-2xl p-6 text-center shadow-card border border-border/50 group hover:shadow-lg transition-shadow"
               >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${option.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform`}>
-                  <option.icon className="w-6 h-6 text-white" />
+                <div className={`w-14 h-14 rounded-full ${option.bgColor} flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform`}>
+                  <option.icon className={`w-6 h-6 ${option.iconColor}`} />
                 </div>
-                <h3 className="font-display font-bold text-lg text-primary mb-1">
+                <h3 className="font-display font-bold text-lg text-foreground mb-1">
                   {option.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-2">{option.subtitle}</p>
