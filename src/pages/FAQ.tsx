@@ -259,7 +259,7 @@ const FAQ = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: categoryIndex * 0.1 }}
-                className="mb-12 scroll-mt-40"
+                className="mb-12 scroll-mt-52"
               >
                 <h2 className="text-2xl font-display font-bold mb-6 text-primary">
                   {category.title}
