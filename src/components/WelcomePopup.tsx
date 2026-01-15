@@ -12,30 +12,51 @@ import { Label } from "@/components/ui/label";
 import { Lock } from "lucide-react";
 import Badge from "./Badge";
 
-export default function WelcomePopup() {
-  const [isOpen, setIsOpen] = useState(false);
+interface WelcomePopupProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export default function WelcomePopup({ isOpen: controlledIsOpen, onClose }: WelcomePopupProps = {}) {
+  const [internalIsOpen, setInternalIsOpen] = useState(false);
   const [email, setEmail] = useState("");
 
+  const isControlled = controlledIsOpen !== undefined;
+  const isOpen = isControlled ? controlledIsOpen : internalIsOpen;
+  
+  const handleOpenChange = (open: boolean) => {
+    if (isControlled) {
+      if (!open && onClose) {
+        onClose();
+      }
+    } else {
+      setInternalIsOpen(open);
+    }
+  };
+
   useEffect(() => {
+    // Only run auto-show logic if not controlled
+    if (isControlled) return;
+    
     // Check if popup was already shown in this session
     const hasSeenPopup = sessionStorage.getItem("hasSeenWelcomePopup");
     
     if (!hasSeenPopup) {
       // Show popup after a brief delay
       const timer = setTimeout(() => {
-        setIsOpen(true);
+        setInternalIsOpen(true);
         sessionStorage.setItem("hasSeenWelcomePopup", "true");
       }, 1500);
 
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [isControlled]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log("Email submitted:", email);
-    setIsOpen(false);
+    handleOpenChange(false);
   };
 
   const bulletPoints = [
@@ -45,7 +66,7 @@ export default function WelcomePopup() {
   ];
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-lg bg-secondary border-none shadow-2xl p-8 rounded-3xl">
         <DialogHeader className="text-center space-y-4">
           <div className="flex justify-center">
