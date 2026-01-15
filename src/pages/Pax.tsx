@@ -74,9 +74,6 @@ return <Layout>
             </Button>
           </div>
 
-          <div className="max-w-3xl mx-auto">
-            <StatsBar />
-          </div>
         </div>
       </section>
 
