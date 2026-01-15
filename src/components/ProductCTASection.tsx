@@ -3,9 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Badge from "./Badge";
 import rezLogo from "@/assets/rez-logo.svg";
-import paxLogo from "@/assets/pax-logo.png";
 
-const CTASection = () => {
+const ProductCTASection = () => {
   return (
     <section className="py-20 px-4 bg-primary-dark overflow-hidden relative">
       {/* Background decorative elements */}
@@ -31,10 +30,10 @@ const CTASection = () => {
               Researcher Dashboard
             </span>
             <h3 className="text-xl font-display font-bold text-white mb-3">
-              Get verified African participants
+              Get verified African participants for your next project
             </h3>
             <p className="text-white/70 mb-8">
-              Access our network of verified participants for your next research project
+              Access our network of verified participants and launch your research today
             </p>
             <Button
               asChild
@@ -46,24 +45,24 @@ const CTASection = () => {
             </Button>
           </div>
 
-          {/* Participant App Card */}
+          {/* Book a Call Card */}
           <div className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 text-left border border-white/10 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
-            <img src={paxLogo} alt="Pax" className="w-14 h-14 mb-6 group-hover:scale-105 transition-transform" />
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-primary text-white mb-4">
-              Participant App
+            <div className="w-14 h-14 mb-6 group-hover:scale-105 transition-transform" />
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-white/20 text-white border border-white/30 mb-4">
+              Book a 15-min call:
             </span>
             <h3 className="text-xl font-display font-bold text-white mb-3">
-              Discover tasks & earn rewards
+              Questions? Book a 15-min call:
             </h3>
             <p className="text-white/70 mb-8">
-              Complete micro-tasks and get rewarded with verified crypto tokens
+              Have questions about how Canvassing works? Let's chat and find the best solution for you
             </p>
             <Button
               asChild
               className="bg-white text-primary-dark hover:bg-white/90 rounded-full px-6 py-5 transition-all font-semibold"
             >
-              <Link to="/pax" className="flex items-center gap-2">
-                Open App <ArrowRight className="w-4 h-4" />
+              <Link to="/contact" className="flex items-center gap-2">
+                Schedule Call <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
           </div>
@@ -73,4 +72,4 @@ const CTASection = () => {
   );
 };
 
-export default CTASection;
+export default ProductCTASection;
