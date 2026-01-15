@@ -38,7 +38,7 @@ const Index = () => {
     gradient: "from-yellow to-yellow/80"
   }];
   const researcherFeatures = ["Create and publish tasks", "Manage participant payments", "Track responses via dashboard"];
-  const participantFeatures = ["Browse available tasks", "Complete tasks at your pace", "Earn verified rewards instantly"];
+  const participantFeatures = ["Browse available tasks", "Complete tasks at your pace", "Claim and withdraw rewards"];
   const timelineSteps = [{
     number: "01",
     title: "Define Your Project",
