@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# Canvassing
 
-## Project info
+A marketplace connecting African researchers with verified participants for surveys and product testing. Create income opportunities while driving innovation through quality data collection.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Overview
 
-## How can I edit this code?
+Canvassing offers two main products:
 
-There are several ways of editing your application.
+- **Rez** - For researchers to create and manage research tasks, surveys, and product tests
+- **Pax** - For participants to discover tasks and earn crypto rewards (GoodDollar tokens)
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Online Surveys & Polls** - Market research, customer satisfaction, academic studies
+- **Product Testing** - App beta testing, website usability, prototype testing
+- **User Interviews** - In-depth insights and discovery research (coming soon)
+- **Verified Participant Network** - Quality-assured responses from real users
+- **Instant Payments** - Participants earn GoodDollar (G$) tokens
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Animations**: Framer Motion
+- **Routing**: React Router DOM
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Getting Started
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── assets/         # Images and static assets
+├── components/     # Reusable UI components
+│   └── ui/         # shadcn/ui components
+├── hooks/          # Custom React hooks
+├── lib/            # Utility functions
+└── pages/          # Page components
+    ├── Index.tsx   # Main landing page
+    ├── Rez.tsx     # Researcher dashboard landing
+    ├── Pax.tsx     # Participant app landing
+    └── ...
+```
 
-**Use GitHub Codespaces**
+## Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This project is deployed via Lovable. To publish updates:
 
-## What technologies are used for this project?
+1. Open the project in Lovable
+2. Click **Share → Publish**
 
-This project is built with:
+## Custom Domain
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+To connect a custom domain, navigate to **Project → Settings → Domains** in Lovable.
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+© Canvassing. All rights reserved.
