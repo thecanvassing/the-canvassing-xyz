@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Star, BarChart3, Beaker, Mic2, PenLine, Calculator as CalcIcon, Rocket, Trophy, Sparkles, Coins, Zap, Target } from "lucide-react";
+import { ArrowRight, Star, BarChart3, Beaker, Mic2, PenLine, Calculator as CalcIcon, Rocket, Trophy, Sparkles, Coins, Zap, Target, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
@@ -207,16 +207,16 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Researcher Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
+            {/* Researcher Card - Prominent */}
+            <div className="bg-primary/10 rounded-2xl p-8 border border-primary/30">
               <img src={rezLogo} alt="Rez" className="w-12 h-12 mb-4" />
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
+              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary border border-primary/30 mb-4">
                 FOR RESEARCHERS
               </span>
               <h3 className="text-2xl font-display font-bold mb-2">Create and manage tasks</h3>
               <ul className="space-y-3 mb-8 mt-6">
                 {researcherFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <img src={rezLogo} alt="" className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>)}
               </ul>
@@ -226,15 +226,15 @@ const Index = () => {
             </div>
 
             {/* Participant Card */}
-            <div className="bg-accent/10 rounded-2xl p-8 border border-accent/30">
+            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50">
               <img src={paxLogo} alt="Pax" className="w-12 h-12 mb-4" />
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/20 text-foreground border border-accent/30 mb-4">
+              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/10 text-foreground border border-accent/20 mb-4">
                 FOR PARTICIPANTS
               </span>
               <h3 className="text-2xl font-display font-bold mb-2">Discover tasks and earn rewards</h3>
               <ul className="space-y-3 mb-8 mt-6">
                 {participantFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <img src={paxLogo} alt="" className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>)}
               </ul>
