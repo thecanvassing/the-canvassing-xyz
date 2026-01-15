@@ -54,14 +54,20 @@ const DemoVideo = () => {
             </motion.div>
           </motion.div>
           
-          {/* Video Placeholder */}
+          {/* YouTube Video Embed */}
           <AnimatedSection delay={0.2}>
             <motion.div 
-              className="bg-accent rounded-3xl aspect-video flex items-center justify-center mb-16"
+              className="rounded-3xl overflow-hidden aspect-video mb-16 shadow-xl"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <p className="text-white text-xl font-semibold">Demo Video will be inserted here</p>
+              <iframe
+                src="https://www.youtube.com/embed/Z2Ly4J68Lzo"
+                title="Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              />
             </motion.div>
           </AnimatedSection>
         </div>
