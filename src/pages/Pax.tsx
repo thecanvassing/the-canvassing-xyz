@@ -60,7 +60,7 @@ return <Layout>
         <div className="absolute inset-0 bg-radial-glow" />
         
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="max-w-3xl mx-auto text-center">
             <img src={paxLogo} alt="Pax" className="w-16 h-16 mx-auto mb-6" />
             <Badge className="mb-6">Trusted by 1K+ participants</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
@@ -73,7 +73,6 @@ return <Layout>
               Download Pax App
             </Button>
           </div>
-
         </div>
       </section>
 
