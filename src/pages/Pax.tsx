@@ -7,7 +7,7 @@ import FAQSection from "@/components/FAQSection";
 import paxGetRewardedImage from "@/assets/pax-get-rewarded.svg";
 import paxLogo from "@/assets/pax-logo.png";
 const Pax = () => {
-  const benefits = ["Get paid in stablecoins for completing surveys and testing products", "Instant crypto/stablecoin rewards", "Earn bonus rewards through referrals and community engagement", "Mobile-first seamless experience", "Real-time transparent dashboard tracking earnings, surveys, and rewards"];
+  const benefits = ["Get paid in stablecoins and tokens for completing surveys and testing products", "Instant crypto/stablecoin and token rewards", "Earn bonus rewards through referrals and community engagement", "Mobile-first seamless experience", "Real-time transparent dashboard tracking earnings, surveys, and rewards"];
   const timelineSteps = [{
     number: "01",
     title: "Sign Up",
@@ -32,14 +32,14 @@ const Pax = () => {
   }, {
     number: "04",
     title: "Get Paid",
-    description: "Receive stablecoin payments directly to your wallet.",
+    description: "Receive stablecoin and token payments directly to your wallet.",
     icon: Banknote,
     link: "Instant Payments →",
     side: "right"
   }];
   const faqs = [{
     question: "What is Pax?",
-    answer: "Pax is the participant app for Canvassing. It allows you to earn stablecoin rewards by completing surveys and testing products for researchers and companies."
+    answer: "Pax is the participant app for Canvassing. It allows you to earn stablecoin and token rewards by completing surveys and testing products for researchers and companies."
   }, {
     question: "How does Pax work?",
     answer: "Download the app, complete your profile verification, and start accepting tasks. Complete surveys and product tests to earn G$ tokens that can be exchanged for real value."
@@ -67,7 +67,7 @@ return <Layout>
               <span className="text-accent">Micro tasks,</span> <span className="text-primary">rewarded in tokens</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-              Join thousands of participants earning stablecoin rewards by completing surveys and testing products from top researchers and companies.
+              Join thousands of participants earning stablecoin and token rewards by completing surveys and testing products from top researchers and companies.
             </p>
             <Button className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg">
               Download Pax App
@@ -110,7 +110,7 @@ return <Layout>
           <div className="text-center mb-12">
             <Badge className="mb-6">Get Started</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              From signup to <span className="text-accent">stablecoin rewards</span> in minutes
+              From signup to <span className="text-accent">stablecoin and token rewards</span> in minutes
             </h2>
           </div>
 
