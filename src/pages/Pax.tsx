@@ -3,7 +3,6 @@ import { ArrowDown, Download, UserCircle, ListChecks, Banknote, Gift } from "luc
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
-import FAQSection from "@/components/FAQSection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
 import paxGetRewardedImage from "@/assets/pax-get-rewarded.svg";
@@ -50,29 +49,6 @@ const Pax = () => {
       icon: Banknote,
       link: "Instant Payments",
       side: "right"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "What is Pax?",
-      answer: "Pax is the participant app for Canvassing. It allows you to earn stablecoin and token rewards by completing surveys and testing products for researchers and companies."
-    },
-    {
-      question: "How does Pax work?",
-      answer: "Download the app, complete your profile verification, and start accepting tasks. Complete surveys and product tests to earn G$ tokens that can be exchanged for real value."
-    },
-    {
-      question: "Who can use Pax?",
-      answer: "Anyone in Africa can join Pax. You need to complete our verification process to ensure you're matched with relevant opportunities."
-    },
-    {
-      question: "How are payments verified?",
-      answer: "Payments are made in GoodDollar (G$) tokens immediately upon task completion and verification. You can track all payments in your dashboard."
-    },
-    {
-      question: "How do I get started with Pax?",
-      answer: "Download the Pax app, create an account, verify your profile, and start browsing available tasks. Your first payment can arrive within hours of completing a task."
     }
   ];
 
@@ -276,8 +252,6 @@ const Pax = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
     </Layout>
   );
 };

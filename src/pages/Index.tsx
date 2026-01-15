@@ -7,7 +7,6 @@ import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import StatsBar from "@/components/StatsBar";
 import Calculator from "@/components/Calculator";
-import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import WelcomePopup from "@/components/WelcomePopup";
 import rezLogo from "@/assets/rez-logo.svg";
@@ -96,19 +95,6 @@ const Index = () => {
     role: "Content Creator, Accra"
   }];
   const [activeTab, setActiveTab] = useState<'researchers' | 'participants'>('researchers');
-  const faqs = [{
-    question: "What is Canvassing?",
-    answer: "Canvassing is a marketplace that connects researchers with verified participants for surveys and product testing. We help you gather quality insights quickly and affordably."
-  }, {
-    question: "How are participants verified?",
-    answer: "Participants go through our verification process which includes identity verification, quality checks, and engagement tracking to ensure authentic responses."
-  }, {
-    question: "Who can use Canvassing?",
-    answer: "Researchers, startups, NGOs, and enterprises looking to collect quality data, as well as individuals looking to earn rewards by participating in research."
-  }, {
-    question: "What kind of incentives are offered?",
-    answer: "Participants are rewarded with GoodDollar (G$) tokens, a stablecoin that provides real value and instant payments."
-  }];
   return <Layout>
       <WelcomePopup />
       {/* Hero Section */}
@@ -328,9 +314,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
 
       {/* CTA Section */}
       <CTASection />
