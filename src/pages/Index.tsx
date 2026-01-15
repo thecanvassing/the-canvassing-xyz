@@ -138,7 +138,7 @@ const Index = () => {
                 <Link to="/rez">Learn More</Link>
               </Button>
               <Button asChild variant="outline" className="bg-white border-primary text-primary hover:bg-primary hover:text-white rounded-full px-8 py-6 text-lg">
-                <Link to="/demo-video">See how it works</Link>
+                <a href="#process">See how it works</a>
               </Button>
             </div>
           </motion.div>
@@ -249,7 +249,7 @@ const Index = () => {
       </section>
 
       {/* Process Timeline Section */}
-      <section className="py-16 px-4 bg-purple-light">
+      <section id="process" className="py-16 px-4 bg-purple-light scroll-mt-20">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <Badge className="mb-6">Process</Badge>
@@ -257,6 +257,17 @@ const Index = () => {
               From project setup to results delivery in{" "}
               <span className="text-accent">under 72 hours</span>
             </h2>
+          </div>
+
+          {/* Demo Video */}
+          <div className="rounded-3xl overflow-hidden aspect-video mb-12 shadow-xl max-w-3xl mx-auto">
+            <iframe
+              src="https://www.youtube.com/embed/Z2Ly4J68Lzo"
+              title="Demo Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            />
           </div>
 
           <div className="relative">
