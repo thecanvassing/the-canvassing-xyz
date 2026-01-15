@@ -20,7 +20,7 @@ const Pricing = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="orange" className="mb-6">Product Pricing</Badge>
+            <Badge className="mb-6">Product Pricing</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground max-w-3xl mx-auto">
               Transparent <span className="text-accent">Pricing</span> That Scales With Your Needs
             </h1>
