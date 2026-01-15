@@ -127,7 +127,7 @@ const Index = () => {
           }} transition={{
             duration: 0.5
           }}>
-              <Badge className="mb-6">Trusted by African founders</Badge>
+              <Badge className="mb-6">Tried, tested, and trusted - by many</Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
                 Research made simple.{" "}
                 <span className="text-accent">Micro-tasks</span> <span className="text-primary">rewarded in tokens.</span>
