@@ -80,7 +80,7 @@ return <Layout>
       <section className="py-16 px-4 bg-purple-light">
         <div className="container mx-auto max-w-2xl">
           <div className="text-center mb-10">
-            <Badge className="mb-6">Built for Everyday Earners</Badge>
+            <Badge className="mb-6">Built for everyday earners</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
               Why Join Canvassing?
             </h2>
