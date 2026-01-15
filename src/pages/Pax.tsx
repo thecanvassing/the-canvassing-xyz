@@ -11,30 +11,30 @@ const Pax = () => {
   const timelineSteps = [{
     number: "01",
     title: "Sign Up",
-    description: "Download the Pax app and create your profile.",
+    description: "Download the Pax app and create your profile",
     icon: Download,
-    link: "Download App →",
+    link: "Takes 2 minutes",
     side: "left"
   }, {
     number: "02",
     title: "Complete Profile",
-    description: "Complete your profile to verify your eligibility and match with surveys and tasks for businesses.",
+    description: "Complete your profile, verify you're human, and instantly earn rewards through achievements.",
     icon: UserCircle,
-    link: "Verification and approval →",
+    link: "Verification and Approval",
     side: "right"
   }, {
     number: "03",
     title: "Complete tasks",
-    description: "Take surveys or test products at your convenience.",
+    description: "Take surveys or test products at your convenience",
     icon: ListChecks,
-    link: "Explore tasks in Pax App →",
+    link: "Takes 5 to 10 minutes",
     side: "left"
   }, {
     number: "04",
     title: "Get Paid",
-    description: "Receive stablecoin and token payments directly to your wallet.",
+    description: "Receive stablecoin payments directly to your wallet",
     icon: Banknote,
-    link: "Instant Payments →",
+    link: "Instant Payments",
     side: "right"
   }];
   const faqs = [{
@@ -108,9 +108,9 @@ const Pax = () => {
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <Badge className="mb-6">Get Started</Badge>
+            <Badge className="mb-6">How It Works</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              From signup to <span className="text-accent">stablecoin and token rewards</span> in minutes
+              From signup to <span className="text-accent">stablecoin rewards</span> in minutes
             </h2>
           </div>
 
