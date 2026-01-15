@@ -117,16 +117,16 @@ const Index = () => {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
           <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.5
-        }}>
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.5
+          }}>
             <Badge className="mb-6">Tried, tested, and trusted - by many</Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-primary">
               Research made simple.{" "}
               <span className="text-accent">Micro-tasks</span> <span className="text-primary">rewarded in tokens.</span>
             </h1>
@@ -145,15 +145,15 @@ const Index = () => {
         </div>
 
         <motion.div initial={{
-        opacity: 0,
-        y: 30
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.5,
-        delay: 0.2
-      }} className="max-w-3xl mx-auto">
+          opacity: 0,
+          y: 30
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5,
+          delay: 0.2
+        }} className="max-w-3xl mx-auto">
             <StatsBar />
           </motion.div>
         </div>
@@ -164,7 +164,7 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <Badge className="mb-6">Hello, we are Canvassing</Badge>
-            <h2 className="text-3xl md:text-4xl font-display font-bold max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-display font-bold max-w-2xl mx-auto text-primary">
               We help researchers, startups, and NGOs collect high-quality data{" "}
               <span className="text-accent">while participants earn crypto rewards through</span>
             </h2>
@@ -184,15 +184,11 @@ const Index = () => {
                       {useCase}
                     </li>)}
                 </ul>
-                {feature.comingSoon ? (
-                  <Button variant="outline" className="mt-4 rounded-full border-primary text-primary hover:bg-primary hover:text-white text-sm px-4 py-1 h-auto">
+                {feature.comingSoon ? <Button variant="outline" className="mt-4 rounded-full border-primary text-primary hover:bg-primary hover:text-white text-sm px-4 py-1 h-auto">
                     Coming Soon
-                  </Button>
-                ) : (
-                  <Link to={feature.link} className="text-accent text-sm font-medium hover:underline mt-4 flex items-center gap-1">
+                  </Button> : <Link to={feature.link} className="text-accent text-sm font-medium hover:underline mt-4 flex items-center gap-1">
                     Learn More <ArrowRight className="w-4 h-4" />
-                  </Link>
-                )}
+                  </Link>}
               </div>)}
           </div>
         </div>
@@ -203,7 +199,7 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <Badge className="mb-6">What we offer</Badge>
-            <h2 className="text-3xl md:text-4xl font-display font-bold">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
               Choose Your Path
             </h2>
           </div>
@@ -215,7 +211,7 @@ const Index = () => {
               <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary border border-primary/30 mb-4">
                 FOR RESEARCHERS
               </span>
-              <h3 className="text-2xl font-display font-bold mb-2">Create and manage tasks</h3>
+              <h3 className="text-2xl font-display font-bold mb-2 text-primary">Create and manage tasks</h3>
               <ul className="space-y-3 mb-8 mt-6">
                 {researcherFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-primary" />
@@ -233,7 +229,7 @@ const Index = () => {
               <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/10 text-foreground border border-accent/20 mb-4">
                 FOR PARTICIPANTS
               </span>
-              <h3 className="text-2xl font-display font-bold mb-2">Discover tasks and earn rewards</h3>
+              <h3 className="text-2xl font-display font-bold mb-2 text-primary">Discover tasks and earn rewards</h3>
               <ul className="space-y-3 mb-8 mt-6">
                 {participantFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent" />
@@ -253,7 +249,7 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <Badge className="mb-6">Process</Badge>
-            <h2 className="text-3xl md:text-4xl font-display font-bold">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
               From project setup to results delivery in{" "}
               <span className="text-accent">under 72 hours</span>
             </h2>
@@ -261,13 +257,7 @@ const Index = () => {
 
           {/* Demo Video */}
           <div className="rounded-3xl overflow-hidden aspect-video mb-12 shadow-xl max-w-3xl mx-auto">
-            <iframe
-              src="https://www.youtube.com/embed/Z2Ly4J68Lzo"
-              title="Demo Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-            />
+            <iframe src="https://www.youtube.com/embed/Z2Ly4J68Lzo" title="Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="w-full h-full" />
           </div>
 
           <div className="relative">
@@ -308,37 +298,22 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="mb-12">
             <Badge className="mb-4">Testimonials</Badge>
-            <h2 className="text-3xl md:text-4xl font-display font-bold">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
               Here's what {activeTab === 'researchers' ? 'researchers' : 'participants'} <span className="text-accent">love</span><br />about Canvassing
             </h2>
           </div>
 
           <div className="flex gap-4 mb-8">
-            <button 
-              onClick={() => setActiveTab('researchers')}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                activeTab === 'researchers' 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-white text-foreground border border-border hover:bg-muted'
-              }`}
-            >
+            <button onClick={() => setActiveTab('researchers')} className={`px-6 py-2 rounded-full font-medium transition-colors ${activeTab === 'researchers' ? 'bg-primary text-primary-foreground' : 'bg-white text-foreground border border-border hover:bg-muted'}`}>
               Researchers
             </button>
-            <button 
-              onClick={() => setActiveTab('participants')}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
-                activeTab === 'participants' 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-white text-foreground border border-border hover:bg-muted'
-              }`}
-            >
+            <button onClick={() => setActiveTab('participants')} className={`px-6 py-2 rounded-full font-medium transition-colors ${activeTab === 'participants' ? 'bg-primary text-primary-foreground' : 'bg-white text-foreground border border-border hover:bg-muted'}`}>
               Participants
             </button>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {(activeTab === 'researchers' ? researcherTestimonials : participantTestimonials).map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
+            {(activeTab === 'researchers' ? researcherTestimonials : participantTestimonials).map((testimonial, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
                 </div>
@@ -349,8 +324,7 @@ const Index = () => {
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
