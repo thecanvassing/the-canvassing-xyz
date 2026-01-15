@@ -82,18 +82,6 @@ const Header = () => {
             )}
           </div>
 
-          {/* Desktop CTA Buttons - Only show on /rez route */}
-          {location.pathname === "/rez" && (
-            <div className="hidden lg:flex items-center gap-3">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 rounded-full px-6">
-                Login to Rez
-              </Button>
-              <Button className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-6">
-                Get Started on Rez
-              </Button>
-            </div>
-          )}
-
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2"
@@ -136,16 +124,6 @@ const Header = () => {
                     {item.label}
                   </Link>
                 )
-              )}
-              {location.pathname === "/rez" && (
-                <div className="flex flex-col gap-2 pt-4">
-                  <Button variant="outline" className="border-primary text-primary rounded-full">
-                    Login to Rez
-                  </Button>
-                  <Button className="bg-primary text-primary-foreground rounded-full">
-                    Get Started on Rez
-                  </Button>
-                </div>
               )}
             </div>
           </div>
