@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Star, BarChart3, Beaker, Mic2, PenLine, Calculator as CalcIcon, Rocket, Trophy, Sparkles, Coins, Zap, Target } from "lucide-react";
@@ -68,7 +69,7 @@ const Index = () => {
     link: "View Dashboard →",
     side: "right"
   }];
-  const testimonials = [{
+  const researcherTestimonials = [{
     quote: "Canvassing helped us gather insights from 500+ African consumers in just 3 days. The quality of responses was exceptional.",
     name: "Sarah K.",
     role: "Research Lead, TechCo"
@@ -81,6 +82,20 @@ const Index = () => {
     name: "Grace O.",
     role: "UX Researcher, DesignHub"
   }];
+  const participantTestimonials = [{
+    quote: "I love how easy it is to find tasks and earn rewards. The payments are instant and reliable.",
+    name: "David A.",
+    role: "Student, Lagos"
+  }, {
+    quote: "Canvassing has become my go-to platform for earning extra income. The tasks are engaging and fair.",
+    name: "Amina B.",
+    role: "Freelancer, Nairobi"
+  }, {
+    quote: "Getting paid in crypto is a game changer. No more waiting for bank transfers or dealing with fees.",
+    name: "Emmanuel K.",
+    role: "Content Creator, Accra"
+  }];
+  const [activeTab, setActiveTab] = useState<'researchers' | 'participants'>('researchers');
   const faqs = [{
     question: "What is Canvassing?",
     answer: "Canvassing is a marketplace that connects researchers with verified participants for surveys and product testing. We help you gather quality insights quickly and affordably."
@@ -285,21 +300,36 @@ const Index = () => {
           <div className="mb-12">
             <Badge className="mb-4">Testimonials</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              Here's what researchers <span className="text-accent">love</span><br />about Canvassing
+              Here's what {activeTab === 'researchers' ? 'researchers' : 'participants'} <span className="text-accent">love</span><br />about Canvassing
             </h2>
           </div>
 
           <div className="flex gap-4 mb-8">
-            <button className="px-6 py-2 rounded-full font-medium bg-primary text-primary-foreground">
+            <button 
+              onClick={() => setActiveTab('researchers')}
+              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+                activeTab === 'researchers' 
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-white text-foreground border border-border hover:bg-muted'
+              }`}
+            >
               Researchers
             </button>
-            <button className="px-6 py-2 rounded-full font-medium bg-white text-foreground border border-border">
+            <button 
+              onClick={() => setActiveTab('participants')}
+              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+                activeTab === 'participants' 
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-white text-foreground border border-border hover:bg-muted'
+              }`}
+            >
               Participants
             </button>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
+            {(activeTab === 'researchers' ? researcherTestimonials : participantTestimonials).map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
                 </div>
@@ -310,7 +340,8 @@ const Index = () => {
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
