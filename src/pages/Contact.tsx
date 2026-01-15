@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
+import RingPattern from "@/components/RingPattern";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -52,8 +53,9 @@ const Contact = () => {
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient" />
         <div className="absolute inset-0 bg-radial-glow" />
+        <RingPattern position="left" />
         
-        <div className="container mx-auto px-4 relative text-center">
+        <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
