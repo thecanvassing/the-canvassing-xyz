@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
+import ProductCTASection from "@/components/ProductCTASection";
 
 const Pricing = () => {
   const faqs = [
@@ -51,7 +51,7 @@ const Pricing = () => {
       <FAQSection faqs={faqs} />
 
       {/* CTA Section */}
-      <CTASection />
+      <ProductCTASection />
     </Layout>
   );
 };
