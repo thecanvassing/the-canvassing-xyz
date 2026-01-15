@@ -3,16 +3,14 @@ import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
+import ParallaxHero from "@/components/ParallaxHero";
 
 const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-hero-gradient" />
-        <div className="absolute inset-0 bg-radial-glow" />
-        
-        <div className="container mx-auto px-4 relative text-center">
+      <ParallaxHero>
+        <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,7 +25,7 @@ const About = () => {
             </p>
           </motion.div>
         </div>
-      </section>
+      </ParallaxHero>
 
       {/* Team Photo Section */}
       <section className="py-8 px-4 bg-cream">

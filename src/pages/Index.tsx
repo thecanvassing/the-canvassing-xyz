@@ -10,6 +10,7 @@ import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import WelcomePopup from "@/components/WelcomePopup";
+import ParallaxHero from "@/components/ParallaxHero";
 import rezLogo from "@/assets/rez-logo.svg";
 import paxLogo from "@/assets/pax-logo.png";
 const Index = () => {
@@ -112,54 +113,49 @@ const Index = () => {
   return <Layout>
       <WelcomePopup />
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-hero-gradient" />
-        <div className="absolute inset-0 bg-radial-glow" />
-        
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <motion.div initial={{
-            opacity: 0,
-            y: 20
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.5
-          }}>
-              <Badge className="mb-6">Tried, tested, and trusted - by many</Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
-                Research made simple.{" "}
-                <span className="text-accent">Micro-tasks</span> <span className="text-primary">rewarded in tokens.</span>
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                Connecting African researchers with verified participants—creating income and driving innovation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-primary hover:bg-primary-dark text-white rounded-full px-8 py-6 text-lg">
-                  <Link to="/rez">Learn More</Link>
-                </Button>
-                <Button asChild variant="outline" className="bg-white border-primary text-primary hover:bg-primary hover:text-white rounded-full px-8 py-6 text-lg">
-                  <Link to="/demo-video">See how it works</Link>
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-
+      <ParallaxHero>
+        <div className="max-w-3xl mx-auto text-center mb-12">
           <motion.div initial={{
           opacity: 0,
-          y: 30
+          y: 20
         }} animate={{
           opacity: 1,
           y: 0
         }} transition={{
-          duration: 0.5,
-          delay: 0.2
-        }} className="max-w-3xl mx-auto">
-            <StatsBar />
+          duration: 0.5
+        }}>
+            <Badge className="mb-6">Tried, tested, and trusted - by many</Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
+              Research made simple.{" "}
+              <span className="text-accent">Micro-tasks</span> <span className="text-primary">rewarded in tokens.</span>
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+              Connecting African researchers with verified participants—creating income and driving innovation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild className="bg-primary hover:bg-primary-dark text-white rounded-full px-8 py-6 text-lg">
+                <Link to="/rez">Learn More</Link>
+              </Button>
+              <Button asChild variant="outline" className="bg-white border-primary text-primary hover:bg-primary hover:text-white rounded-full px-8 py-6 text-lg">
+                <Link to="/demo-video">See how it works</Link>
+              </Button>
+            </div>
           </motion.div>
         </div>
-      </section>
+
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 0.5,
+        delay: 0.2
+      }} className="max-w-3xl mx-auto">
+          <StatsBar />
+        </motion.div>
+      </ParallaxHero>
 
       {/* Help Section */}
       <section className="py-16 px-4 bg-purple-light">
