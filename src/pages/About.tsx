@@ -4,6 +4,7 @@ import Badge from "@/components/Badge";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import RingPattern from "@/components/RingPattern";
+import teamImage from "@/assets/team.jpg";
 
 const About = () => {
   return (
@@ -36,14 +37,15 @@ const About = () => {
         <div className="container mx-auto max-w-3xl">
           <AnimatedSection>
             <motion.div 
-              className="rounded-3xl overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 h-80 flex items-center justify-center"
+              className="rounded-3xl overflow-hidden"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="text-center">
-                <p className="text-muted-foreground">Team Photo Placeholder</p>
-                <p className="text-sm text-muted-foreground mt-2">Andrew Kim & Benedictors Ogada</p>
-              </div>
+              <img 
+                src={teamImage} 
+                alt="Andrew Kim & Benedictors Ogada - Canvassing founders" 
+                className="w-full h-auto object-cover"
+              />
             </motion.div>
           </AnimatedSection>
         </div>
