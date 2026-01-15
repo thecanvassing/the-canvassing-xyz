@@ -2,19 +2,10 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import Calculator from "@/components/Calculator";
-import FAQSection from "@/components/FAQSection";
 import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const Pricing = () => {
-  const faqs = [
-    { question: "How does the cost calculator work?", answer: "The calculator estimates your project cost based on the number of questions and responses for surveys, or number of testers for product testing. Pricing is transparent with no hidden fees." },
-    { question: "Do I need to provide my email to use the calculator?", answer: "Yes, we require your email to send you a detailed quote and help you get started with your project. We never spam and you can unsubscribe anytime." },
-    { question: "How do I start my project after calculating the cost?", answer: "After receiving your quote, click 'Start My Project' to access your dashboard where you can set up your survey or product test with all the details." },
-    { question: "How is the pricing determined for surveys and product tests?", answer: "Survey pricing is based on question count and number of responses. Product testing is priced per tester. Both include participant verification and quality assurance." },
-    { question: "Will I receive spam or unwanted emails?", answer: "No, we respect your privacy. You'll only receive your project quote and essential updates. You can unsubscribe anytime." },
-  ];
-
   return (
     <Layout>
       {/* Hero Section */}
@@ -60,9 +51,6 @@ const Pricing = () => {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
 
       {/* CTA Section */}
       <ProductCTASection />

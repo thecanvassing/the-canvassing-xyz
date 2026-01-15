@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import Calculator from "@/components/Calculator";
-import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
@@ -67,19 +66,6 @@ const Rez = () => {
     quote: "Finally, a platform that understands the African market. Fast, reliable, and cost-effective.",
     name: "Grace O.",
     role: "UX Researcher, DesignHub"
-  }];
-  const faqs = [{
-    question: "What is Canvassing?",
-    answer: "Canvassing is a marketplace that connects researchers with verified participants for surveys and product testing. We help you gather quality insights quickly and affordably."
-  }, {
-    question: "How are participants verified?",
-    answer: "Participants go through our verification process which includes identity verification, quality checks, and engagement tracking to ensure authentic responses."
-  }, {
-    question: "What tools do you support?",
-    answer: "We support popular survey tools like Google Forms, Tally, Typeform, and more. Simply paste your survey link and we handle the rest."
-  }, {
-    question: "What kind of incentives are offered?",
-    answer: "Participants are rewarded with GoodDollar (G$) tokens, a stablecoin that provides real value and instant payments."
   }];
   return <Layout>
       {/* Hero Section */}

@@ -4,34 +4,10 @@ import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
-import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const DemoVideo = () => {
-  const faqs = [
-    {
-      question: "How do I know participants are real, not bots?",
-      answer: "All participants go through our rigorous verification process including identity checks and behavioral analysis to ensure authentic responses."
-    },
-    {
-      question: "Can I target specific demographics?",
-      answer: "Yes, you can target participants based on location, age, gender, income level, profession, and many other demographic criteria."
-    },
-    {
-      question: "How quickly will I get results?",
-      answer: "Most projects receive quality-verified responses within 24-72 hours, depending on your sample size and targeting requirements."
-    },
-    {
-      question: "How are participants verified?",
-      answer: "Participants complete identity verification, quality assessments, and ongoing engagement tracking to maintain our high standards."
-    },
-    {
-      question: "How do I get started as a researcher?",
-      answer: "Simply create an account on our Rez Dashboard, define your project requirements, and we'll match you with verified participants instantly."
-    }
-  ];
-
   return (
     <Layout>
       {/* Hero Section */}
@@ -72,9 +48,6 @@ const DemoVideo = () => {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
 
       {/* CTA Section */}
       <CTASection />

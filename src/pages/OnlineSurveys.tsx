@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import Calculator from "@/components/Calculator";
-import FAQSection from "@/components/FAQSection";
 import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
@@ -16,13 +15,6 @@ const OnlineSurveys = () => {
     "Quality monitoring & fraud: Target by age and location",
     "Real-time response tracking",
     "Quality verification on every response",
-  ];
-
-  const faqs = [
-    { question: "How do I create an online survey on Canvassing?", answer: "Simply paste your survey link from your preferred platform (Google Forms, Tally, Typeform, etc.) and set your target participants. We handle the distribution and verification." },
-    { question: "What survey tools are supported?", answer: "We support all major survey platforms including Google Forms, Tally, Typeform, SurveyMonkey, and any platform that generates a shareable link." },
-    { question: "What happens after I launch my survey?", answer: "Your survey is distributed to verified participants matching your criteria. You can track responses in real-time on your dashboard." },
-    { question: "How do I receive my survey results?", answer: "Results are collected through your original survey platform. We provide additional quality verification data through your Canvassing dashboard." },
   ];
 
   return (
@@ -108,9 +100,6 @@ const OnlineSurveys = () => {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
 
       {/* CTA Section */}
       <ProductCTASection />

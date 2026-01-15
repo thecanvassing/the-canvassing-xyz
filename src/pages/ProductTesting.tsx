@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import Calculator from "@/components/Calculator";
-import FAQSection from "@/components/FAQSection";
 import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
@@ -16,13 +15,6 @@ const ProductTesting = () => {
     "Collect feedback via your preferred form",
     "Verified testers matched to your needs",
     "Video recordings available (optional)",
-  ];
-
-  const faqs = [
-    { question: "How does product testing work on Canvassing?", answer: "Share your product link, add testing instructions, and we match you with verified testers who provide detailed feedback through your preferred feedback form." },
-    { question: "What kind of products can I test?", answer: "You can test websites, mobile apps, prototypes, physical products, and more. Any product that can be accessed or experienced by testers." },
-    { question: "How do testers give feedback?", answer: "Testers provide feedback through your preferred form or survey. We can also arrange video recordings of testing sessions for additional insights." },
-    { question: "How do I get the testing results?", answer: "Results are delivered through your feedback platform. Video recordings and additional quality data are available through your Canvassing dashboard." },
   ];
 
   return (
@@ -108,9 +100,6 @@ const ProductTesting = () => {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
 
       {/* CTA Section */}
       <ProductCTASection />
