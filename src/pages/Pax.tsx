@@ -66,14 +66,7 @@ const Pax = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <motion.img 
-              src={paxLogo} 
-              alt="Pax" 
-              className="w-16 h-16 mx-auto mb-6"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            />
+            <img src={paxLogo} alt="Pax" className="w-16 h-16 mx-auto mb-6" />
             <Badge className="mb-6">Trusted by 1K+ participants</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
               <span className="text-accent">Micro tasks,</span> <span className="text-primary">rewarded in tokens</span>
@@ -196,12 +189,7 @@ const Pax = () => {
             >
               {/* Left Content */}
               <div className="flex-1 text-left">
-                <motion.img 
-                  src={paxLogo} 
-                  alt="Pax" 
-                  className="w-12 h-12 mb-6 rounded-lg"
-                  whileHover={{ rotate: 10 }}
-                />
+                <img src={paxLogo} alt="Pax" className="w-12 h-12 mb-6 rounded-lg" />
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4 leading-tight">
                   Get Rewarded<br />for Your<br />Opinions.
                 </h2>

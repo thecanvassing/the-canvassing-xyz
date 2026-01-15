@@ -84,17 +84,7 @@ const Rez = () => {
           }} transition={{
             duration: 0.5
           }}>
-            <motion.img src={rezLogo} alt="Rez" className="w-16 h-16 mx-auto mb-6" initial={{
-              scale: 0,
-              rotate: -180
-            }} animate={{
-              scale: 1,
-              rotate: 0
-            }} transition={{
-              delay: 0.2,
-              type: "spring",
-              stiffness: 200
-            }} />
+            <img src={rezLogo} alt="Rez" className="w-16 h-16 mx-auto mb-6" />
             <Badge className="mb-6">Vouched for by some African founders</Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-primary">
               Get Quality Research Insights{" "}
