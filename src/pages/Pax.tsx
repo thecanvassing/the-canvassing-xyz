@@ -187,7 +187,7 @@ const Pax = () => {
           <p className="text-white/70 mb-8">
             Download the <span className="text-yellow">Pax app</span> and join our community of participants making money through research.
           </p>
-          <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full px-8 py-6">
+          <Button className="bg-white text-primary-dark hover:bg-white/90 rounded-full px-8 py-6 font-semibold">
             Download App →
           </Button>
         </div>
