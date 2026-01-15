@@ -173,7 +173,7 @@ const Index = () => {
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <Badge className="mb-6">Process</Badge>
+            <Badge className="mb-6">How it works</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
               From project setup to results delivery in{" "}
               <span className="text-accent">under 72 hours</span>
