@@ -110,7 +110,7 @@ const Index = () => {
               transition={{ duration: 0.5 }}
             >
               <img src={rezLogo} alt="Rez" className="w-16 h-16 mx-auto mb-6" />
-              <Badge className="mb-6">Powered by Web3 Payments</Badge>
+              <Badge className="mb-6">Vouched for by some African founders</Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
                 Get Quality Research Insights{" "}
                 <span className="text-accent">in Days, Not Weeks</span>
