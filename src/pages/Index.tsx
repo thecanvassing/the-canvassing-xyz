@@ -260,10 +260,7 @@ const Index = () => {
                         </div>
                         <h3 className="font-display font-bold text-lg">{step.title}</h3>
                       </div>
-                      <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
-                      <Link to="#" className="text-accent text-sm font-medium hover:underline inline-flex items-center gap-1">
-                        {step.link}
-                      </Link>
+                      <p className="text-muted-foreground text-sm">{step.description}</p>
                     </div>
                   </div>
                   
