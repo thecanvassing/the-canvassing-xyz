@@ -31,7 +31,7 @@ const OnlineSurveys = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="orange" className="mb-6">Online Surveys</Badge>
+            <Badge className="mb-6">Online Surveys</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground max-w-3xl mx-auto">
               Struggling to <span className="text-accent">Find Verified Survey</span> Participants Fast?
             </h1>
