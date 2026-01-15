@@ -6,7 +6,7 @@ import WelcomePopup from "@/components/WelcomePopup";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
-import StatsBar from "@/components/StatsBar";
+
 import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -130,18 +130,6 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.5,
-          delay: 0.2
-        }} className="max-w-3xl mx-auto">
-            <StatsBar />
-          </motion.div>
         </div>
       </section>
 
