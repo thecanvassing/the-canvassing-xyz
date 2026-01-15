@@ -223,46 +223,82 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Online Surveys Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50 group hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <BarChart3 className="w-6 h-6 text-white" />
-              </div>
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 mb-4">
-                Method 01
+            <div className="bg-white rounded-2xl p-8 shadow-card border-2 border-primary/20 group hover:shadow-lg transition-shadow">
+              <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-accent text-white border-2 border-primary mb-6">
+                Online Surveys
               </span>
-              <h3 className="text-2xl font-display font-bold mb-6">Online Surveys</h3>
-              <ul className="space-y-3 mb-8">
-                {surveyFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-md bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Zap className="w-3 h-3 text-accent" />
-                    </div>
-                    <span className="text-muted-foreground">{feature}</span>
-                  </li>)}
+              <h3 className="text-2xl font-display font-bold mb-4">Perfect for:</h3>
+              <ul className="space-y-3 mb-8 text-lg">
+                <li className="flex items-start gap-3">
+                  <span className="text-accent">•</span>
+                  <span className="text-foreground">Market research & consumer insights</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent">•</span>
+                  <span className="text-foreground">Product-market fit validation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent">•</span>
+                  <span className="text-foreground">Academic research & thesis data</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent">•</span>
+                  <span className="text-foreground">Customer satisfaction studies</span>
+                </li>
               </ul>
-              <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white rounded-full">
-                <Link to="/products/online-surveys">Start Survey →</Link>
+              
+              <div className="space-y-3 mb-8">
+                <div className="bg-purple-light rounded-lg py-3 px-4 text-center">
+                  <span className="text-accent font-semibold text-sm uppercase tracking-wide">Verified, Real Participants</span>
+                </div>
+                <div className="bg-purple-light rounded-lg py-3 px-4 text-center">
+                  <span className="text-primary font-semibold text-sm uppercase tracking-wide">1K+ Verified Participants</span>
+                </div>
+                <div className="bg-purple-light rounded-lg py-3 px-4 text-center">
+                  <span className="text-accent font-semibold text-sm uppercase tracking-wide">48hr Average Turnaround</span>
+                </div>
+              </div>
+              
+              <Button asChild className="w-full bg-primary hover:bg-primary-dark text-primary-foreground rounded-full py-6 text-lg border-2 border-primary">
+                <Link to="/products/online-surveys">Create Survey →</Link>
               </Button>
             </div>
 
-            {/* Product Testing Card */}
-            <div className="bg-white rounded-2xl p-8 shadow-card border border-border/50 group hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow to-yellow/80 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Beaker className="w-6 h-6 text-yellow-foreground" />
-              </div>
-              <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-yellow/20 text-yellow-foreground border border-yellow/30 mb-4">
-                Method 02
+            {/* Participant App Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-card border-2 border-primary/20 group hover:shadow-lg transition-shadow">
+              <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-accent text-white border-2 border-primary mb-6">
+                Participant App
               </span>
-              <h3 className="text-2xl font-display font-bold mb-6">Product Testing</h3>
-              <ul className="space-y-3 mb-8">
-                {testingFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-md bg-gradient-to-br from-yellow/20 to-yellow/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Target className="w-3 h-3 text-yellow-foreground" />
-                    </div>
-                    <span className="text-muted-foreground">{feature}</span>
-                  </li>)}
+              <h3 className="text-2xl font-display font-bold mb-4">Perfect for:</h3>
+              <ul className="space-y-3 mb-8 text-lg">
+                <li className="flex items-start gap-3">
+                  <span className="text-accent">•</span>
+                  <span className="text-foreground">Browse available tasks</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent">•</span>
+                  <span className="text-foreground">Complete screenings and tasks</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent">•</span>
+                  <span className="text-foreground">Claim and withdraw rewards</span>
+                </li>
               </ul>
-              <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white rounded-full">
-                <Link to="/products/product-testing">Start Testing →</Link>
+              
+              <div className="space-y-3 mb-8">
+                <div className="bg-purple-light rounded-lg py-3 px-4 text-center">
+                  <span className="text-primary font-semibold text-sm uppercase tracking-wide">Test With Real Users on Real Devices</span>
+                </div>
+                <div className="bg-purple-light rounded-lg py-3 px-4 text-center">
+                  <span className="text-primary font-semibold text-sm uppercase tracking-wide">1K+ Verified Participants</span>
+                </div>
+                <div className="bg-purple-light rounded-lg py-3 px-4 text-center">
+                  <span className="text-primary font-semibold text-sm uppercase tracking-wide">Results in Days, Not Weeks</span>
+                </div>
+              </div>
+              
+              <Button asChild variant="outline" className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-full py-6 text-lg">
+                <Link to="/products/product-testing">Test Product →</Link>
               </Button>
             </div>
           </div>
