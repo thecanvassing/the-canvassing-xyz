@@ -25,7 +25,7 @@ const Contact = () => {
       icon: Send,
       title: "Email Us",
       subtitle: "Send us an email anytime",
-      detail: "admin@canvassing.xyz",
+      detail: "admin@thecanvassing.com",
       gradient: "from-primary to-primary-dark"
     },
     {
