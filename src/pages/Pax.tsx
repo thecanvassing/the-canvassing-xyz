@@ -53,7 +53,7 @@ const Pax = () => {
     question: "How do I get started with Pax?",
     answer: "Download the Pax app, create an account, verify your profile, and start browsing available tasks. Your first payment can arrive within hours of completing a task."
   }];
-return <Layout>
+  return <Layout>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient" />
@@ -180,9 +180,7 @@ return <Layout>
       {/* Ready to Earn CTA */}
       <section className="py-16 px-4 bg-primary-dark text-center">
         <div className="container mx-auto max-w-xl">
-          <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
-            <span className="text-white text-lg">✨</span>
-          </div>
+          
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             Ready to Start Earning?
           </h2>
