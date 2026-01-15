@@ -136,9 +136,9 @@ const Index = () => {
       {/* Demo Video Section */}
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-4xl text-center">
-          <p className="text-xl font-display mb-2">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Play Demo Video, <span className="text-accent">to see how it works</span>
-          </p>
+          </h2>
           <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce mb-8" />
           
           <div className="bg-accent rounded-3xl h-80 md:h-96 flex items-center justify-center">
