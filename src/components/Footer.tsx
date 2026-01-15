@@ -9,8 +9,8 @@ const Footer = () => {
       { label: "Product Testing", href: "/products/product-testing" },
     ],
     solutions: [
-      { label: "Research", href: "/products/online-surveys" },
-      { label: "Participants", href: "/pax" },
+      { label: "Rez", href: "/rez" },
+      { label: "Pax", href: "/pax" },
     ],
     company: [
       { label: "About Us", href: "/about" },
@@ -120,11 +120,7 @@ const Footer = () => {
               <h4 className="font-semibold text-white">Connect</h4>
               <div className="flex items-center gap-2 text-white/70 text-sm">
                 <Mail className="w-4 h-4" />
-                <span>hello@canvassing.com</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/70 text-sm">
-                <Phone className="w-4 h-4" />
-                <span>+234-XXX-XXXX</span>
+                <span>admin@thecanvassing.com</span>
               </div>
             </div>
           </div>
