@@ -10,6 +10,7 @@ import Calculator from "@/components/Calculator";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
+import RingPattern from "@/components/RingPattern";
 import rezLogo from "@/assets/rez-logo.svg";
 const Rez = () => {
   const [email, setEmail] = useState("");
@@ -147,8 +148,9 @@ const Rez = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-16 px-4 bg-purple-light">
-        <div className="container mx-auto max-w-2xl text-center">
+      <section className="py-16 px-4 bg-purple-light relative overflow-hidden">
+        <RingPattern position="right" />
+        <div className="container mx-auto max-w-2xl text-center relative z-10">
           <AnimatedSection>
             <Badge className="mb-6">Based on 100+ research projects</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-10">
