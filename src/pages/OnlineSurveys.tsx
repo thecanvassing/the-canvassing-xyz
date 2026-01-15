@@ -67,9 +67,9 @@ const OnlineSurveys = () => {
           </div>
 
           <div className="text-center">
-            <p className="text-xl font-display mb-2">
+            <h3 className="text-2xl md:text-3xl font-display font-bold mb-2">
               See exactly what <span className="text-accent">your project will cost</span>
-            </p>
+            </h3>
             <ArrowDown className="w-6 h-6 mx-auto text-accent animate-bounce" />
           </div>
         </div>
