@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, MessageCircle, Video } from "lucide-react";
+import { Mail, Headphones, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,28 +22,25 @@ const Contact = () => {
 
   const contactOptions = [
     {
-      icon: Send,
+      icon: Mail,
       title: "Email Us",
       subtitle: "Send us an email anytime",
       detail: "admin@thecanvassing.com",
-      bgColor: "bg-primary/10",
-      iconColor: "text-primary"
+      gradient: "from-primary to-primary-dark"
     },
     {
-      icon: MessageCircle,
+      icon: Headphones,
       title: "Live Chat",
       subtitle: "Chat with our team",
       detail: "Available 9am - 6pm EST",
-      bgColor: "bg-accent/10",
-      iconColor: "text-accent"
+      gradient: "from-accent to-accent/80"
     },
     {
-      icon: Video,
+      icon: Calendar,
       title: "Schedule a Demo",
       subtitle: "Book a personalized walkthrough",
       detail: "30-minute session",
-      bgColor: "bg-yellow/20",
-      iconColor: "text-yellow-600"
+      gradient: "from-yellow to-accent"
     },
   ];
 
@@ -74,10 +71,10 @@ const Contact = () => {
                 key={option.title}
                 className="bg-white rounded-2xl p-6 text-center shadow-card border border-border/50 group hover:shadow-lg transition-shadow"
               >
-                <div className={`w-14 h-14 rounded-full ${option.bgColor} flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform`}>
-                  <option.icon className={`w-6 h-6 ${option.iconColor}`} />
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${option.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform`}>
+                  <option.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-display font-bold text-lg text-foreground mb-1">
+                <h3 className="font-display font-bold text-lg text-primary mb-1">
                   {option.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-2">{option.subtitle}</p>
