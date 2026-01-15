@@ -147,13 +147,15 @@ const Rez = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={0.2}>
-            <motion.div className="bg-accent rounded-3xl h-80 md:h-96 flex items-center justify-center" whileHover={{
-            scale: 1.02
-          }} transition={{
-            duration: 0.3
-          }}>
-              <p className="text-xl text-white font-medium">Demo Video will be inserted here</p>
-            </motion.div>
+            <div className="rounded-3xl overflow-hidden aspect-video shadow-xl">
+              <iframe 
+                src="https://www.youtube.com/embed/Z2Ly4J68Lzo" 
+                title="Demo Video" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen 
+                className="w-full h-full" 
+              />
+            </div>
           </AnimatedSection>
         </div>
       </section>
