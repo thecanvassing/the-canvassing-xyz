@@ -4,6 +4,7 @@ import Badge from "@/components/Badge";
 import Calculator from "@/components/Calculator";
 import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
+import RingPattern from "@/components/RingPattern";
 
 const Pricing = () => {
   return (
@@ -11,7 +12,8 @@ const Pricing = () => {
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden bg-hero-gradient">
         <div className="absolute inset-0 bg-radial-glow" />
-        <div className="container mx-auto px-4 relative">
+        <RingPattern position="left" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
