@@ -121,11 +121,11 @@ const Index = () => {
                 Connecting African researchers with verified participants—creating income and driving innovation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-primary hover:bg-primary-dark text-white rounded-full px-8 py-6 text-lg">
-                  Learn More
+                <Button asChild className="bg-primary hover:bg-primary-dark text-white rounded-full px-8 py-6 text-lg">
+                  <Link to="/rez">Learn More</Link>
                 </Button>
-                <Button variant="outline" className="bg-white border-primary text-primary hover:bg-primary hover:text-white rounded-full px-8 py-6 text-lg">
-                  See how it works
+                <Button asChild variant="outline" className="bg-white border-primary text-primary hover:bg-primary hover:text-white rounded-full px-8 py-6 text-lg">
+                  <Link to="/demo-video">See how it works</Link>
                 </Button>
               </div>
             </motion.div>
