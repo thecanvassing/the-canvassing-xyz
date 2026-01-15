@@ -6,7 +6,6 @@ import WelcomePopup from "@/components/WelcomePopup";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
-
 import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -14,17 +13,14 @@ import rezLogo from "@/assets/rez-logo.svg";
 const Index = () => {
   const [email, setEmail] = useState("");
   const [showPopup, setShowPopup] = useState(false);
-  
   const isValidEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
-
   const handleGetParticipants = () => {
     if (isValidEmail(email)) {
       window.open(`https://rez.thecanvassing.xyz?email=${encodeURIComponent(email)}`, '_blank');
     }
   };
-
   const painPoints = ["Weeks spent recruiting qualified participants", "Falling response rates and low engagement", "Struggling with poor data quality and fake responses", "Long delays between project launch and results", "Juggling different tools for surveys, testing, and payments"];
   const timelineSteps = [{
     number: "01",
@@ -110,20 +106,10 @@ const Index = () => {
                 The trusted marketplace where researchers find verified participants for online surveys and product testing. Transparent pricing, quality responses, fast turnaround.
               </p>
               <div className="flex flex-col gap-4 items-center">
-                <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-3 rounded-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
+                <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md pb-[20px]">
+                  <input type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)} className="flex-1 px-4 py-3 rounded-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
-                <Button 
-                  onClick={handleGetParticipants}
-                  disabled={!isValidEmail(email)}
-                  className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                >
+                <Button onClick={handleGetParticipants} disabled={!isValidEmail(email)} className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed">
                   Get Participants Now
                 </Button>
               </div>
