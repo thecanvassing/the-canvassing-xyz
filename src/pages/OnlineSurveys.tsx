@@ -84,7 +84,7 @@ const OnlineSurveys = () => {
           
           <Calculator variant="surveys" showTabs={false} />
 
-          <p className="text-center mt-10 text-lg">
+          <p className="text-center mt-10 text-xl md:text-2xl font-medium">
             Over <span className="text-accent font-bold">500 researchers</span> have used our calculator
           </p>
         </div>
