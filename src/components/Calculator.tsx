@@ -5,9 +5,10 @@ import { Input } from "@/components/ui/input";
 
 interface CalculatorProps {
   variant?: "surveys" | "testing";
+  showTabs?: boolean;
 }
 
-const Calculator = ({ variant = "surveys" }: CalculatorProps) => {
+const Calculator = ({ variant = "surveys", showTabs = true }: CalculatorProps) => {
   const [activeTab, setActiveTab] = useState<"surveys" | "testing">(variant);
   const [email, setEmail] = useState("");
   const [questions, setQuestions] = useState(10);
@@ -27,28 +28,30 @@ const Calculator = ({ variant = "surveys" }: CalculatorProps) => {
   return (
     <div className="w-full">
       {/* Tabs */}
-      <div className="flex gap-2 mb-8">
-        <button
-          onClick={() => setActiveTab("surveys")}
-          className={`px-6 py-2 rounded-full font-medium transition-all ${
-            activeTab === "surveys"
-              ? "bg-primary text-primary-foreground"
-              : "bg-white text-foreground border border-border hover:border-primary/50"
-          }`}
-        >
-          Online Surveys
-        </button>
-        <button
-          onClick={() => setActiveTab("testing")}
-          className={`px-6 py-2 rounded-full font-medium transition-all ${
-            activeTab === "testing"
-              ? "bg-primary text-primary-foreground"
-              : "bg-white text-foreground border border-border hover:border-primary/50"
-          }`}
-        >
-          Product testing
-        </button>
-      </div>
+      {showTabs && (
+        <div className="flex gap-2 mb-8">
+          <button
+            onClick={() => setActiveTab("surveys")}
+            className={`px-6 py-2 rounded-full font-medium transition-all ${
+              activeTab === "surveys"
+                ? "bg-primary text-primary-foreground"
+                : "bg-white text-foreground border border-border hover:border-primary/50"
+            }`}
+          >
+            Online Surveys
+          </button>
+          <button
+            onClick={() => setActiveTab("testing")}
+            className={`px-6 py-2 rounded-full font-medium transition-all ${
+              activeTab === "testing"
+                ? "bg-primary text-primary-foreground"
+                : "bg-white text-foreground border border-border hover:border-primary/50"
+            }`}
+          >
+            Product testing
+          </button>
+        </div>
+      )}
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Form */}
