@@ -10,7 +10,6 @@ import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import WelcomePopup from "@/components/WelcomePopup";
-import ParallaxHero from "@/components/ParallaxHero";
 import rezLogo from "@/assets/rez-logo.svg";
 import paxLogo from "@/assets/pax-logo.png";
 const Index = () => {
@@ -113,8 +112,10 @@ const Index = () => {
   return <Layout>
       <WelcomePopup />
       {/* Hero Section */}
-      <ParallaxHero>
-        <div className="max-w-3xl mx-auto text-center mb-12">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-hero-gradient">
+        <div className="absolute inset-0 bg-radial-glow" />
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center mb-12">
           <motion.div initial={{
           opacity: 0,
           y: 20
@@ -153,9 +154,10 @@ const Index = () => {
         duration: 0.5,
         delay: 0.2
       }} className="max-w-3xl mx-auto">
-          <StatsBar />
-        </motion.div>
-      </ParallaxHero>
+            <StatsBar />
+          </motion.div>
+        </div>
+      </section>
 
       {/* Help Section */}
       <section className="py-16 px-4 bg-purple-light">
