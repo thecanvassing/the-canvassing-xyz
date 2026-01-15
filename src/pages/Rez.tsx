@@ -215,7 +215,7 @@ const Index = () => {
       <section className="py-16 px-4 bg-purple-light">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
-            <Badge className="mb-6">Methods</Badge>
+            <Badge className="mb-6">Choose your path</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold">
               <span className="text-accent">Two</span> Powerful Ways to Get Insights
             </h2>
