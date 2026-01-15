@@ -208,12 +208,6 @@ const Index = () => {
                 </div>)}
             </div>
           </div>
-
-          <div className="text-center mt-12">
-            <Button className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6">
-              Get Started
-            </Button>
-          </div>
         </div>
       </section>
 
