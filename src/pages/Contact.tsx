@@ -61,7 +61,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="orange" className="mb-6">Contacts</Badge>
+            <Badge className="mb-6">Contact</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground max-w-3xl mx-auto">
               Get in Touch
             </h1>
