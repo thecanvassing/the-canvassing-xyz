@@ -6,6 +6,7 @@ import Badge from "@/components/Badge";
 import FAQSection from "@/components/FAQSection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
+import ParallaxHero from "@/components/ParallaxHero";
 import paxGetRewardedImage from "@/assets/pax-get-rewarded.svg";
 import paxLogo from "@/assets/pax-logo.png";
 
@@ -79,45 +80,40 @@ const Pax = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-hero-gradient" />
-        <div className="absolute inset-0 bg-radial-glow" />
-        
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center">
+      <ParallaxHero>
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.img 
+              src={paxLogo} 
+              alt="Pax" 
+              className="w-16 h-16 mx-auto mb-6"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            />
+            <Badge className="mb-6">Trusted by 1K+ participants</Badge>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
+              <span className="text-accent">Micro tasks,</span> <span className="text-primary">rewarded in tokens</span>
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+              Join thousands of participants earning stablecoin and token rewards by completing surveys and testing products from top researchers and companies.
+            </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ delay: 0.3 }}
             >
-              <motion.img 
-                src={paxLogo} 
-                alt="Pax" 
-                className="w-16 h-16 mx-auto mb-6"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              />
-              <Badge className="mb-6">Trusted by 1K+ participants</Badge>
-              <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
-                <span className="text-accent">Micro tasks,</span> <span className="text-primary">rewarded in tokens</span>
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                Join thousands of participants earning stablecoin and token rewards by completing surveys and testing products from top researchers and companies.
-              </p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                <Button asChild className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg">
-                  <a href="https://thepax.app/website" target="_blank" rel="noopener noreferrer">Download Pax App</a>
-                </Button>
-              </motion.div>
+              <Button asChild className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg">
+                <a href="https://thepax.app/website" target="_blank" rel="noopener noreferrer">Download Pax App</a>
+              </Button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </ParallaxHero>
 
       {/* Benefits Section */}
       <section className="py-16 px-4 bg-purple-light">

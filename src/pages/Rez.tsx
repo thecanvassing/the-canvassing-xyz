@@ -11,6 +11,7 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
+import ParallaxHero from "@/components/ParallaxHero";
 import rezLogo from "@/assets/rez-logo.svg";
 
 const Rez = () => {
@@ -126,60 +127,55 @@ const Rez = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-hero-gradient" />
-        <div className="absolute inset-0 bg-radial-glow" />
-        
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
+      <ParallaxHero>
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.img 
+              src={rezLogo} 
+              alt="Rez" 
+              className="w-16 h-16 mx-auto mb-6"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            />
+            <Badge className="mb-6">Vouched for by some African founders</Badge>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
+              Get Quality Research Insights{" "}
+              <span className="text-accent">in Days, Not Weeks</span>
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+              The trusted marketplace where researchers find verified participants for online surveys and product testing. Transparent pricing, quality responses, fast turnaround.
+            </p>
+            <motion.div 
+              className="flex flex-col gap-4 items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ delay: 0.3 }}
             >
-              <motion.img 
-                src={rezLogo} 
-                alt="Rez" 
-                className="w-16 h-16 mx-auto mb-6"
-                initial={{ scale: 0, rotate: -180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              />
-              <Badge className="mb-6">Vouched for by some African founders</Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-foreground">
-                Get Quality Research Insights{" "}
-                <span className="text-accent">in Days, Not Weeks</span>
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                The trusted marketplace where researchers find verified participants for online surveys and product testing. Transparent pricing, quality responses, fast turnaround.
-              </p>
-              <motion.div 
-                className="flex flex-col gap-4 items-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+              <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md pb-[20px]">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 px-4 py-3 rounded-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-center"
+                />
+              </div>
+              <Button
+                onClick={handleGetParticipants}
+                disabled={!isValidEmail(email)}
+                className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md pb-[20px]">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-3 rounded-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-center"
-                  />
-                </div>
-                <Button
-                  onClick={handleGetParticipants}
-                  disabled={!isValidEmail(email)}
-                  className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Get Participants Now
-                </Button>
-              </motion.div>
+                Get Participants Now
+              </Button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </ParallaxHero>
 
       {/* Demo Video Section */}
       <section className="py-16 px-4 bg-background">
