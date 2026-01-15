@@ -7,8 +7,24 @@
     <meta name="description" content="Connect with verified African participants for surveys and product tests. Get quality research insights in days, not weeks with transparent Web3 payments.">
     <meta name="author" content="Canvassing" />
 
-    
-    
+    <!-- Prevent FOUT: Hide until fonts ready -->
+    <style>
+      html { opacity: 0; }
+      html.fonts-ready { opacity: 1; transition: opacity 0.1s ease-in; }
+    </style>
+    <script>
+      if (document.fonts) {
+        document.fonts.ready.then(function() {
+          document.documentElement.classList.add('fonts-ready');
+        });
+      } else {
+        document.documentElement.classList.add('fonts-ready');
+      }
+      setTimeout(function() {
+        document.documentElement.classList.add('fonts-ready');
+      }, 500);
+    </script>
+
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
@@ -18,11 +34,11 @@
     
     <link rel="canonical" href="https://canvassing.xyz" />
     <meta property="og:title" content="Canvassing - Research Marketplace for Verified Participants">
-  <meta name="twitter:title" content="Canvassing - Research Marketplace for Verified Participants">
-  <meta property="og:description" content="Connect with verified African participants for surveys and product tests. Get quality research insights in days, not weeks with transparent Web3 payments.">
-  <meta name="twitter:description" content="Connect with verified African participants for surveys and product tests. Get quality research insights in days, not weeks with transparent Web3 payments.">
-  <link rel="icon" type="image/svg+xml" href="https://storage.googleapis.com/gpt-engineer-file-uploads/i2tOUjxindak3JGhCNKAyIfsMof2/uploads/1767967805086-logo.svg">
-</head>
+    <meta name="twitter:title" content="Canvassing - Research Marketplace for Verified Participants">
+    <meta property="og:description" content="Connect with verified African participants for surveys and product tests. Get quality research insights in days, not weeks with transparent Web3 payments.">
+    <meta name="twitter:description" content="Connect with verified African participants for surveys and product tests. Get quality research insights in days, not weeks with transparent Web3 payments.">
+    <link rel="icon" type="image/svg+xml" href="https://storage.googleapis.com/gpt-engineer-file-uploads/i2tOUjxindak3JGhCNKAyIfsMof2/uploads/1767967805086-logo.svg">
+  </head>
 
   <body>
     <div id="root"></div>
