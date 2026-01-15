@@ -8,7 +8,6 @@ import FAQSection from "@/components/FAQSection";
 import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
-import ParallaxHero from "@/components/ParallaxHero";
 
 const OnlineSurveys = () => {
   const features = [
@@ -29,8 +28,10 @@ const OnlineSurveys = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <ParallaxHero>
-        <div className="text-center">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-hero-gradient">
+        <div className="absolute inset-0 bg-radial-glow" />
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,8 +54,9 @@ const OnlineSurveys = () => {
               </Button>
             </motion.div>
           </motion.div>
+          </div>
         </div>
-      </ParallaxHero>
+      </section>
 
       {/* Features Section */}
       <section className="py-16 px-4 bg-purple-light">

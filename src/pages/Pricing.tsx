@@ -5,7 +5,6 @@ import Calculator from "@/components/Calculator";
 import FAQSection from "@/components/FAQSection";
 import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import ParallaxHero from "@/components/ParallaxHero";
 
 const Pricing = () => {
   const faqs = [
@@ -19,8 +18,10 @@ const Pricing = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <ParallaxHero>
-        <div className="text-center">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-hero-gradient">
+        <div className="absolute inset-0 bg-radial-glow" />
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,8 +35,9 @@ const Pricing = () => {
               No surprises, no hidden fees. Calculate your project cost instantly and see exactly where your money goes.
             </p>
           </motion.div>
+          </div>
         </div>
-      </ParallaxHero>
+      </section>
 
       {/* Calculator Section */}
       <section className="py-16 px-4 bg-cream">
