@@ -20,7 +20,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="orange" className="mb-6">About Us</Badge>
+            <Badge className="mb-6">About Us</Badge>
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground max-w-3xl mx-auto">
               Making Research <span className="text-accent">Accessible to Everyone</span>
             </h1>
