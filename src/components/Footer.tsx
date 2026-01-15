@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import logoSvg from "@/assets/logo.svg";
 
 const Footer = () => {
