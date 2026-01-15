@@ -77,12 +77,11 @@ const ProductTesting = () => {
       {/* Calculator Section */}
       <section className="py-16 px-4 bg-cream">
         <div className="container mx-auto max-w-4xl">
-          <Badge className="mb-4">Calculator</Badge>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-10">
             <span className="text-accent">Calculate</span> Your Project Cost
           </h2>
           
-          <Calculator variant="testing" />
+          <Calculator variant="testing" showTabs={false} />
 
           <p className="text-center mt-10 text-lg">
             Over <span className="text-accent font-bold">500 researchers</span> have used our calculator
