@@ -285,45 +285,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 px-4 bg-background">
-        <div className="container mx-auto max-w-5xl">
-          <div className="mb-12">
-            <Badge className="mb-4">Testimonials</Badge>
-            <h2 className="text-3xl md:text-4xl font-display font-bold">
-              Here's what researchers <span className="text-accent">love</span> about Canvassing
-            </h2>
-          </div>
-
-          <div className="flex gap-4 mb-8">
-            <button className="px-6 py-2 rounded-full font-medium bg-primary text-primary-foreground">
-              Researchers
-            </button>
-            <button className="px-6 py-2 rounded-full font-medium bg-white text-foreground border border-border">
-              Participants
-            </button>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-card border border-border/50">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
-                </div>
-                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                  "{testimonial.quote}"
-                </p>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>)}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
-
       {/* CTA Section */}
       <CTASection />
 
