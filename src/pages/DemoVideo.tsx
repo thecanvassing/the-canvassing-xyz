@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import AnimatedCard from "@/components/AnimatedCard";
 
 const DemoVideo = () => {
   const faqs = [
@@ -71,55 +71,7 @@ const DemoVideo = () => {
       <FAQSection faqs={faqs} />
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-primary-dark">
-        <div className="container mx-auto max-w-3xl">
-          <AnimatedSection className="text-center mb-10">
-            <Badge variant="purple" className="mb-6">FAQ</Badge>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
-              Ready to Get Started?
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Researcher Dashboard Card */}
-            <AnimatedCard index={0}>
-              <div className="bg-primary rounded-2xl p-6 text-left h-full">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-accent text-white mb-4">
-                  Researcher Dashboard
-                </span>
-                <p className="text-white mb-6">
-                  Get verified <span className="text-accent">African participants</span> for your next project
-                </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-accent text-accent hover:bg-accent hover:text-white rounded-full w-full"
-                >
-                  <Link to="/rez">Start Project →</Link>
-                </Button>
-              </div>
-            </AnimatedCard>
-
-            {/* Book a Call Card */}
-            <AnimatedCard index={1}>
-              <div className="bg-primary-dark/50 rounded-2xl p-6 text-left border border-primary/30 h-full">
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary text-white mb-4">
-                  Book a 15-min call:
-                </span>
-                <p className="text-white mb-6">
-                  Questions? Book a 15-min call:
-                </p>
-                <Button
-                  asChild
-                  className="bg-primary hover:bg-primary/90 text-white rounded-full w-full"
-                >
-                  <Link to="/contact">Schedule Call →</Link>
-                </Button>
-              </div>
-            </AnimatedCard>
-          </div>
-        </div>
-      </section>
+      <CTASection />
     </Layout>
   );
 };
