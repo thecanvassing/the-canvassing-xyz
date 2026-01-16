@@ -42,11 +42,11 @@ export default function WelcomePopup({ isOpen: controlledIsOpen, onClose }: Welc
     const hasSeenPopup = sessionStorage.getItem("hasSeenWelcomePopup");
     
     if (!hasSeenPopup) {
-      // Show popup after a brief delay
+      // Show popup after user has had time to view the page (5 seconds)
       const timer = setTimeout(() => {
         setInternalIsOpen(true);
         sessionStorage.setItem("hasSeenWelcomePopup", "true");
-      }, 1500);
+      }, 5000);
 
       return () => clearTimeout(timer);
     }
