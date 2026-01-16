@@ -4,153 +4,181 @@ import { Search } from "lucide-react";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
 import CTASection from "@/components/CTASection";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import RingPattern from "@/components/RingPattern";
 
+const faqCategories = [
+  {
+    id: "general",
+    title: "General",
+    faqs: [
+      {
+        question: "What is Canvassing?",
+        answer:
+          "Canvassing is a research platform that connects researchers with verified participants to run online surveys and product tests. Participants are rewarded instantly in stablecoins (cUSD) when they complete tasks, and researchers get high-quality data quickly and affordably.",
+      },
+      {
+        question: "How are participants verified?",
+        answer:
+          "We verify participants through Face Verification, profile completeness checks, and ongoing response quality monitoring.",
+      },
+      {
+        question: "Who can use Canvassing?",
+        answer: `Canvassing is built for two types of users:
+• Researchers who need fast, verified responses for surveys and product testing
+• Participants who want to earn stablecoin rewards by answering surveys and testing products 
+Both groups can sign up, create profiles, and start participating or launching research projects.`,
+      },
+      {
+        question: "How do I know participants are real, not bots?",
+        answer:
+          "All participants go through our rigorous verification process including identity checks and behavioral analysis to ensure authentic responses.",
+      },
+      {
+        question: "How quickly will I get results?",
+        answer:
+          "Most projects receive quality-verified responses within 24-72 hours, depending on your sample size and targeting requirements.",
+      },
+      {
+        question: "How do I get started as a researcher?",
+        answer:
+          "Simply create an account on our Rez Dashboard, define your project requirements, and we'll match you with verified participants instantly.",
+      },
+      {
+        question: "What tools do you support?",
+        answer:
+          "We support popular survey tools like Google Forms, Tally, Typeform, and more. Simply paste your survey link and we handle the rest.",
+      },
+    ],
+  },
+  {
+    id: "online-surveys",
+    title: "Online Surveys",
+    faqs: [
+      {
+        question: "How do I create an online survey on Canvassing?",
+        answer:
+          "To create a survey task, select Online Surveys as your task type, fill in your task details, and paste your survey link (we support tools like Tally). Once submitted, review your setup, make payment, and launch. Your survey is then published on the Pax app for participants to complete.",
+      },
+      {
+        question: "What survey tools are supported?",
+        answer:
+          "Canvassing supports external survey tools such as Tally. As long as your survey link is accessible and properly configured, participants can complete it directly through the Pax app.",
+      },
+      {
+        question: "What happens after I launch my survey?",
+        answer:
+          "After payment, your survey is instantly published to verified participants on the Pax app. You can monitor progress in real time and receive completed responses as participants submit them.",
+      },
+      {
+        question: "How do I receive my survey results?",
+        answer:
+          "Responses are collected through your original survey tool. Once participants complete the task, you can download and analyze your data directly from the platform you used to create the survey.",
+      },
+    ],
+  },
+  {
+    id: "product-testing",
+    title: "Product Testing",
+    faqs: [
+      {
+        question: "How does product testing work on Canvassing?",
+        answer:
+          "Select Product Testing as your task type, provide your product link (app, website, or prototype), add clear testing instructions, and include a link to your feedback form. After review and payment, the task is published on the Pax app for testers.",
+      },
+      {
+        question: "What kind of products can I test?",
+        answer:
+          "You can test mobile apps, websites, prototypes, landing pages, or beta features. As long as participants can access your product through a link, it can be tested.",
+      },
+      {
+        question: "How do testers give feedback?",
+        answer:
+          "Testers access your product using the link you provide, follow your instructions, and submit feedback through your linked feedback form (such as Tally or Google Forms).",
+      },
+      {
+        question: "How do I get the testing results?",
+        answer:
+          "All feedback is submitted directly to your feedback form. You receive real user insights, usability notes, and structured responses ready for analysis as soon as testers complete their tasks.",
+      },
+    ],
+  },
+  {
+    id: "pricing",
+    title: "Pricing",
+    faqs: [
+      {
+        question: "How does the cost calculator work?",
+        answer:
+          "Our cost calculator allows you to estimate the price of your online survey or product testing project. Simply select your task type, input your details, and provide your survey or product link. Once you enter your email, you'll receive a detailed cost breakdown, and you can use this tool for free without any obligation.",
+      },
+      {
+        question: "Do I need to provide my email to use the calculator?",
+        answer:
+          "Yes, you will need to enter your email to receive the cost estimate. Rest assured, your email will only be used for communication related to your project, and we won't spam you.",
+      },
+      {
+        question: "How do I start my project after calculating the cost?",
+        answer:
+          "Once you've reviewed your cost estimate, you can proceed to create and publish your project on our platform. You'll follow the simple steps to set up your survey or product test and then launch it to participants. It's straightforward and quick.",
+      },
+      {
+        question:
+          "How is the pricing determined for surveys and product tests?",
+        answer:
+          "Pricing is based on the type of project, the number of participants, and the complexity of the task. Our calculator provides a detailed breakdown, ensuring transparency and helping you budget effectively.",
+      },
+      {
+        question: "Will I receive spam or unwanted emails?",
+        answer:
+          "Absolutely not. We value your privacy and only use your email for updates related to your project. You can opt out at any time.",
+      },
+    ],
+  },
+  {
+    id: "pax",
+    title: "Pax (Participants)",
+    faqs: [
+      {
+        question: "What is Pax?",
+        answer:
+          "Pax is a rewards platform that helps users earn digital rewards through simple actions such as learning, completing tasks, and participating in partner programs. Pax is designed to make earning accessible, transparent, and easy—especially for users in emerging markets.",
+      },
+      {
+        question: "How does Pax work?",
+        answer:
+          "Users join Pax, complete available tasks (such as online surveys, product testing, or partner tasks), and earn rewards for their participation. Rewards are tracked in your account and can be claimed once eligibility conditions are met.",
+      },
+      {
+        question: "Who can use Pax?",
+        answer:
+          "Pax is open to anyone who wants to earn rewards online, particularly students, freelancers, early-career professionals, and users exploring digital opportunities. You don't need prior technical or crypto experience to get started.",
+      },
+      {
+        question: "How are payments verified?",
+        answer:
+          "We verify participants through Face Verification, profile completeness checks, and ongoing response quality monitoring.",
+      },
+      {
+        question: "How do I get started with Pax?",
+        answer: `1. Sign up on the Pax platform
+2. Complete onboarding and profile setup
+3. Explore available tasks or learning activities
+4. Complete tasks and track your progress
+5. Claim your rewards when they're available`,
+      },
+    ],
+  },
+];
+
 const FAQ = () => {
   const [searchQuery, setSearchQuery] = useState("");
-
-  const faqCategories = [
-    {
-      id: "general",
-      title: "General",
-      faqs: [
-        {
-          question: "What is Canvassing?",
-          answer: "Canvassing is a marketplace that connects researchers with verified participants for surveys and product testing. We help you gather quality insights quickly and affordably."
-        },
-        {
-          question: "How are participants verified?",
-          answer: "Participants go through our verification process which includes identity verification, quality checks, and engagement tracking to ensure authentic responses."
-        },
-        {
-          question: "Who can use Canvassing?",
-          answer: "Researchers, startups, NGOs, and enterprises looking to collect quality data, as well as individuals looking to earn rewards by participating in research."
-        },
-        {
-          question: "What kind of incentives are offered?",
-          answer: "Participants are rewarded with GoodDollar (G$) tokens, a stablecoin that provides real value and instant payments."
-        },
-        {
-          question: "How do I know participants are real, not bots?",
-          answer: "All participants go through our rigorous verification process including identity checks and behavioral analysis to ensure authentic responses."
-        },
-        {
-          question: "Can I target specific demographics?",
-          answer: "Yes, you can target participants based on location, age, gender, income level, profession, and many other demographic criteria."
-        },
-        {
-          question: "How quickly will I get results?",
-          answer: "Most projects receive quality-verified responses within 24-72 hours, depending on your sample size and targeting requirements."
-        },
-        {
-          question: "How do I get started as a researcher?",
-          answer: "Simply create an account on our Rez Dashboard, define your project requirements, and we'll match you with verified participants instantly."
-        },
-        {
-          question: "What tools do you support?",
-          answer: "We support popular survey tools like Google Forms, Tally, Typeform, and more. Simply paste your survey link and we handle the rest."
-        }
-      ]
-    },
-    {
-      id: "online-surveys",
-      title: "Online Surveys",
-      faqs: [
-        {
-          question: "How do I create an online survey on Canvassing?",
-          answer: "Simply paste your survey link from your preferred platform (Google Forms, Tally, Typeform, etc.) and set your target participants. We handle the distribution and verification."
-        },
-        {
-          question: "What survey tools are supported?",
-          answer: "We support all major survey platforms including Google Forms, Tally, Typeform, SurveyMonkey, and any platform that generates a shareable link."
-        },
-        {
-          question: "What happens after I launch my survey?",
-          answer: "Your survey is distributed to verified participants matching your criteria. You can track responses in real-time on your dashboard."
-        },
-        {
-          question: "How do I receive my survey results?",
-          answer: "Results are collected through your original survey platform. We provide additional quality verification data through your Canvassing dashboard."
-        }
-      ]
-    },
-    {
-      id: "product-testing",
-      title: "Product Testing",
-      faqs: [
-        {
-          question: "How does product testing work on Canvassing?",
-          answer: "Share your product link, add testing instructions, and we match you with verified testers who provide detailed feedback through your preferred feedback form."
-        },
-        {
-          question: "What kind of products can I test?",
-          answer: "You can test websites, mobile apps, prototypes, physical products, and more. Any product that can be accessed or experienced by testers."
-        },
-        {
-          question: "How do testers give feedback?",
-          answer: "Testers provide feedback through your preferred form or survey. We can also arrange video recordings of testing sessions for additional insights."
-        },
-        {
-          question: "How do I get the testing results?",
-          answer: "Results are delivered through your feedback platform. Video recordings and additional quality data are available through your Canvassing dashboard."
-        }
-      ]
-    },
-    {
-      id: "pricing",
-      title: "Pricing",
-      faqs: [
-        {
-          question: "How does the cost calculator work?",
-          answer: "The calculator estimates your project cost based on the number of questions and responses for surveys, or number of testers for product testing. Pricing is transparent with no hidden fees."
-        },
-        {
-          question: "Do I need to provide my email to use the calculator?",
-          answer: "Yes, we require your email to send you a detailed quote and help you get started with your project. We never spam and you can unsubscribe anytime."
-        },
-        {
-          question: "How do I start my project after calculating the cost?",
-          answer: "After receiving your quote, click 'Start My Project' to access your dashboard where you can set up your survey or product test with all the details."
-        },
-        {
-          question: "How is the pricing determined for surveys and product tests?",
-          answer: "Survey pricing is based on question count and number of responses. Product testing is priced per tester. Both include participant verification and quality assurance."
-        },
-        {
-          question: "Will I receive spam or unwanted emails?",
-          answer: "No, we respect your privacy. You'll only receive your project quote and essential updates. You can unsubscribe anytime."
-        }
-      ]
-    },
-    {
-      id: "pax",
-      title: "Pax (Participants)",
-      faqs: [
-        {
-          question: "What is Pax?",
-          answer: "Pax is the participant app for Canvassing. It allows you to earn stablecoin and token rewards by completing surveys and testing products for researchers and companies."
-        },
-        {
-          question: "How does Pax work?",
-          answer: "Download the app, complete your profile verification, and start accepting tasks. Complete surveys and product tests to earn G$ tokens that can be exchanged for real value."
-        },
-        {
-          question: "Who can use Pax?",
-          answer: "Anyone in Africa can join Pax. You need to complete our verification process to ensure you're matched with relevant opportunities."
-        },
-        {
-          question: "How are payments verified?",
-          answer: "Payments are made in GoodDollar (G$) tokens immediately upon task completion and verification. You can track all payments in your dashboard."
-        },
-        {
-          question: "How do I get started with Pax?",
-          answer: "Download the Pax app, create an account, verify your profile, and start browsing available tasks. Your first payment can arrive within hours of completing a task."
-        }
-      ]
-    }
-  ];
 
   // Filter FAQs based on search query
   const filteredCategories = useMemo(() => {
@@ -192,7 +220,8 @@ const FAQ = () => {
                 Frequently Asked <span className="text-accent">Questions</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                Everything you need to know about Canvassing, our products, and how to get started.
+                Everything you need to know about Canvassing, our products, and
+                how to get started.
               </p>
 
               {/* Search Input */}
@@ -243,11 +272,12 @@ const FAQ = () => {
           {filteredCategories.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground text-lg">
-                No FAQs found matching "{searchQuery}"
+                No FAQs found matching &quot;{searchQuery}&quot;
               </p>
               <button
                 onClick={() => setSearchQuery("")}
                 className="mt-4 text-primary hover:underline"
+                type="button"
               >
                 Clear search
               </button>
@@ -276,7 +306,7 @@ const FAQ = () => {
                       <AccordionTrigger className="text-left font-medium hover:no-underline py-5">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground pb-5">
+                      <AccordionContent className="text-muted-foreground pb-5 whitespace-pre-line">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
