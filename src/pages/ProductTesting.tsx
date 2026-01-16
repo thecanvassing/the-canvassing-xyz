@@ -8,6 +8,7 @@ import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
 import RingPattern from "@/components/RingPattern";
+import { Link } from "react-router-dom";
 
 const ProductTesting = () => {
   const features = [
@@ -43,8 +44,10 @@ const ProductTesting = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <Button className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg">
+              <Button className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg" asChild>
+                <Link to="/rez">
                 Start Product Testing
+                </Link>
               </Button>
             </motion.div>
           </motion.div>
