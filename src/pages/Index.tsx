@@ -337,7 +337,7 @@ const Index = () => {
 
 
       {/* Testimonials Section */}
-      <section className="py-16 px-4 bg-purple-light">
+      <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-5xl">
           <div className="mb-12">
             <Badge className="mb-4">Testimonials</Badge>
