@@ -17,7 +17,7 @@ const Index = () => {
     icon: BarChart3,
     title: "Online Surveys",
     subtitle: "& Polls",
-    useCases: ["Market research", "Customer satisfaction", "Academic studies", "Product feedback", "Brand tracking"],
+    useCases: ["Market research", "Customer satisfaction", "Academic studies", "Opinion polls"],
     comingSoon: false,
     link: "/products/online-surveys",
     gradient: "from-primary to-primary-dark"
@@ -25,7 +25,7 @@ const Index = () => {
     icon: Beaker,
     title: "Product",
     subtitle: "Testing",
-    useCases: ["App beta testing", "Website usability", "Physical products", "Prototype testing", "User testing"],
+    useCases: ["Usability testing", "Feature validation", "Beta testing", "UX Feedback",],
     comingSoon: false,
     link: "/products/product-testing",
     gradient: "from-accent to-accent/80"
@@ -33,42 +33,42 @@ const Index = () => {
     icon: Mic2,
     title: "User",
     subtitle: "Interviews",
-    useCases: ["User research", "In-depth insights", "Customer personas", "Discovery research", "Concept testing"],
+    useCases: ["Discovery research", "Pain point interviews", "Concept validation", "Journey mapping"],
     comingSoon: true,
     link: "#",
     gradient: "from-yellow to-yellow/80"
   }];
   const researcherFeatures = ["Create and publish tasks", "Manage participant payments", "Track responses via dashboard"];
-  const participantFeatures = ["Browse available tasks", "Complete tasks at your pace", "Claim and withdraw rewards"];
-  const timelineSteps = [{
-    number: "01",
-    title: "Define Your Project",
-    description: "Set your research goals and target participants. Specify demographics, timeline, and methodology.",
-    icon: PenLine,
-    link: "Get Started →",
-    side: "left"
-  }, {
-    number: "02",
-    title: "Get Instant Quote",
-    description: "Receive immediate pricing based on your requirements. No surprises, no hidden fees.",
-    icon: CalcIcon,
-    link: "See Pricing →",
-    side: "right"
-  }, {
-    number: "03",
-    title: "Project is Published",
-    description: "Your project goes live to verified participants matching your criteria instantly.",
-    icon: Rocket,
-    link: "View Process →",
-    side: "left"
-  }, {
-    number: "04",
-    title: "Get Results",
-    description: "Receive quality-verified responses directly to your dashboard in real-time.",
-    icon: Trophy,
-    link: "View Dashboard →",
-    side: "right"
-  }];
+  const participantFeatures = ["Browse available tasks", "Complete screenings and tasks", "Claim and withdraw rewards"];
+  // const timelineSteps = [{
+  //   number: "01",
+  //   title: "Define Your Project",
+  //   description: "Tell us what you need: project type, target demographic, number of participants.",
+  //   icon: PenLine,
+  //   link: "Takes 2 minutes",
+  //   side: "left"
+  // }, {
+  //   number: "02",
+  //   title: "Get Instant Quote",
+  //   description: "Get Instant QuoteReceive immediate pricing based on your requirements. No surprises, no hidden fees.",
+  //   icon: CalcIcon,
+  //   link: "Review & approve",
+  //   side: "right"
+  // }, {
+  //   number: "03",
+  //   title: "Project is Published",
+  //   description: "We handle participant matching, quality screening, and project launch.",
+  //   icon: Rocket,
+  //   link: "Takes 2 minutes",
+  //   side: "left"
+  // }, {
+  //   number: "04",
+  //   title: "Get Results",
+  //   description: "Track in real-time with live responses, quality checks, and data download.",
+  //   icon: Trophy,
+  //   link: "48-72 hours total",
+  //   side: "right"
+  // }];
   const researcherTestimonials = [{
     quote: "Canvassing helped us gather insights from 500+ African consumers in just 3 days. The quality of responses was exceptional.",
     name: "Sarah K.",
@@ -234,7 +234,7 @@ const Index = () => {
       </section>
 
       {/* Process Timeline Section */}
-      <section id="process" className="py-16 px-4 bg-purple-light scroll-mt-20">
+      {/* <section id="process" className="py-16 px-4 bg-purple-light scroll-mt-20">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <Badge className="mb-6">Process</Badge>
@@ -244,13 +244,11 @@ const Index = () => {
             </h2>
           </div>
 
-          {/* Demo Video */}
           <div className="rounded-3xl overflow-hidden aspect-video mb-12 shadow-xl max-w-3xl mx-auto">
             <iframe src="https://www.youtube.com/embed/Z2Ly4J68Lzo" title="Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen className="w-full h-full" />
           </div>
 
           <div className="relative">
-            {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden md:block" />
 
             <div className="space-y-8 md:space-y-0">
@@ -263,7 +261,10 @@ const Index = () => {
                         </div>
                         <h3 className="font-display font-bold text-lg text-primary">{step.title}</h3>
                       </div>
-                      <p className="text-muted-foreground text-sm">{step.description}</p>
+                      <p className="text-muted-foreground text-sm mb-3">{step.description}</p>
+                      <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-purple-light text-primary">
+                        {step.link}
+                      </span>
                     </div>
                   </div>
                   
@@ -279,11 +280,11 @@ const Index = () => {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
 
       {/* Testimonials Section */}
-      <section className="py-16 px-4 bg-background">
+      <section className="py-16 px-4 bg-purple-light">
         <div className="container mx-auto max-w-5xl">
           <div className="mb-12">
             <Badge className="mb-4">Testimonials</Badge>
