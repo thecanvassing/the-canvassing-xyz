@@ -9,6 +9,7 @@ import Badge from "@/components/Badge";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
 import RingPattern from "@/components/RingPattern";
+import AnimatedStarfield from "@/components/AnimatedStarfield";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -52,6 +53,7 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient" />
+        <AnimatedStarfield color="#f97316" starCount={150000} speed={0.0005} />
         <div className="absolute inset-0 bg-radial-glow" />
         <RingPattern position="left" />
         

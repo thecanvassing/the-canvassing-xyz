@@ -8,6 +8,7 @@ import ProductCTASection from "@/components/ProductCTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
 import RingPattern from "@/components/RingPattern";
+import AnimatedStarfield from "@/components/AnimatedStarfield";
 import { Link } from "react-router-dom";
 
 const OnlineSurveys = () => {
@@ -23,6 +24,7 @@ const OnlineSurveys = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden bg-hero-gradient">
+        <AnimatedStarfield color="#f97316" starCount={150000} speed={0.0005} />
         <div className="absolute inset-0 bg-radial-glow" />
         <RingPattern position="left" />
         <div className="container mx-auto px-4 relative z-10">
