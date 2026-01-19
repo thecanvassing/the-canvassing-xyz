@@ -36,7 +36,6 @@ const Pricing = () => {
       <section className="py-16 px-4 bg-cream">
         <div className="container mx-auto max-w-4xl">
           <AnimatedSection>
-            <Badge className="mb-4">Testimonials</Badge>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-10">
               <span className="text-accent">Calculate</span> Your Project Cost
             </h2>
