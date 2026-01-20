@@ -84,38 +84,44 @@ const Index = () => {
     name: "Abdulrahman",
     role: "Founder, Wayst Recycling",
     avatar: "AB",
-    avatarBg: "bg-primary"
+    avatarBg: "bg-primary",
+    rating: 5
   }, {
     quote: "We used Canvassing to understand financial behaviors in Sub-Saharan Africa as we built our project.",
     name: "Joe Gikenye",
     role: "Founder, Minilend",
     avatar: "JG",
-    avatarBg: "bg-accent"
+    avatarBg: "bg-accent",
+    rating: 4
   }, {
     quote: "After creating our Tally form, all we had to sit back and wait for participants to complete the tasks. The responses were insightful and the data was valuable.",
     name: "Jordan Muthemba",
     role: "Co-Founder, Exion Finance",
     avatar: "JM",
-    avatarBg: "bg-primary-dark"
+    avatarBg: "bg-primary-dark",
+    rating: 5
   }];
   const participantTestimonials = [{
     quote: "Many long term benefactors can testify that with Canvassing lies many opportunities.",
     name: "Ayorinde Olorunniyi",
     role: "Pax Early Adopter",
     avatar: "AO",
-    avatarBg: "bg-accent"
+    avatarBg: "bg-accent",
+    rating: 5
   }, {
     quote: "Tasks and withdrawal alerts are instant.",
     name: "Esther Muteti",
     role: "Freelancer, Nairobi",
     avatar: "EM",
-    avatarBg: "bg-primary"
+    avatarBg: "bg-primary",
+    rating: 4
   }, {
     quote: "While claiming rewards, sometimes the process was sluggish but the process is smooth and the rewards are instant and the transitions are smooth when navigating through the app, and makes it all worth it.",
     name: "Fredrick Ekesa",
     role: "Participant, Nairobi",
     avatar: "FE",
-    avatarBg: "bg-primary-dark"
+    avatarBg: "bg-primary-dark",
+    rating: 4
   }];
 
   const partnerLogos = [
@@ -407,7 +413,12 @@ const Index = () => {
               className="bg-white rounded-2xl p-6 shadow-card border border-border/50"
             >
               <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-4 h-4 ${i < testimonial.rating ? 'fill-accent text-accent' : 'fill-muted text-muted'}`}
+                  />
+                ))}
               </div>
               <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
                 "{testimonial.quote}"
