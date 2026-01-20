@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Star, BarChart3, Beaker, Mic2, PenLine, Calculator as CalcIcon, Rocket, Trophy, Sparkles, Coins, Zap, Target, Check, Building2, Users, Globe } from "lucide-react";
+import { ArrowRight, Star, BarChart3, Beaker, Mic2, PenLine, Calculator as CalcIcon, Rocket, Trophy, Target, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
@@ -13,6 +13,15 @@ import RingPattern from "@/components/RingPattern";
 import AnimatedStarfield from "@/components/AnimatedStarfield";
 import rezLogo from "@/assets/rez-logo.svg";
 import paxLogo from "@/assets/pax-logo.png";
+import celoLogo from "@/assets/partners/celo.svg";
+import exionLogo from "@/assets/partners/exion_finance.svg";
+import expendiLogo from "@/assets/partners/expendi.svg";
+import gooddollarLogo from "@/assets/partners/gooddollar.svg";
+import minilendLogo from "@/assets/partners/minilend.png";
+import peerpesaLogo from "@/assets/partners/peerpesa.png";
+import prezentiLogo from "@/assets/partners/prezenti.svg";
+import waystLogo from "@/assets/partners/wayst.svg";
+import web3CertifierLogo from "@/assets/partners/web3_certifier.png";
 const Index = () => {
   const helpFeatures = [{
     icon: BarChart3,
@@ -110,10 +119,15 @@ const Index = () => {
   }];
 
   const partnerLogos = [
-    { name: "Universities", icon: Building2 },
-    { name: "NGOs", icon: Globe },
-    { name: "Startups", icon: Rocket },
-    { name: "Enterprises", icon: Users },
+    { name: "Celo", logo: celoLogo, link: "https://celo.org" },
+    { name: "Exion Finance", logo: exionLogo,  link: "https://www.exion.finance/"},
+    { name: "Expendi", logo: expendiLogo, link: "https://expendi.app" },
+    { name: "GoodDollar", logo: gooddollarLogo,link: "https://gooddollar.org" },
+    { name: "Minilend", logo: minilendLogo, link: "https://minilend.xyz"},
+    { name: "PeerPesa", logo: peerpesaLogo, link: "https://peerpesa.co" },
+    { name: "Prezenti", logo: prezentiLogo, link: "https://prezenti.xyz" },
+    { name: "Wayst Recycling", logo: waystLogo, link: "https://waystrecycling.com"},
+    { name: "Web3 Certifier", logo: web3CertifierLogo, link: "https://web3certifier.com" },
   ];
   const [activeTab, setActiveTab] = useState<'researchers' | 'participants'>('researchers');
   return <Layout>
@@ -166,27 +180,53 @@ const Index = () => {
           <StatsBar />
         </motion.div>
 
-        {/* Partner Logos Strip */}
+        {/* Partner Logos Marquee */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="max-w-3xl mx-auto mt-12"
+          className="mt-16 w-full"
         >
-          <p className="text-center text-muted-foreground text-sm mb-6">Trusted by leading organizations across Africa</p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-            {partnerLogos.map((partner, index) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
-                className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-              >
-                <partner.icon className="w-8 h-8" />
-                <span className="text-xs font-medium">{partner.name}</span>
-              </motion.div>
-            ))}
+          <p className="text-center text-muted-foreground text-sm mb-12">Trusted by leading organizations across Africa and in the world</p>
+          <div className="relative overflow-hidden">
+            {/* Gradient overlays for smooth fade effect */}
+        
+            <div className="flex animate-marquee hover:[animation-play-state:paused]">
+              {/* First set of logos */}
+              {partnerLogos.map((partner) => (
+                <a
+                  key={partner.name}
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 mx-8 flex items-center justify-center"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-8 md:h-10 w-auto object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                    title={partner.name}
+                  />
+                </a>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {partnerLogos.map((partner) => (
+                <a
+                  key={`${partner.name}-duplicate`}
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 mx-8 flex items-center justify-center"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-8 md:h-10 w-auto object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                    title={partner.name}
+                  />
+                </a>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
@@ -288,10 +328,10 @@ const Index = () => {
     </section>
 
     {/* Process Timeline Section */}
-    <section id="process" className="py-16 px-4 bg-purple-light scroll-mt-20">
+    {/* <section id="process" className="py-16 px-4 bg-purple-light scroll-mt-20">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
-          <Badge className="mb-6">How It Works</Badge>
+          <Badge className="mb-6">How it works</Badge>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
             From project setup to results delivery in{" "}
             <span className="text-accent">under 72 hours</span>
@@ -336,10 +376,10 @@ const Index = () => {
         </div>
       </div>
     </section>
-
+ */}
 
     {/* Testimonials Section */}
-    <section className="py-16 px-4 bg-background">
+    <section className="py-16 px-4 bg-purple-light">
       <div className="container mx-auto max-w-5xl">
         <div className="mb-12">
           <Badge className="mb-4">Testimonials</Badge>
