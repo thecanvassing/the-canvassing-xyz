@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Calculator as CalcIcon, ArrowRight, CheckCircle, TrendingDown, Sparkles, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ConfirmationPopup from "@/components/ConfirmationPopup";
 
 interface CalculatorProps {
   variant?: "surveys" | "testing";
@@ -24,7 +26,9 @@ const Calculator = ({ variant = "surveys", showTabs = true }: CalculatorProps) =
   const [calculatedPrice, setCalculatedPrice] = useState<CalculatedPrice | null>(null);
   const [showEmailCapture, setShowEmailCapture] = useState(false);
   const [email, setEmail] = useState("");
-  const [isStarting, setIsStarting] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isPopupLoading, setIsPopupLoading] = useState(false);
+  const [isPopupSuccess, setIsPopupSuccess] = useState(false);
 
   const calculateCost = () => {
     const numQuestions = parseInt(questions) || 0;
@@ -56,15 +60,21 @@ const Calculator = ({ variant = "surveys", showTabs = true }: CalculatorProps) =
 
   const handleStartProject = () => {
     if (email.includes("@") && email.includes(".")) {
-      setIsStarting(true);
+      setIsPopupOpen(true);
+      setIsPopupLoading(true);
+      setIsPopupSuccess(false);
+
       setTimeout(() => {
-        window.open(
-          `https://rez.thecanvassing.xyz?email=${encodeURIComponent(email)}&type=${calculatedPrice?.projectType}&questions=${calculatedPrice?.numQuestions}&participants=${calculatedPrice?.numParticipants}`,
-          "_blank"
-        );
-        setIsStarting(false);
+        setIsPopupLoading(false);
+        setIsPopupSuccess(true);
       }, 1500);
     }
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setIsPopupLoading(false);
+    setIsPopupSuccess(false);
   };
 
   const includedFeatures = [
@@ -158,99 +168,150 @@ const Calculator = ({ variant = "surveys", showTabs = true }: CalculatorProps) =
 
         {/* Result */}
         <div className="bg-primary rounded-2xl p-6 flex flex-col">
-          {!calculatedPrice ? (
-            <div className="flex flex-col items-center justify-center h-full text-center py-8">
-              <CalcIcon className="w-12 h-12 mb-4 text-white/50" />
-              <div className="text-xl font-display font-bold text-white mb-2">
-                Your Instant Quote
-              </div>
-              <p className="text-white/70 text-sm">
-                Enter your project details to see pricing
-              </p>
-            </div>
-          ) : (
-            <div className="flex flex-col h-full">
-              <div className="text-sm text-white/90 mb-2">Your Cost with Rez</div>
-              <div className="text-sm text-white/80 mb-2">
-                {activeTab === "surveys"
-                  ? `For ${calculatedPrice.numQuestions} questions × ${calculatedPrice.numParticipants} participants`
-                  : `For ${calculatedPrice.numParticipants} product testers`}
-              </div>
-              <div className="text-5xl font-display font-bold text-white mb-4">
-                ${calculatedPrice.yourCost.toFixed(0)}
-              </div>
-
-              {/* Comparison */}
-              <div className="bg-white/10 rounded-xl p-4 mb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-white/90">Traditional Agency</span>
-                  <span className="line-through text-white/60">
-                    ${calculatedPrice.agencyCost.toFixed(0)}
-                  </span>
+          <AnimatePresence mode="wait">
+            {!calculatedPrice ? (
+              <motion.div
+                key="placeholder"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="flex flex-col items-center justify-center h-full text-center py-8"
+              >
+                <CalcIcon className="w-12 h-12 mb-4 text-white/50" />
+                <div className="text-xl font-display font-bold text-white mb-2">
+                  Your Instant Quote
                 </div>
-                <div className="flex items-center gap-2 text-accent">
-                  <TrendingDown className="w-5 h-5" />
-                  <span className="font-bold">
-                    Save {calculatedPrice.savingsPercent}% (${calculatedPrice.savings.toFixed(0)})
-                  </span>
-                </div>
-              </div>
+                <p className="text-white/70 text-sm">
+                  Enter your project details to see pricing
+                </p>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="results"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="flex flex-col h-full"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-sm text-white/90 mb-2"
+                >
+                  Your Cost with Rez
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                  className="text-sm text-white/80 mb-2"
+                >
+                  {activeTab === "surveys"
+                    ? `For ${calculatedPrice.numQuestions} questions × ${calculatedPrice.numParticipants} participants`
+                    : `For ${calculatedPrice.numParticipants} product testers`}
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                  className="text-5xl font-display font-bold text-white mb-4"
+                >
+                  ${calculatedPrice.yourCost.toFixed(0)}
+                </motion.div>
 
-              {/* Included Features */}
-              <div className="space-y-2 mb-4">
-                <p className="text-sm font-semibold text-white/90 mb-2">What's Included:</p>
-                {includedFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-accent" />
-                    <span className="text-sm text-white/80">{feature}</span>
+                {/* Comparison */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="bg-white/10 rounded-xl p-4 mb-4"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm text-white/90">Traditional Agency</span>
+                    <span className="line-through text-white/60">
+                      ${calculatedPrice.agencyCost.toFixed(0)}
+                    </span>
                   </div>
-                ))}
-              </div>
+                  <div className="flex items-center gap-2 text-accent">
+                    <TrendingDown className="w-5 h-5" />
+                    <span className="font-bold">
+                      Save {calculatedPrice.savingsPercent}% (${calculatedPrice.savings.toFixed(0)})
+                    </span>
+                  </div>
+                </motion.div>
 
-              {/* Email Capture */}
-              {showEmailCapture && (
-                <div className="mt-auto pt-4 border-t border-white/20">
-                  {!isStarting ? (
-                    <>
-                      <div className="flex items-center gap-2 mb-2">
-                        <Sparkles className="w-4 h-4 text-accent" />
-                        <p className="text-sm font-semibold text-white">Ready to get started?</p>
-                      </div>
+                {/* Included Features */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="space-y-2 mb-4"
+                >
+                  <p className="text-sm font-semibold text-white/90 mb-2">What's Included:</p>
+                  {includedFeatures.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.45 + index * 0.05 }}
+                      className="flex items-start gap-2"
+                    >
+                      <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-accent" />
+                      <span className="text-sm text-white/80">{feature}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
 
-                      <div className="space-y-3">
-                        <input
-                          type="email"
-                          placeholder="your@email.com"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          className="w-full px-4 py-3 rounded-xl text-foreground bg-white focus:outline-none focus:ring-2 focus:ring-accent"
-                        />
-                        <Button
-                          onClick={handleStartProject}
-                          disabled={!email.includes("@")}
-                          variant="outline"
-                          className="w-full border-white border-2 text-primary bg-white hover:bg-primary hover:text-white rounded-full"
-                        >
-                          Start My Project
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </div>
-                    </>
-                  ) : (
-                    <div className="text-center py-4">
-                      <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2 animate-pulse">
-                        <Sparkles className="w-5 h-5 text-white" />
-                      </div>
-                      <p className="font-semibold text-white text-sm mb-1">Creating your account...</p>
-                      <p className="text-xs text-white/70">Check {email} for login details</p>
+                {/* Email Capture */}
+                {showEmailCapture && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.65 }}
+                    className="mt-auto pt-4 border-t border-white/20"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <Sparkles className="w-4 h-4 text-accent" />
+                      <p className="text-sm font-semibold text-white">Ready to get started?</p>
                     </div>
-                  )}
-                </div>
-              )}
-            </div>
-          )}
+
+                    <div className="space-y-3">
+                      <input
+                        type="email"
+                        placeholder="your@email.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl text-foreground bg-white focus:outline-none focus:ring-2 focus:ring-accent"
+                      />
+                      <Button
+                        onClick={handleStartProject}
+                        disabled={!email.includes("@")}
+                        variant="outline"
+                        className="w-full border-white border-2 text-primary bg-white hover:bg-primary hover:text-white rounded-full"
+                      >
+                        Start My Project
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </div>
+                  </motion.div>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
+
+      <ConfirmationPopup
+        isOpen={isPopupOpen}
+        onClose={handleClosePopup}
+        isLoading={isPopupLoading}
+        isSuccess={isPopupSuccess}
+        loadingTitle="Setting up your project..."
+        loadingMessage="Please wait while we prepare everything."
+        successTitle="Check Your Email!"
+        successMessage={`We've sent instructions to ${email} on how to proceed with your project.`}
+      />
     </div>
   );
 };

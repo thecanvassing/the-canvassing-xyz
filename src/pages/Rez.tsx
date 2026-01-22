@@ -309,6 +309,7 @@ const Rez = () => {
             </div>
           </div>
         </motion.div>
+
       </section>
 
       {/* Demo Video Section */}
