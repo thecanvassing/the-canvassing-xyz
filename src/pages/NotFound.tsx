@@ -18,7 +18,7 @@ const NotFound = () => {
   return (
     <Layout>
       <section className="relative py-16 md:py-24 overflow-hidden bg-hero-gradient min-h-[80vh] flex items-center">
-        <AnimatedStarfield color="#f97316" starCount={150000} speed={0.0005} />
+        <AnimatedStarfield />
         <div className="absolute inset-0 bg-radial-glow" />
         <RingPattern position="left" />
         <RingPattern position="right" />

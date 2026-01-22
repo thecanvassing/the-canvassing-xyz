@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { STARFIELD_COLOR, STARFIELD_COUNT, STARFIELD_SPEED } from '@/constants/theme';
 
 interface AnimatedStarfieldProps {
   color?: string;
@@ -8,10 +9,10 @@ interface AnimatedStarfieldProps {
   className?: string;
 }
 
-const AnimatedStarfield = ({ 
-  color = '#f97316', // accent color (orange)
-  starCount = 150000,
-  speed = 0.0005,
+const AnimatedStarfield = ({
+  color = STARFIELD_COLOR,
+  starCount = STARFIELD_COUNT,
+  speed = STARFIELD_SPEED,
   className = ''
 }: AnimatedStarfieldProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
