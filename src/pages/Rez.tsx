@@ -219,7 +219,7 @@ const Rez = () => {
                     placeholder="Enter your work email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none text-base bg-background"
+                    className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none text-base bg-background text-center"
                   />
 
                   <button
