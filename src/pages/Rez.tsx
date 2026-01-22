@@ -14,6 +14,7 @@ import {
   Beaker,
   Download,
   Check,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
@@ -149,6 +150,30 @@ const Rez = () => {
     "Detailed feedback and screenshots",
     "Fast turnaround times",
   ];
+
+  const researcherTestimonials = [{
+    quote: "Customer concentration awareness and validation - that is the value that the survey we did with Canvassing brought us.",
+    name: "Abdulrahman",
+    role: "Founder, Wayst Recycling",
+    avatar: "AB",
+    avatarBg: "bg-primary",
+    rating: 5
+  }, {
+    quote: "We used Canvassing to understand financial behaviors in Sub-Saharan Africa as we built our project.",
+    name: "Joe Gikenye",
+    role: "Founder, Minilend",
+    avatar: "JG",
+    avatarBg: "bg-accent",
+    rating: 4
+  }, {
+    quote: "After creating our Tally form, all we had to sit back and wait for participants to complete the tasks. The responses were insightful and the data was valuable.",
+    name: "Jordan Muthemba",
+    role: "Co-Founder, Exion Finance",
+    avatar: "JM",
+    avatarBg: "bg-primary-dark",
+    rating: 5
+  }];
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -561,6 +586,51 @@ const Rez = () => {
               have used our calculator
             </p>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-4 bg-purple-light">
+        <div className="container mx-auto max-w-5xl">
+          <div className="mb-12">
+            <Badge className="mb-4">Testimonials</Badge>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary">
+              Here's what researchers <span className="text-accent">love</span><br />about Canvassing
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {researcherTestimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-card border border-border/50"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${i < testimonial.rating ? 'fill-accent text-accent' : 'fill-muted text-muted'}`}
+                    />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className={`w-10 h-10 rounded-full ${testimonial.avatarBg} flex items-center justify-center text-white font-semibold text-sm`}>
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
