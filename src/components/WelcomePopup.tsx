@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -23,7 +23,7 @@ export default function WelcomePopup({ isOpen: controlledIsOpen, onClose }: Welc
 
   const isControlled = controlledIsOpen !== undefined;
   const isOpen = isControlled ? controlledIsOpen : internalIsOpen;
-  
+
   const handleOpenChange = (open: boolean) => {
     if (isControlled) {
       if (!open && onClose) {
@@ -33,24 +33,6 @@ export default function WelcomePopup({ isOpen: controlledIsOpen, onClose }: Welc
       setInternalIsOpen(open);
     }
   };
-
-  useEffect(() => {
-    // Only run auto-show logic if not controlled
-    if (isControlled) return;
-    
-    // Check if popup was already shown in this session
-    const hasSeenPopup = sessionStorage.getItem("hasSeenWelcomePopup");
-    
-    if (!hasSeenPopup) {
-      // Show popup after user has had time to view the page (5 seconds)
-      const timer = setTimeout(() => {
-        setInternalIsOpen(true);
-        sessionStorage.setItem("hasSeenWelcomePopup", "true");
-      }, 5000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isControlled]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
