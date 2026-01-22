@@ -140,7 +140,7 @@ const Index = () => {
     <WelcomePopup />
     {/* Hero Section */}
     <section className="relative py-16 md:py-24 overflow-hidden bg-hero-gradient">
-      <AnimatedStarfield starCount={15000} />
+      <AnimatedStarfield />
       <div className="absolute inset-0 bg-radial-glow" />
       <RingPattern position="left" />
       <div className="container mx-auto px-4 relative z-10">
