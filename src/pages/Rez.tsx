@@ -27,6 +27,15 @@ import AnimatedStarfield from "@/components/AnimatedStarfield";
 import DownloadReportPopup from "@/components/DownloadReportPopup";
 import ConfirmationPopup from "@/components/ConfirmationPopup";
 import rezLogo from "@/assets/rez-logo.svg";
+import celoLogo from "@/assets/partners/celo.svg";
+import exionLogo from "@/assets/partners/exion_finance.svg";
+import expendiLogo from "@/assets/partners/expendi.svg";
+import gooddollarLogo from "@/assets/partners/gooddollar.svg";
+import minilendLogo from "@/assets/partners/minilend.png";
+import peerpesaLogo from "@/assets/partners/peerpesa.png";
+import prezentiLogo from "@/assets/partners/prezenti.svg";
+import waystLogo from "@/assets/partners/wayst.svg";
+import web3CertifierLogo from "@/assets/partners/web3_certifier.png";
 
 const Rez = () => {
   const [email, setEmail] = useState("");
@@ -54,6 +63,37 @@ const Rez = () => {
       }, 1000);
     }
   };
+
+  const partnerLogos = [
+    { name: "Celo", logo: celoLogo, link: "https://celo.org" },
+    { name: "Exion Finance", logo: exionLogo, link: "https://www.exion.finance/" },
+    { name: "Expendi", logo: expendiLogo, link: "https://expendi.app" },
+    { name: "GoodDollar", logo: gooddollarLogo, link: "https://gooddollar.org" },
+    { name: "Minilend", logo: minilendLogo, link: "https://minilend.xyz" },
+    { name: "PeerPesa", logo: peerpesaLogo, link: "https://peerpesa.co" },
+    { name: "Prezenti", logo: prezentiLogo, link: "https://prezenti.xyz" },
+    { name: "Wayst Recycling", logo: waystLogo, link: "https://waystrecycling.com" },
+    { name: "Web3 Certifier", logo: web3CertifierLogo, link: "https://web3certifier.com" },
+  ];
+
+  const heroTestimonials = [
+    {
+      quote: "The responses were insightful and the data was valuable.",
+      name: "Jordan Muthemba",
+      role: "Co-Founder, Exion Finance",
+    },
+    {
+      quote: "Customer concentration awareness and validation - that is the value Canvassing brought us.",
+      name: "Abdulrahman",
+      role: "Founder, Wayst Recycling",
+    },
+    {
+      quote: "We used Canvassing to understand financial behaviors in Sub-Saharan Africa.",
+      name: "Joe Gikenye",
+      role: "Founder, Minilend",
+    },
+  ];
+
   const painPoints = [
     "Weeks wasted recruiting participants on WhatsApp groups",
     "Fake responses and bot traffic ruining your data",
@@ -185,42 +225,90 @@ const Rez = () => {
                 transition={{ delay: 0.3 }}
                 className="text-center mb-8"
               >
-                <p className="text-sm text-muted-foreground mb-3">
+                <p className="text-base text-muted-foreground mb-3">
                   Not ready to start yet?
                 </p>
                 <button
                   onClick={() => setShowReportPopup(true)}
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium text-sm border-2 border-primary/30 hover:border-primary/50 px-4 py-2 rounded-full transition-all hover:shadow-md bg-white/80 backdrop-blur-sm"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-semibold text-base border-2 border-primary/30 hover:border-primary/50 px-6 py-3 rounded-full transition-all hover:shadow-md bg-white/80 backdrop-blur-sm"
                 >
-                  <Download className="w-4 h-4" />
+                  <Download className="w-5 h-5" />
                   <span className="hidden sm:inline">Download Free 2026 Research Report</span>
                   <span className="sm:hidden">Download Free Report</span>
                 </button>
               </motion.div>
 
-              {/* Trust Indicators */}
+              {/* Social Proof */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="grid grid-cols-3 gap-6 max-w-2xl mx-auto"
+                className="flex items-center justify-center gap-3"
               >
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent">48hrs</div>
-                  <div className="text-sm text-muted-foreground">Average delivery</div>
+                <div className="flex -space-x-2">
+                  {heroTestimonials.map((t, i) => (
+                    <div
+                      key={i}
+                      className={`w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-semibold ${
+                        i === 0 ? "bg-primary" : i === 1 ? "bg-accent" : "bg-primary-dark"
+                      }`}
+                    >
+                      {t.name.split(" ").map(n => n[0]).join("")}
+                    </div>
+                  ))}
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent">5,000+</div>
-                  <div className="text-sm text-muted-foreground">Verified participants</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-accent">98%</div>
-                  <div className="text-sm text-muted-foreground">Quality rate</div>
-                </div>
+                <p className="text-sm text-muted-foreground">
+                  Trusted by <span className="font-semibold text-primary">200+ researchers</span>
+                </p>
               </motion.div>
             </motion.div>
           </div>
         </div>
+
+        {/* Partner Logos Marquee */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-12 w-full"
+        >
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee hover:[animation-play-state:paused]">
+              {partnerLogos.map((partner) => (
+                <a
+                  key={partner.name}
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 mx-8 flex items-center justify-center"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300"
+                    title={partner.name}
+                  />
+                </a>
+              ))}
+              {partnerLogos.map((partner) => (
+                <a
+                  key={`${partner.name}-duplicate`}
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 mx-8 flex items-center justify-center"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300"
+                    title={partner.name}
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Demo Video Section */}
