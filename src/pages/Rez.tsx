@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  Star,
+  ArrowRight,
   PenLine,
   Calculator as CalcIcon,
   Rocket,
@@ -12,8 +12,9 @@ import {
   Target,
   BarChart3,
   Beaker,
+  Download,
+  Check,
 } from "lucide-react";
-import WelcomePopup from "@/components/WelcomePopup";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import Badge from "@/components/Badge";
@@ -23,19 +24,34 @@ import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCard from "@/components/AnimatedCard";
 import RingPattern from "@/components/RingPattern";
 import AnimatedStarfield from "@/components/AnimatedStarfield";
+import DownloadReportPopup from "@/components/DownloadReportPopup";
+import ConfirmationPopup from "@/components/ConfirmationPopup";
 import rezLogo from "@/assets/rez-logo.svg";
+
 const Rez = () => {
   const [email, setEmail] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
+  const [showReportPopup, setShowReportPopup] = useState(false);
+  const [showParticipantsPopup, setShowParticipantsPopup] = useState(false);
+  const [participantsSubmitting, setParticipantsSubmitting] = useState(false);
+  const [participantsSubmitted, setParticipantsSubmitted] = useState(false);
+
   const isValidEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
+
   const handleGetParticipants = () => {
     if (isValidEmail(email)) {
-      window.open(
-        `https://rez.thecanvassing.xyz?email=${encodeURIComponent(email)}`,
-        "_blank"
-      );
+      setShowParticipantsPopup(true);
+      setParticipantsSubmitting(true);
+      // Simulate API call
+      setTimeout(() => {
+        setParticipantsSubmitting(false);
+        setParticipantsSubmitted(true);
+        setTimeout(() => {
+          setShowParticipantsPopup(false);
+          setParticipantsSubmitted(false);
+        }, 3000);
+      }, 1000);
     }
   };
   const painPoints = [
@@ -93,91 +109,114 @@ const Rez = () => {
     "Detailed feedback and screenshots",
     "Fast turnaround times",
   ];
-  const testimonials = [
-    {
-      quote:
-        "Canvassing helped us gather insights from 500+ African consumers in just 3 days. The quality of responses was exceptional.",
-      name: "Sarah K.",
-      role: "Research Lead, TechCo",
-    },
-    {
-      quote:
-        "The verified participant network means we no longer waste time on fake responses. Game changer for our research.",
-      name: "James M.",
-      role: "Product Manager, StartupXYZ",
-    },
-    {
-      quote:
-        "Finally, a platform that understands the African market. Fast, reliable, and cost-effective.",
-      name: "Grace O.",
-      role: "UX Researcher, DesignHub",
-    },
-  ];
   return (
     <Layout>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 overflow-hidden bg-hero-gradient">
-        <AnimatedStarfield color="#f97316" starCount={150000} speed={0.0005} />
+        <AnimatedStarfield />
         <div className="absolute inset-0 bg-radial-glow" />
         <RingPattern position="left" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.5,
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
               <img src={rezLogo} alt="Rez" className="w-16 h-16 mx-auto mb-6" />
               <Badge className="mb-6">
-                Vouched for by some African founders
+                <Check className="w-4 h-4 inline mr-1" />
+                Trusted by 200+ African researchers
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-primary">
-                Get Quality Research Insights{" "}
-                <span className="text-accent">in Days, Not Weeks</span>
+                Get Quality Research Insights in{" "}
+                <span className="text-accent">48 Hours</span>, Not Weeks
               </h1>
-              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-                The trusted marketplace where researchers find verified
-                participants for online surveys and product testing. Transparent
-                pricing, quality responses, fast turnaround.
+              <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+                Recruit verified African participants for surveys and product tests.
+                From $50 for 20 responses. No recruitment hassle, no fake data.
               </p>
+
+              {/* Primary CTA - Email Capture Card */}
               <motion.div
-                className="flex flex-col gap-4 items-center"
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  delay: 0.3,
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="bg-white rounded-xl shadow-lg p-6 mb-6 max-w-lg mx-auto border border-border/50"
               >
-                <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md pb-[20px]">
+                <p className="text-sm text-muted-foreground mb-3 text-left">
+                  Start your first project in 2 minutes:
+                </p>
+
+                <div className="space-y-3">
                   <input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Enter your work email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-3 rounded-full border border-border bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-center"
+                    className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary focus:outline-none text-base bg-background"
                   />
+
+                  <button
+                    onClick={handleGetParticipants}
+                    disabled={!isValidEmail(email)}
+                    className={`w-full py-3 rounded-full font-semibold text-base flex items-center justify-center gap-2 transition-all ${
+                      isValidEmail(email)
+                        ? "bg-primary text-white hover:bg-primary-dark shadow-md hover:shadow-lg"
+                        : "bg-muted text-muted-foreground cursor-not-allowed"
+                    }`}
+                  >
+                    Get Participants Now
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
-                <Button
-                  onClick={handleGetParticipants}
-                  disabled={!isValidEmail(email)}
-                  className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+
+                <p className="text-xs text-muted-foreground mt-3 text-left">
+                  <Check className="w-3 h-3 inline mr-1" /> No credit card required
+                  <Check className="w-3 h-3 inline mx-1 ml-3" /> 2-minute setup
+                  <Check className="w-3 h-3 inline mx-1 ml-3" /> First project in 48 hours
+                </p>
+              </motion.div>
+
+              {/* Secondary CTA - Download Report */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-center mb-8"
+              >
+                <p className="text-sm text-muted-foreground mb-3">
+                  Not ready to start yet?
+                </p>
+                <button
+                  onClick={() => setShowReportPopup(true)}
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium text-sm border-2 border-primary/30 hover:border-primary/50 px-4 py-2 rounded-full transition-all hover:shadow-md bg-white/80 backdrop-blur-sm"
                 >
-                  Get Participants Now
-                </Button>
+                  <Download className="w-4 h-4" />
+                  <span className="hidden sm:inline">Download Free 2026 Research Report</span>
+                  <span className="sm:hidden">Download Free Report</span>
+                </button>
+              </motion.div>
+
+              {/* Trust Indicators */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="grid grid-cols-3 gap-6 max-w-2xl mx-auto"
+              >
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent">48hrs</div>
+                  <div className="text-sm text-muted-foreground">Average delivery</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent">5,000+</div>
+                  <div className="text-sm text-muted-foreground">Verified participants</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-accent">98%</div>
+                  <div className="text-sm text-muted-foreground">Quality rate</div>
+                </div>
               </motion.div>
             </motion.div>
           </div>
@@ -439,8 +478,27 @@ const Rez = () => {
       {/* CTA Section */}
       <CTASection />
 
-      {/* Popup */}
-      <WelcomePopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+      {/* Download Report Popup */}
+      <DownloadReportPopup
+        isOpen={showReportPopup}
+        onClose={() => setShowReportPopup(false)}
+      />
+
+      {/* Get Participants Confirmation Popup */}
+      <ConfirmationPopup
+        isOpen={showParticipantsPopup}
+        onClose={() => {
+          setShowParticipantsPopup(false);
+          setParticipantsSubmitting(false);
+          setParticipantsSubmitted(false);
+        }}
+        isLoading={participantsSubmitting}
+        isSuccess={participantsSubmitted}
+        loadingTitle="Setting up your account..."
+        loadingMessage="Please wait while we prepare your researcher dashboard."
+        successTitle="Check Your Email!"
+        successMessage={`We've sent your login details to ${email}`}
+      />
     </Layout>
   );
 };
