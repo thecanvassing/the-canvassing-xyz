@@ -152,7 +152,7 @@ const Footer = () => {
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
           </div>
           <p className="text-sm text-white/60">
-            © 2025 Canvassing. All rights reserved. Built with ❤️ in Africa.
+            © 2026 Canvassing. All rights reserved. Built with ❤️ in Africa.
           </p>
         </div>
       </div>
